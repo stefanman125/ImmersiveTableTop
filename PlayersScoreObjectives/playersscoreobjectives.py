@@ -24,20 +24,23 @@ def create_players_and_score(players_filename): # Prompts the user to enter play
     players_file.close()
     print("[*] New players file created")
 
-def change_score(players_filename):
+def change_score(players_filename, selected_player, new_score):
     players_file = open(players_filename, 'r+')
     players = [player.strip().split() for player in players_file.readlines()] # Splits players from the formatted file to a dictionary
-    print("Current Players:")
-    for index, player in enumerate(players): # Print all player names with index
-        print(str(index+1) + ") " + player[0])
-    changing_player = input("Choose a player by index: ")
-    new_score = input("Enter their new score: ")
-    players[int(changing_player)-1][1] = new_score
+    for player in players:
+        if (player[0] == selected_player):
+            player[1] = new_score
     players = sorted(players, key=lambda x: x[1], reverse=True)
     players_file.seek(0) # Place file seeker at the beginning of the file to overwrite old score data
     players_file.writelines(player[0] + ' '*(get_longest_name(players) + space - len(player[0])) + str(player[1]) + '\n' for player in players)
     players_file.close()
     print("[*] Successfully changed score")
+
+def get_player_data(players_filename):
+    players_file = open(players_filename, 'r+')
+    players = [player.strip().split() for player in players_file.readlines()] # Splits players from the formatted file to a dictionary
+    players_file.close()
+    return players
 
 def get_longest_name(players): # Takes list of player names and their scores
     longest = 0
@@ -62,13 +65,9 @@ def create_objectives(objectives_filename):
     objectives_file.close()
     print("[*] New Objectives file created")
 
-def add_objective(objectives_filename):
+def add_objective(objectives_filename, new_objective):
     objectives_file = open(objectives_filename, 'r+')
-    objectives = [objective.strip() for objective in open(objectives_filename, 'r+')] # Splits players from the formatted file to a dictionary
-    print("Current Objectives:")
-    for objective in objectives:
-        print(str(objectives.index(objective)+1) + ') ' + objective.strip())
-    new_objective = input("Enter a new objective name: ")
+    objectives = [objective.strip() for objective in open(objectives_filename, 'r+')] 
     objectives.append(new_objective)
     objectives_file.seek(0) # Place file seeker at the beginning of the file to overwrite old data
     objectives_file.writelines(objective + '\n' for objective in objectives)

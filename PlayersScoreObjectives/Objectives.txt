@@ -1,6 +1,4 @@
-objective 1
-objective 2
-objective 3
-objective 4
-objective 5
-objective 6
+8 structures on the rim systems
+3 units on systems outside your home system
+bobo
+another one
