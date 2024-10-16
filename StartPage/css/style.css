@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*background-image: url(''); /* Use the actual image path */
+    /* background-size: cover;
+    background-position: center;*/
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-color: rgb(15, 14, 14);*/
+    font-family: Arial, sans-serif;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* This is where the Title Style Lives */
+.title {
+    font-size: 6vw;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #FFA500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    background-clip: text;
+    /*This is where you change the gradient of the Title and change the bg add fill type -- Solid or Trasparent*/
+    background: -webkit-linear-gradient(#fe0303, #ffea00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 5s;
+
+}
+
+/* This is whyere the SubTitel Style Lives*/
+.subtitle {
+    font-size: 3vw;
+    margin-top: 10px;
+    color: #FFE135;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    background-clip: text;
+    /*This is where you change the gradient of the Title and change the bg add fill type -- Solid or Trasparent*/
+    background: -webkit-linear-gradient(#fe0303, #ffea00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: blinker 5s linear infinite;
+}
+
+/*This is where the GM Online lives*/
+.small-text {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-size: 2.2vw;
+    color: #FFA500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    background-clip: text;
+    /*This is where you change the gradient of the Title and change the bg add fill type -- Solid or Trasparent*/
+    background: -webkit-linear-gradient(#fe0303, #ffea00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#space {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+#warp {
+    position: absolute;
+    cursor: grabbing;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 20px auto;
+    color: rgb(209, 255, 255);
+    border: 2px solid;
+    padding: 0px;
+    width: 10em;
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    display: inline-block;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0);
+    cursor: crosshair;
+    z-index: 1;
+}
+
+#visualizer {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+
+    /* border: 1px solid #ffffff; */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+#play-visualizer {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: crosshair;
+    z-index: 2;
+}
+
+#play-visualizer:hover {
+    background-color: #000000;
+    z-index: 2;
+}
