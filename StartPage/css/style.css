@@ -158,13 +158,13 @@ body {
     display: inline-block;
     padding-left: 100%;
     /* Animation to scroll the text and the speed in Seconds */
-    animation: scroll 60s linear infinite;
+    animation: scroll 45s linear infinite;
 
 }
 
 @keyframes scroll {
     0% {
-        transform: translateX(100%);
+        transform: translateX(5%);
     }
 
     100% {
