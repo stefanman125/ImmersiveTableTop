@@ -1,2 +1,3 @@
 1. Fix The Audio Location Currently only working under the main DIR
 2. Figure out how to have the music play when the page loads
+3. Figure out how to change the location of where the headlines live OR just switch to an api or something
