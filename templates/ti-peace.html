@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersion Control Center</title>
+    <!-- TI Peace CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ti-peace.css') }}">
+    <style>
+        /* News Reel Font */
+        @font-face {
+            font-family: 'Bebas-Neue';
+            src: url("{{ url_for('static', filename='fonts/BebasNeue-Regular.ttf') }}") format('truetype');
+        }
+        
+        /* ICC Title Font */
+        @font-face {
+            font-family: 'Nasalization';
+            src: url("{{ url_for('static', filename='fonts/nasalization-rg.otf') }}") format('opentype');
+        }
+    </style>
+</head>
+<body>
+    <!-- Title Text -->
+    <h1 class="title-text">  I . C . C  </h1>
+
+    <!-- Background Video -->
+    <video autoplay muted loop>
+        <source src="{{ url_for('static', filename='Backgrounds/TI4/space-horizon-moewalls-com.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Left frame overlay with a red box inside -->
+    <div class="overlay left-frame">
+        <img src="{{ url_for('static', filename='UI/8925942.png') }}" alt="Left Frame">
+        <div class="blue-box"></div> <!-- Red semi-transparent box -->
+    </div>
+
+    <!-- Right frame overlay-->
+    <script>
+        const default_video = "{{ url_for('static', filename='Videos/no-signal-tv-2.gif') }}"
+
+        // List of videos (file paths)
+        const videos = [
+        {% for filename in videos %}
+            "{{ url_for('static', filename=filename) }}"{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        ];
+        console.log(videos)
+    </script>
+    <div class="overlay right-frame">
+        <img src="{{ url_for('static', filename='UI/6167920.png') }}" alt="Right Frame" class="frame-img">
+        <img src="{{ url_for('static', filename='Videos/TI4/no-signal-tv.gif') }}" alt="No Signal GIF" class="no-signal">
+        <!--<video class="right-frame-video" autoplay muted>
+            <source id="right-frame-video-source" src="" type="video/mp4">
+        </video>-->
+        <video class="right-frame-video" id="right-frame-video" autoplay muted>
+            <!-- No <source> tag needed when dynamically setting src in JavaScript -->
+        </video>
+
+    </div>
+    <script src="{{ url_for('static', filename='js/videos.js') }}"></script>
+
+    <!-- News Reel -->
+    <div class="news-bar">
+        <div class="news-content">
+            <span id="news-headlines">Loading news...</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Replace the fetch with the Flask-provided string
+            let newsHeadlines = "{{ headlines }}"; // Flask string
+
+            // Insert headlines into the span
+            document.getElementById('news-headlines').textContent = newsHeadlines;
+        });
+    </script>
+
+    <!-- Audio Visualizer -->
+    <div class="visualizer">
+        <!-- Music Selection -->
+        <script>
+            // List of songs (file paths)
+            const music = [
+            {% for filename in music %}
+                "{{ url_for('static', filename=filename) }}"{% if not loop.last %}, {% endif %}
+            {% endfor %}
+            ];
+        </script>
+        <canvas id="visualizer" width="600" height="100"></canvas>
+        <audio id="visualizer-sound" preload="auto" autoplay>
+            <source id="visualizer-sound" src="" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <h1 class="visualizer-text" id="visualizer-text" >
+            Song Name 
+        </h1>
+        <!-- Used to set the bar color -->
+        <script> 
+            var selectedColor = 'rgba(0, 0, 255, 0.6)' 
+        </script> 
+        <script src="{{ url_for('static', filename='js/music.js') }}"></script>
+    </div>
+
+</body>
+</html>
