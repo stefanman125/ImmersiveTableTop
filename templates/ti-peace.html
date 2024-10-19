@@ -33,7 +33,13 @@
     <!-- Left frame overlay with a red box inside -->
     <div class="overlay left-frame">
         <img src="{{ url_for('static', filename='UI/8925942.png') }}" alt="Left Frame">
-        <div class="blue-box"></div> <!-- Red semi-transparent box -->
+
+        <!-- Blue semi-transparent box -->
+        <div class="blue-box"></div> 
+
+        <!-- Scoreboard -->
+        <div class="leaderboard" id="leaderboard"></div>
+        <script src="{{ url_for('static', filename='js/scoreboard.js') }}"></script>
     </div>
 
     <!-- Right frame overlay-->
