@@ -1,73 +1,128 @@
-//Where The Current Data Array For Each Player will be Stored
-//TODO FIGURE OUT IMAGE STRUCTURE
+// Array to hold player data
 let players = [
     { name: 'Joe', score: 0, avatar: 'test_picture.png' },
-    { name: 'Stefan', score: 0, avatar: 'test_picture.png' },
     { name: 'Admam', score: 0, avatar: 'test_picture.png' },
-    { name: 'Other Dude ', score: 0, avatar: 'test_picture.png' },
-
+    { name: 'Stefan', score: 0, avatar: 'test_picture.png' },
+    { name: 'Other Dude', score: 0, avatar: 'test_picture.png' }
 ];
 
-// Function to generate a random score increment
+// Function to generate a random players score
 function generateRandomScore() {
-    return 1;  // Random score increment between 0 and 19
+    return 2;
 }
 
-// Function to update a random player's score
+// Function to generate a random player's score
 function updatePlayerScore() {
-    const PlayerScoreIndex = Math.floor(Math.random() * players.length);
+    //The Math can be removed and replaced with static incomming values via fetch
+    const playerScoreIndex = Math.floor(Math.random() * players.length);
     const randomScore = generateRandomScore();
-    players[PlayerScoreIndex].score += randomScore;
+    players[playerScoreIndex].score += randomScore;
+    //Grab the Score and update
+    const scoreElement = document.getElementById('score');
+    //If you want to set other valuse a modification might be needed below
+    scoreElement.textContent = `${players[playerScoreIndex].name} Score: ${players[playerScoreIndex].score}`;
+    //console.log(scoreElement)
 
-    //This Will set the Score Per Player Using a the Randomizer + current Score
-    const playerScoreElement = document.getElementById('score');
-    playerScoreElement.textContent = `${players[PlayerScoreIndex].name} Score: ${players[PlayerScoreIndex].score}`;
-
-    //Once Score is Changed With Above
-    //This will update the current leaderboard
+    // Update the leaderboard reordering
     updateLeaderboard();
 }
 
-// Function to update the leaderboard display
+// Function to animate the leaderboard reordering
 function updateLeaderboard() {
+    const leaderboardContainer = document.getElementById('leaderboard');
+    const playerCards = Array.from(leaderboardContainer.children);
+
+    // Store the initial positions of all player cards
+    playerCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        card.dataset.initialTop = rect.top;
+    });
+
     // Sort players by score in descending order
     players.sort((a, b) => b.score - a.score);
-    const highscore = players[0].score;
-    const isTie = players.filter(players => players.score === highscore).length > 1;
-    // Get the leaderboard container
-    const leaderboardContainer = document.getElementById('leaderboard');
-    leaderboardContainer.innerHTML = '';  // Clear the current leaderboard
 
-    // Display the updated leaderboard
+    // Get the highest score
+    const topScore = players[0].score;
+
+    // Check if there's a tie for the topscore
+    const isTie = players.filter(player => player.score === topScore).length > 1;
+
+    // Rebuild the leaderboard
     players.forEach((player, index) => {
-        const playerCard = document.createElement('div');
-        playerCard.classList.add('player-card');
+        const playerCard = playerCards.find(card => card.dataset.name === player.name);
+
+        const playerScore = playerCard.querySelector('.player-info p');
+        playerScore.textContent = `Score: ${player.score}`;
+        // Remove Both Boarders
+        if (player.score === 0 && isTie) {
+            playerCard.classList.remove('highlighted');
+            playerCard.classList.remove('tied');
 
 
-        //If No Score == No boarder
-        if (player.score === 0) {
-            playerCard.classList.add('player-card');
         }
-        //If Players Score is Top Score & Is tied Silver boarder
-        else if (player.score === highscore && isTie) {
-            playerCard.classList.add('tied');
-        }
-        //If Player index is 0 and is not tie Gold boarder
+        //Apply Gold Boarder
         else if (index === 0 && !isTie) {
             playerCard.classList.add('highlighted');
+            playerCard.classList.remove('tied');
+
+        }
+        //Apply Silver Boarder and remove gold
+        else if (player.score === topScore) {
+            playerCard.classList.add('tied');
+            playerCard.classList.remove('highlighted');
+            //console.log(player)
+
+        }
+        else {
+            //Remove Both Boarders
+            playerCard.classList.remove('highlighted');
+            playerCard.classList.remove('tied');
         }
 
+        // reordered playerCard back to the leaderboard this will not cause the refactor
+        leaderboardContainer.appendChild(playerCard);
+    });
 
-        // Create the avatar image
+    // Calculate new positions and transition
+    playerCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const initialTop = card.dataset.initialTop;
+        const deltaY = initialTop - rect.top;
+
+        // Apply the transform to move the element to its original position
+        card.style.transition = 'none';
+        card.style.transform = `translateY(${deltaY}px)`;
+
+        // Trigger refactor
+        card.getBoundingClientRect();
+
+        // Apply the transition to move it to the new position smoothly
+        //If you are making is quicker make sure this trasision alligns with the one listed in the css file under".playercard"
+        card.style.transition = 'transform 1s ease';
+        card.style.transform = 'translateY(0)';
+    });
+}
+
+// Event listener for the refresh button
+document.getElementById('refreshButton').addEventListener('click', updatePlayerScore);
+
+// Initial leaderboard display
+document.addEventListener('DOMContentLoaded', () => {
+    const leaderboardContainer = document.getElementById('leaderboard');
+    players.forEach(player => {
+        //Create Player Info Container
+        //These are the components that go into the individual leaderboard stats
+        const playerCard = document.createElement('div');
+        playerCard.classList.add('player-card');
+        playerCard.dataset.name = player.name;
+
         const avatarImg = document.createElement('img');
         avatarImg.src = player.avatar;
         avatarImg.alt = 'Player Avatar';
         avatarImg.classList.add('avatar');
-
-        // Create the player info container
+        //Add player Card
         const playerInfo = document.createElement('div');
         playerInfo.classList.add('player-info');
-
         // Add player name and current Score
         const playerName = document.createElement('h1');
         playerName.textContent = player.name;
@@ -80,14 +135,9 @@ function updateLeaderboard() {
         playerInfo.appendChild(playerScore);
 
 
-
         // Append the player card to the leaderboard
         leaderboardContainer.appendChild(playerCard);
     });
-}
 
-// Event listener for the refresh button
-document.getElementById('refreshButton').addEventListener('click', updatePlayerScore);
-
-//Displays the whole leaderboard
-updateLeaderboard();
+    updateLeaderboard();
+});

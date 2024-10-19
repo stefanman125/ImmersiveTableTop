@@ -26,6 +26,7 @@ body {
     padding: 20px;
     margin-bottom: 10px;
     background-color: rgba(163, 163, 163, 0.653);
+    transition: transform 1s ease;
 }
 
 .avatar {
