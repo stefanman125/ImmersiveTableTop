@@ -1,7 +1,7 @@
 // Array to hold player data
 let players = [
     { name: 'Joe', score: 0, avatar: 'test_picture.png' },
-    { name: 'Admam', score: 0, avatar: 'test_picture.png' },
+    { name: 'Adam', score: 0, avatar: 'test_picture.png' },
     { name: 'Stefan', score: 0, avatar: 'test_picture.png' },
     { name: 'Other Dude', score: 0, avatar: 'test_picture.png' }
 ];
