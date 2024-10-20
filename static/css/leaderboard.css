@@ -1,46 +1,64 @@
-.scoreboard {
-    margin-bottom: 20px;
-}
-
-.leaderboard {
+#leaderboard {
+    display: flex;
     position: absolute;
+    flex-direction: column;
     top: -1%;
-    width: 90%;
-    height: 50%;
-    z-index: 1; /* make sure the video is on top of the gif*/
+    padding-top: 4%;
+    padding-bottom: 10%;
+    /* padding-right: 10%; */
+    /* padding-left: 10%; */
+    /* padding-bottom: 2%; */
+    /* padding: 5%; */
+    margin: 0 auto;
+    max-height: 90%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
 }
 
 .player-card {
     display: flex;
     align-items: center;
-    justify-content: start;
-    border: 2px solid rgb(255, 255, 255);
-    padding: 20px;
-    margin-bottom: 10px;
-    background-color: rgba(163, 163, 163, 0.653);
-    transition: transform 1s ease;
+    justify-content: flex-start;
+    padding: 2%;
+    background-color: rgb(133, 132, 132);
+    border: 2px solid #000000;
+
+    transition: transform 1s ease, height 0.5s ease;
+    /* Add height transition for smooth scaling */
+    max-width: 100%;
+    padding-left: 5%;
+
+    overflow: hidden;
+
 }
 
-.avatar {
-    width: 80px;
-    height: 100px;
-    margin-right: 20px;
+.player-card .avatar {
+    width: 10%;
+    height: auto;
     object-fit: contain;
-    border: 1px solid rgb(255, 255, 255);
+    margin-right: 10px;
+    border-radius: 50%;
 }
 
 .player-info {
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.5em;
+    flex: 1;
 }
 
 .player-info h3 {
+    font-size: 0.5em;
     margin: 0;
-    font-size: 1.2rem;
+
 }
 
 .player-info p {
-    margin: 5px 0;
-    font-size: 2rem;
+    font-size: 3em;
+    margin: 0;
 }
 
 .highlighted {

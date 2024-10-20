@@ -4,6 +4,15 @@ let players = [
     { name: 'Adam', score: 0, avatar: 'test_picture.png' },
     { name: 'Stefan', score: 0, avatar: 'test_picture.png' },
     { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
+    { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
+    { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
+    { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
+    { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
+    // { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
+    // { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
+    // { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
+    // { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
+    // { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
 ];
 
 // Function to generate a random player's score
@@ -26,6 +35,12 @@ function updateLeaderboard() {
     const leaderboardContainer = document.getElementById('leaderboard');
     const playerCards = Array.from(leaderboardContainer.children);
 
+    const containerHeight = leaderboardContainer.clientHeight;
+
+    // Calculate the height each player card should take (e.g., leaving 5px gap between cards)
+    const cardHeight = (containerHeight - (players.length - 5) * 5) / players.length;
+
+
     // Store the initial positions of all player cards
     playerCards.forEach(card => {
         const rect = card.getBoundingClientRect();
@@ -44,7 +59,7 @@ function updateLeaderboard() {
     // Rebuild the leaderboard
     players.forEach((player, index) => {
         const playerCard = playerCards.find(card => card.dataset.name === player.name);
-
+        playerCard.style.height = `${cardHeight}px`;
         const playerScore = playerCard.querySelector('.player-info p');
         playerScore.textContent = `Score: ${player.score}`;
         // Remove Both Boarders
