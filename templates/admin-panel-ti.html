@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersion Control Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin-panel-ti.css') }}">
+</head>
+<body>
+    <h1>Immersion Control Panel</h1>
+    <div class="button-container">
+        <button><a href="/admin/players/">Players</a></button>
+        <button><a href="/admin/objectives/">Objectives</a></button>
+        <button><a href="/admin/music/">Music</a></button>
+        <button><a href="/admin/video/">Video</a></button>
+        <button><a href="/admin/log">View Log</a></button>
+        <button><a href="#">Reset Game</a></button>
+    </div>
+</body>
+</html>

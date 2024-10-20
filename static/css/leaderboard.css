@@ -1,0 +1,53 @@
+.scoreboard {
+    margin-bottom: 20px;
+}
+
+.leaderboard {
+    position: absolute;
+    top: -1%;
+    width: 90%;
+    height: 50%;
+    z-index: 1; /* make sure the video is on top of the gif*/
+}
+
+.player-card {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: rgba(163, 163, 163, 0.653);
+    transition: transform 1s ease;
+}
+
+.avatar {
+    width: 80px;
+    height: 100px;
+    margin-right: 20px;
+    object-fit: contain;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.player-info {
+    text-align: left;
+}
+
+.player-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.player-info p {
+    margin: 5px 0;
+    font-size: 2rem;
+}
+
+.highlighted {
+    /* Gold Color */
+    border: 8px dashed rgb(255, 215, 0);
+}
+
+.tied {
+    border: 8px dashed silver;
+}
