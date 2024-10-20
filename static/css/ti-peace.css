@@ -38,22 +38,15 @@ video {
     z-index: 1; /* Bring overlays to the front */
 }
 
-/* Specific style for the left frame containing scores and objectives */
 .left-frame {
     position: absolute;
-    left: 2%;
-    top: 18%; /* Align to top */
-    width: 43%; /* Set desired width */
-    height: 60%; /* Full height */
-}
-
-/* Resize the left frame image to fit inside the frame */
-.left-frame img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;    /* Maintain aspect ratio */
-    height: auto;   /* Maintain aspect ratio */
-    position: relative;
+    left: 2%; /* Distance from the right edge of the screen */
+    top: 18%;
+    width: 45%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
 }
 
@@ -94,7 +87,7 @@ video {
 .frame-img {
     width: 100%; /* Full width of the container */
     height: 100%; /* Full height of the container */
-    object-fit: contain; /* Ensure it maintains aspect ratio */
+    /*object-fit: contain; /* Ensure it maintains aspect ratio */
     z-index: 2;
 }
 
@@ -148,7 +141,7 @@ video {
 /* MUSIC VISUALIZER */
 .visualizer {
     position: fixed;
-    bottom: 20%;
+    bottom: 17%;
     left: 3%;
     z-index: 2;
 }
@@ -156,7 +149,7 @@ video {
 /* Visualizer Text */
 .visualizer-text {
     position: fixed;
-    bottom: 13%;
+    bottom: 10%;
     left: 3%;
     font-size: 40px; /* Large font size */
     font-family: 'Nasalization', sans-serif;

@@ -3,20 +3,14 @@ let players = [
     { name: 'Joe', score: 0, avatar: 'test_picture.png' },
     { name: 'Adam', score: 0, avatar: 'test_picture.png' },
     { name: 'Stefan', score: 0, avatar: 'test_picture.png' },
-    { name: 'Other Dude', score: 0, avatar: 'test_picture.png' }
+    { name: 'Other Dude', score: 0, avatar: 'test_picture.png' },
 ];
-
-// Function to generate a random players score
-function generateRandomScore() {
-    return 2;
-}
 
 // Function to generate a random player's score
 function updatePlayerScore() {
     //The Math can be removed and replaced with static incomming values via fetch
     const playerScoreIndex = Math.floor(Math.random() * players.length);
-    const randomScore = generateRandomScore();
-    players[playerScoreIndex].score += randomScore;
+    players[playerScoreIndex].score = newScore;
     //Grab the Score and update
     const scoreElement = document.getElementById('score');
     //If you want to set other valuse a modification might be needed below
@@ -104,7 +98,7 @@ function updateLeaderboard() {
 }
 
 // Event listener for the refresh button
-document.getElementById('refreshButton').addEventListener('click', updatePlayerScore);
+//document.getElementById('refreshButton').addEventListener('click', updatePlayerScore);
 
 // Initial leaderboard display
 document.addEventListener('DOMContentLoaded', () => {

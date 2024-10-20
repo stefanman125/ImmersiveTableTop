@@ -129,7 +129,6 @@ def get_videos(video_type):
     except Exception as e:
         print("[*] Error Excepted: {e}".format(e=e))
     
-
 @app.route('/ti-peace', methods=['GET'])
 def ti_peace():
     headlines = generatenews.get_news_texts('NewsReel/sourcetexts-peace.txt')
@@ -137,6 +136,10 @@ def ti_peace():
     videos = get_videos("Peace")
     print(videos)
     return render_template("ti-peace.html", headlines=headlines, music=music, videos=videos)
+
+@app.route('/players', methods=['GET'])
+def ti_players():
+    return render_template("players.html")
 
 @app.route('/', methods=['GET'])
 def index():
@@ -150,14 +153,13 @@ def index():
         case "frost":
             pass
 
-
 def start_ti():
     # Start Music and Background
     print("[*] Starting Music...")
     print("[*] Starting Video...")
 
     # Create Players file
-    playersscoreobjectives.create_players_and_score(players_filename)
+    # playersscoreobjectives.create_players_and_score(players_filename)
 
     # Create Objectives file with the starting objectives
     playersscoreobjectives.create_objectives(objectives_filename)
@@ -174,13 +176,12 @@ def main():
     global mode
 
     # Ask the user for the mode
-    #while (True):
-    #    mode = input('Enter the mode ("frost" for Frosthaven, "ti" for Twilight Imperium): ')
-    #    if (mode != "frost" and mode != "ti"):
-    #        print("Please enter a valid mode.")
-    #    else:
-    #        break
-    mode = "ti"
+    while (True):
+        mode = input('Enter the mode ("frost" for Frosthaven, "ti" for Twilight Imperium): ')
+        if (mode != "frost" and mode != "ti"):
+            print("Please enter a valid mode.")
+        else:
+            break
     print("Starting ImmsersiveTableTop in '{mode}' mode...".format(mode=mode))
 
     if (mode == "frost"):

@@ -9,8 +9,7 @@ space = 2 # Space between the player name and score in whitespaces
 
 def create_players_and_score(players_filename): # Prompts the user to enter player names
     print("[*] Creating a players file...")
-    #new_players_file = input("Would you like to create a new players file? y/n (Say 'n' if this application crashed for some reason, so you don't have to re-enter player names and set scores): ")
-    new_players_file = 'n'
+    new_players_file = input("Would you like to create a new players file? y/n (Say 'n' if this application crashed for some reason, so you don't have to re-enter player names and set scores): ")
     if (new_players_file == 'n'): # Exits function if user does not want to recreate the players file
         print("[*] Skipping players file...")
         return None
@@ -52,8 +51,7 @@ def get_longest_name(players): # Takes list of player names and their scores
 
 def create_objectives(objectives_filename):
     print("[*] Creating an objectives file...")
-    #new_file = input("Would you like to create a new Objectives file? y/n (Say 'n' if this application crashed for some reason, so you don't have to re-enter all the public objectives): ")
-    new_file = 'n'
+    new_file = input("Would you like to create a new Objectives file? y/n (Say 'n' if this application crashed for some reason, so you don't have to re-enter all the public objectives): ")
     if (new_file == 'n'): # Exits function if user does not want to recreate the players file
         print("[*] Skipping Objectives file...")
         return None
