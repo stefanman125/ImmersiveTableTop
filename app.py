@@ -204,9 +204,7 @@ def index():
             pass
 
 def start_ti():
-    # Start Music and Background
-    print("[*] Starting Music...")
-    print("[*] Starting Video...")
+    pass
 
 def start_frost():
     # Start Music and Background
@@ -236,12 +234,13 @@ def main():
     global mode
 
     # Ask the user for the mode
-    while (True):
-        mode = input('Enter the mode ("frost" for Frosthaven, "ti" for Twilight Imperium): ')
-        if (mode != "frost" and mode != "ti"):
-            print("Please enter a valid mode.")
-        else:
-            break
+    #while (True):
+    #    mode = input('Enter the mode ("frost" for Frosthaven, "ti" for Twilight Imperium): ')
+    #    if (mode != "frost" and mode != "ti"):
+    #        print("Please enter a valid mode.")
+    #    else:
+    #        break
+    mode = "ti"
     print("Starting ImmsersiveTableTop in '{mode}' mode...".format(mode=mode))
 
     if (mode == "frost"):
@@ -249,7 +248,7 @@ def main():
     elif (mode == "ti"):
         start_ti()
 
-    print("[*] Starting web app on localhost:5000")
-    app.run(host="0.0.0.0", debug=False) 
+    # Uncomment the line below to start in development mode
+    #app.run(host="0.0.0.0", debug=False) 
 
 main()
