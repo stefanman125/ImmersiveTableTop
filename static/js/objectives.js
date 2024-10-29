@@ -135,6 +135,7 @@ function addNewObjective() {
     objectives.push(newObjectiveName);
     createObjectivesTable(); // Refresh the table
     saveObjectivesToJson(); // Save updated data to JSON file
+    logAction(`Objective "${newObjectiveName}" was added by`) // Log the action for non-repudation
 }
 
 // Handler to navigate the user to /admin

@@ -249,6 +249,6 @@ def main():
         start_ti()
 
     # Uncomment the line below to start in development mode
-    #app.run(host="0.0.0.0", debug=False) 
+    app.run(host="0.0.0.0", debug=False) 
 
 main()

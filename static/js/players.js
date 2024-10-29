@@ -123,20 +123,24 @@ function addNewPlayer() {
     players.push(newPlayer); // Add the new player to the array
     createTable(players); // Refresh the table with the new player
     saveDataToJson(); // Save updated data back to JSON file
+    logAction(`New player "${newPlayer.name}" playing "${avatar}" was added by`)
 }
 
 function removePlayer(index) {
     const confirmRemove = confirm('Are you sure you want to remove this player?');
     if (confirmRemove) {
+        logAction(`Player "${players[index].name}" was removed by`)
         players.splice(index, 1); // Remove the player from the array
         createTable(players); // Refresh the table
         saveDataToJson(); // Save updated data back to JSON file
+        console.log(players);
     }
 }
 
 function changePlayerName(index) {
     const newName = prompt('Enter the new name for the player:', players[index].name);
     if (newName) {
+        logAction(`Player "${players[index].name}" was renamed to "${newName}" by`)
         players[index].name = newName; // Update the player's name
         createTable(players); // Refresh the table
         saveDataToJson(); // Save updated data back to JSON file
@@ -148,6 +152,7 @@ function changePlayerPoints(index) {
     if (newPoints !== null) {
         const parsedPoints = parseInt(newPoints, 10); // Parse the input to an integer
         if (!isNaN(parsedPoints)) {
+            logAction(`Player "${players[index].name}" score changed from '${players[index].points}' to '${parsedPoints}' by`)
             players[index].points = parsedPoints; // Update the player's points
             createTable(players); // Refresh the table
             saveDataToJson(); // Save updated data back to JSON file
@@ -207,6 +212,7 @@ function changeObjectives(index) {
                 players[index].objectives.push(objectivesList[selectedIndex]); // Add the selected objective to the player
                 createTable(players); // Refresh the table
                 saveDataToJson(); // Save updated data back to JSON file
+                logAction(`Player "${players[index].name}" received a new objective: "${objectivesList[selectedIndex]}" by`)
             }
             modal.style.display = 'none'; // Close the modal after selection
             document.body.style.overflow = ''; // Re-enable scrolling
@@ -233,6 +239,7 @@ function changeObjectives(index) {
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove';
         removeButton.onclick = () => {
+            logAction(`The objective "${playerObjectives[i]}" was removed from the player "${players[index].name}" by`)
             players[index].objectives.splice(i, 1); // Remove the objective from the player's objectives
             createTable(players); // Refresh the table
             saveDataToJson(); // Save updated data back to JSON file
@@ -280,6 +287,8 @@ function addSecretObjective(index) {
     
     // Save the updated players array to JSON
     saveDataToJson();
+    
+    logAction(`Player "${players[index].name}" received a new secret objective: "${objectiveName} (I) (Secret)" by`)
 }
 
 async function saveDataToJson() {

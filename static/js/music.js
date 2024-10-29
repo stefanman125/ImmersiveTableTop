@@ -125,7 +125,7 @@ function displayMusicData(musicData) {
 
 // Main function to load and display music data
 async function loadMusic() {
-    const musicData = await fetchMusicData();
+    musicData = await fetchMusicData();
     if (musicData) {
         if (musicData.currentlyPlaying) {
             displayCurrentlyPlaying(musicData); // Display the currently playing data
@@ -146,6 +146,7 @@ async function overrideSong(songId) {
             },
             body: JSON.stringify({ override: songId }) // Send the song ID as an integer in the request body
         });
+        logAction(`Song queue has been overridden to play "${musicData["available"][songId]["song"]}" by`)
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -161,6 +162,9 @@ async function overrideSong(songId) {
 function navigateToAdmin() {
     window.location.href = '/admin';
 }
+
+// Define musicData as a global function
+let musicData;
 
 // Load music data when the page loads and every second
 window.onload = function () {

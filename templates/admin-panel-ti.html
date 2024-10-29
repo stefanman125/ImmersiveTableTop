@@ -72,7 +72,36 @@
         <a class="button" href="/admin/objectives">Objectives</a>
         <a class="button" href="/admin/music">Music</a>
         <a class="button" href="/admin/log">View Log</a>
-        <a class="button" href="#">Reset Game</a>
+        <a class="button" id="resetGameBtn">Reset Game</a>
     </div>
+    <script src="{{ url_for('static', filename='js/logger.js') }}"></script>
+    <script>
+        // Add listener for the reset game button
+        document.getElementById('resetGameBtn').addEventListener('click', resetGame);
+
+        async function resetGame() {
+            const areYouSure = prompt("Are you sure you want to reset the game? (Type \"Yes, I want to Reset\" to reset the game).\n\nResetting the game does the following:\n- Removes all players\n- Removes all objectives\n- Resets back to peace phase")
+            if (areYouSure === "Yes, I want to Reset") {
+                const data = JSON.stringify([]);
+                const headers = { 'Content-Type': 'application/json' };
+
+                // Clear Objectives
+                await fetch('/admin/objectives', {
+                    method: 'POST',
+                    headers: headers,
+                    body: data
+                });
+
+                // Clear Players
+                await fetch('/admin/players', {
+                    method: 'POST',
+                    headers: headers,
+                    body: data
+                });
+                alert("Game has been reset!")
+                logAction(`Game has been reset by`)
+            }
+        }
+    </script>
 </body>
 </html>
