@@ -24,7 +24,7 @@ function getPrivateIP(callback) {
 
 // Handler to log an action
 async function logAction(message) {
-    const response = await fetch('http://192.168.0.100:5000/admin/log', {
+    const response = await fetch(logUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

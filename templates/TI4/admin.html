@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersion Control Panel</title>
+    <style>
+      body {
+          font-family: 'Orbitron', sans-serif;
+          background-color: rgba(40, 44, 52, 255);
+          background-size: cover;
+          color: #ffffff;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          height: 100vh; /* Full viewport height */
+          overflow: hidden;
+      }
+
+      h1 {
+          font-size: 4em; /* Increased title size */
+          margin: 20px 0;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+          text-align: center;
+      }
+
+      .button-container {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1; /* Take all available space */
+          justify-content: space-between; /* Evenly distribute buttons */
+          align-items: center; /* Center buttons horizontally */
+          padding: 20px; /* Padding around the buttons */
+      }
+
+      a.button {
+          background-color: #4B0082; /* Dark Purple */
+          color: white;
+          border: none;
+          padding: 15px;
+          font-size: 2em; /* Increased button text size */
+          cursor: pointer;
+          border-radius: 15px;
+          transition: background-color 0.3s, transform 0.2s;
+          width: 100%; /* Full width */
+          flex-grow: 1; /* Allow buttons to grow and fill space */
+          margin: 5px 0; /* Margin between buttons */
+          text-align: center; /* Center text in anchor */
+          text-decoration: none; /* Remove underline */
+      }
+
+      a.button:hover {
+          background-color: #6A0DAD; /* Lighter Purple */
+          transform: scale(1.05);
+      }
+
+      #resetGameBtn {
+        background-color: #bc0e0e;
+      }
+
+      #resetGameBtn:hover {
+        background-color: #cc2525;
+      }
+
+      @media (max-width: 600px) {
+          h1 {
+              font-size: 2.5em; /* Adjusted title size for smaller screens */
+          }
+        
+          a.button {
+              font-size: 1.2em; /* Adjusted button/link text size for smaller screens */
+          }
+      }
+    </style>
+</head>
+<body>
+    <h1>Immersion Control Panel</h1>
+    <div class="button-container">
+        <a class="button" href="/ti/admin/gamedata">Game Data</a>
+        <a class="button" href="/ti/admin/players">Players</a>
+        <a class="button" href="/ti/admin/objectives">Objectives</a>
+        <a class="button" href="/ti/admin/music">Music</a>
+        <a class="button" href="/ti/admin/log">View Log</a>
+        <a class="button" id="resetGameBtn">Reset Game</a>
+    </div>
+    <script>
+        const logUrl = "/ti/admin/log"
+    </script>
+    <script src="{{ url_for('static', filename='js/logger.js') }}"></script>
+    <script>
+        // Add listener for the reset game button
+        document.getElementById('resetGameBtn').addEventListener('click', resetGame);
+
+        async function resetGame() {
+            const areYouSure = prompt("Are you sure you want to reset the game? (Type \"Yes, I want to Reset\" to reset the game).\n\nResetting the game does the following:\n- Removes all players\n- Removes all objectives\n- Resets back to peace phase");
+            if (areYouSure === "Yes, I want to Reset") {
+                const data = JSON.stringify({ "resetGame": true });
+                const headers = { 'Content-Type': 'application/json' };
+            
+                const response = await fetch('/ti/admin/reset', {
+                    method: 'POST',
+                    headers: headers,
+                    body: data
+                });
+
+                // Check if the response was a success
+                if (response.ok) {
+                    alert("Game has Reset!");
+                    logAction(`Game was reset by`);
+                    window.location.href = "/"; // Take the user back to the home page
+                } else {
+                    alert("Unable to reset the game.");
+                }
+            } else {
+                alert("Game not reset. Please enter the correct value into the prompt to reset the game.");
+            }
+        } 
+    </script>
+</body>
+</html>

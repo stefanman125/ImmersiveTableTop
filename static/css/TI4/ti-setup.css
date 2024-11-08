@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(15, 14, 14);
+    font-family: Arial, sans-serif;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.title {
+    position: relative;
+    bottom: 8vh;
+    font-size: 6vw;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #FFA500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    background-clip: text;
+    /*This is where you change the gradient of the Title and change the bg add fill type -- Solid or Trasparent*/
+    background: -webkit-linear-gradient(#e34620, #fab029);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 5s;
+}
+
+.subtitle {
+    position: relative;
+    bottom: 8vh;
+    font-size: 3vw;
+    margin-top: 10px;
+    color: #FFE135;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    background-clip: text;
+    /*This is where you change the gradient of the Title and change the bg add fill type -- Solid or Trasparent*/
+    background: -webkit-linear-gradient(#e34620, #fab029);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: blinker 5s linear infinite;
+}
+
+.small-text {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-size: 2.2vw;
+    color: #FFA500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    background-clip: text;
+    /*This is where you change the gradient of the Title and change the bg add fill type -- Solid or Trasparent*/
+    background: -webkit-linear-gradient(#e34620, #fab029);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#space {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.setup-btn {
+    position: absolute;
+    cursor: grabbing;
+    left: 0;
+    right: 0;
+    margin: 20px auto;
+    color: rgb(209, 255, 255);
+    border: 2px solid;
+    padding: 0px;
+    width: 15em;
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    font-family: 'Nasalization', sans-serif;
+    display: inline-block;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0);
+    cursor: crosshair;
+    z-index: 1;
+}
+
+#startGameBtn {
+    bottom: 30vh;
+}
+
+#setupBtn {
+    bottom: 25vh;
+}
+
+#menuBtn {
+    bottom: 20vh;
+}
+
+/* Info box that shows up when the "Setup" button is pressed.*/
+/* Basic styling for the info box */
+#info-box {
+    position: fixed;
+    bottom: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 32px;
+    font-family: 'Nasalization', sans-serif;
+    transition: right 0.5s ease-in-out; /* Smooth sliding effect */
+    z-index: 2;
+}
+
+/* Animation to make it visible */
+#info-box.visible {
+    right: 20px; /* Visible on screen */
+}
+
+/* Hidden state */
+#info-box.hidden {
+    right: -600px; /* Off-screen */
+}
+
+/* MUSIC VISUALIZER */
+.visualizer {
+    position: fixed;
+    bottom: 14%;
+    left: 3%;
+    z-index: 2;
+}
+
+/* Visualizer Text */
+.visualizer-text {
+    position: fixed;
+    bottom: 7%;
+    left: 3%;
+    font-size: 40px; /* Large font size */
+    font-family: 'Nasalization', sans-serif;
+    font-style: italic;
+    background-clip: text;
+    background: -webkit-linear-gradient(#e34620, #fab029);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 2;
+}

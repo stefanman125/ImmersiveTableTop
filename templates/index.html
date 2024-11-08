@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Buttons</title>
+    <style>
+        /* Reset styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full-screen centered layout for 16:9 screens */
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .button-container {
+            width: 60%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        /* Button styling */
+        .button-container button {
+            flex: 1;
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="window.location.href='/ti/setup';">Play Twilight Imperium (Fourth Edition)</button>
+        <button onclick="window.location.href='/frost/setup';">Play Frosthaven (Coming Soon)</button>
+        <button onclick="window.location.href='/bb/setup';">Play Blood Bowl (Coming Soon)</button>
+        <button onclick="window.location.href='/root/setup';">Play Root (Coming Soon)</button>
+        <button onclick="window.location.href='/leaderboard';">Leaderboard (todo)</button>
+    </div>
+</body>
+</html>

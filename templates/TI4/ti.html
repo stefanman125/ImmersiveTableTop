@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersion Control Center</title>
+    <!-- TI Peace CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/TI4/ti.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/TI4/leaderboard.css') }}">
+    <style>
+        /* Fade In */
+        body {
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* News Reel Font */
+        @font-face {
+            font-family: 'Bebas-Neue';
+            src: url("{{ url_for('static', filename='fonts/BebasNeue-Regular.ttf') }}") format('truetype');
+        }
+        
+        /* ICC Title Font */
+        @font-face {
+            font-family: 'Nasalization';
+            src: url("{{ url_for('static', filename='fonts/nasalization-rg.otf') }}") format('opentype');
+        }
+        
+        /* Video info Font */
+        @font-face {
+            font-family: 'OCR-A';
+            src: url("{{ url_for('static', filename='fonts/OCRAStd.otf') }}") format('opentype');
+        }
+
+        /* Another video info Font */
+        @font-face {
+            font-family: 'AXON';
+            src: url("{{ url_for('static', filename='fonts/axon-body.otf') }}") format('opentype');
+        }
+    </style>
+</head>
+<body>
+    <script>
+        gamedataFileUrl = "{{ url_for('static', filename='data/TI4/gamedata.json') }}" 
+    </script>
+
+    <!-- Title Text -->
+    <h1 id="title-text" class="title-text">  I . C . C  </h1>
+
+    <!-- Background Video -->
+    <script>
+        backgroundSrcPeace = "{{ url_for('static', filename='Backgrounds/TI4/Peace/space-horizon-moewalls-com.mp4') }}" 
+        backgroundSrcWar = "{{ url_for('static', filename='Backgrounds/TI4/War/battle-in-outer-space-preview.mp4') }}"
+    </script>
+    <video id="background-video" autoplay muted loop>
+        <source id="background-video-source" src="{{ url_for('static', filename='Backgrounds/TI4/Peace/space-horizon-moewalls-com.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h2 id="gamestate-text"> PEACE ESTABLISHED </h2>
+
+    <!-- Left frame overlay -->
+    <div class="left-frame">
+
+        <!-- Scoreboard -->
+        <h3 id="left-frame-title" >Objectives</h3>
+
+        <table id="objectives-table">
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <table id="players-table">
+            <tbody>
+
+            </tbody>
+        </table>
+        <script src="{{ url_for('static', filename='js/TI4/leaderboard.js') }}"></script>
+    </div>
+
+    <!-- Right frame overlay-->
+    <div class="right-frame">
+        <script>
+            const default_video = "{{ url_for('static', filename='Videos/no-signal-tv-2.gif') }}"
+
+            // List of videos (file paths)
+            const peaceVideos = [
+            {% for filename in peaceVideos %}
+                "{{ url_for('static', filename=filename) }}"{% if not loop.last %}, {% endif %}
+            {% endfor %}
+            ];
+
+            const warVideos = [
+            {% for filename in warVideos %}
+                "{{ url_for('static', filename=filename) }}"{% if not loop.last %}, {% endif %}
+            {% endfor %}
+            ];
+
+            const peaceNoSignalUrl = "{{ url_for('static', filename='Videos/TI4/no-signal-tv.gif') }}"
+            const warNoSignalUrl = "{{ url_for('static', filename='Videos/TI4/no-signal-tv-2.gif') }}"
+
+            let currentVideos = peaceVideos;
+        </script>
+        <img src="{{ url_for('static', filename='UI/6167920.png') }}" alt="Right Frame" class="frame-img">
+        <img id="no-signal-gif" src="{{ url_for('static', filename='Videos/TI4/no-signal-tv.gif') }}" alt="No Signal GIF" class="no-signal">
+        <div id="right-frame-filter">
+            <h1 id="right-frame-filter-video-info"></h1>
+            <video id="right-frame-filter-white-noise" src="{{ url_for('static', filename='UI/white-noise-2.mp4') }}" autoplay muted loop></video>
+            <h1 id="right-frame-filter-live">• Live</h1>
+        </div>
+        <video class="right-frame-video" id="right-frame-video" autoplay muted></video>
+    </div>
+    <script src="{{ url_for('static', filename='js/TI4/videos.js') }}"></script>
+
+    <!-- News Reel -->
+    <div id="news-bar" class="news-bar">
+        <div class="news-content">
+            <span id="news-headlines">Loading news...</span>
+        </div>
+        <script>
+            let warHeadlines = "{{ warHeadlines }}"
+            let peaceHeadlines = "{{ peaceHeadlines }}"; 
+
+            const newsHeadlines = document.getElementById('news-headlines')
+            newsHeadlines.textContent = peaceHeadlines;
+        </script>
+    </div>
+
+    <!-- Audio Visualizer -->
+    <div class="visualizer-box">
+        <!-- Music Selection -->
+        <script>
+            musicFileURL = "{{ url_for('static', filename='data/TI4/music.json') }}"
+            musicUrl = "/ti/admin/music"
+            gameState = "Peace"
+        </script>
+        <canvas id="visualizer" width="900" height="100"></canvas>
+        <audio id="visualizer-sound" preload="auto" autoplay>
+            <source id="visualizer-sound" src="" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <h1 id="visualizer-text" >
+            Song Name 
+        </h1>
+        <!-- Used to set the bar color -->
+        <script> 
+            var visualizerBarColor = 'rgba(0, 0, 255, 0.6)' 
+        </script> 
+        <script src="{{ url_for('static', filename='js/music_player.js') }}"></script>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/TI4/ti.js') }}"></script>
+
+</body>
+</html>

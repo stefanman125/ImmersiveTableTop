@@ -33,7 +33,7 @@ function setupAudioVisualizer(audioElementId, canvasElementId) {
         for (var i = 0; i < bufferLength; i++) {
             barHeight = dataArray[i] / 3;
             barHeight = Math.max(barHeight, minBarHeight); // Set minimum bar height
-            ctx.fillStyle = selectedColor; // Use the hard-coded color
+            ctx.fillStyle = visualizerBarColor; // Use the hard-coded color
             ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
             x += barWidth + 1;
         }
@@ -63,7 +63,7 @@ async function fetchMusicData() {
 
 async function postCurrentlyPlaying(songId, currentTime, maxTime) {
     try {
-        const response = await fetch('/admin/music', {
+        const response = await fetch(musicUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -77,12 +77,23 @@ async function postCurrentlyPlaying(songId, currentTime, maxTime) {
             })
         });
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error! status: ${response.status} ${response.body}`);
         }
         //console.log(`Successfully posted current time: ${currentTime}`);
     } catch (error) {
         console.error('Error posting current time:', error);
     }
+}
+
+async function fadeOut(audio, duration = 1000) {
+    const step = 0.05;
+    const interval = duration / (audio.volume / step);
+
+    while (audio.volume > 0) {
+        audio.volume = Math.max(audio.volume - step, 0);
+        await new Promise(resolve => setTimeout(resolve, interval));
+    }
+    audio.pause(); // Pause the audio once volume reaches zero
 }
 
 window.onload = function () {
@@ -96,29 +107,33 @@ window.onload = function () {
 
     // Function to check the currently playing song
     async function checkCurrentSong() {
-        const musicData = await fetchMusicData();
-        const currentlyPlayingId = musicData.override; // Fetch the override song ID from the music json file
-        const newSongData = musicData.available[currentlyPlayingId]; // Get the song details by ID
-        //console.log(newSongData)
-        //console.log(currentSongUrl)
+        try {
+            const musicData = await fetchMusicData();
+            const currentlyPlayingId = musicData.override; // Fetch the override song ID from the music json file
+            const newSongData = musicData.available[currentlyPlayingId]; // Get the song details by ID
 
-        if (newSongData && newSongData.song !== currentSongUrl) {
-            currentSongUrl = newSongData.song; // Update the current song URL
-            currentSongId = currentlyPlayingId; // Update the current song ID
-            audio.src = currentSongUrl; // Set the new song URL
-            const visualizer_text = document.getElementById('visualizer-text');
-            visualizer_text.textContent = getFileName(currentSongUrl); // Update the visualizer text
-            console.log("Now playing:", getFileName(currentSongUrl)); // Log the currently playing song
-            await audio.play(); // Play the new song
-            await postCurrentlyPlaying(currentSongId); // POST the current song ID
-            await postOverride(); // Reset the music override value
+            if (newSongData && newSongData.song !== currentSongUrl) {
+                await fadeOut(audio);
+                currentSongUrl = newSongData.song; // Update the current song URL
+                currentSongId = currentlyPlayingId; // Update the current song ID
+                audio.src = currentSongUrl; // Set the new song URL
+                audio.volume = 0.3;
+                const visualizer_text = document.getElementById('visualizer-text');
+                visualizer_text.textContent = getFileName(currentSongUrl); // Update the visualizer text
+                console.log("Now playing:", getFileName(currentSongUrl)); // Log the currently playing song
+                await audio.play(); // Play the new song
+                await postCurrentlyPlaying(currentSongId); // POST the current song ID
+                await postOverride(); // Reset the music override value
+            }
+        } catch (error) {
+            console.error(`Error checking current song because: ${error}`)
         }
     }
 
     // Function to clear the music override after its detected
     async function postOverride() {
     try {
-        const response = await fetch('/admin/music', {
+        const response = await fetch(musicUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -157,8 +172,9 @@ window.onload = function () {
             visualizer_text.textContent = getFileName(randomSongData.song); // Update the visualizer text
             console.log("Now playing random:", getFileName(randomSongData.song)); // Log the randomly playing song
             await audio.play(); // Play the random song
-            currentTime = Math.round(audio.currentTime)
-            maxTime = Math.round(audio.maxTime)
+            currentTime = Math.round(audio.currentTime);
+            maxTime = Math.round(audio.maxTime);
+            currentSongUrl = randomSongData.song;
             await postCurrentlyPlaying(randomSongId, currentTime, maxTime); // Use the song ID from the filtered IDs
         } else {
             console.log("No available songs match the game state.");
@@ -174,12 +190,12 @@ window.onload = function () {
         }
     }, 1000); // Send every second
 
+    // Continuously check the music.json file 
+    setInterval(checkCurrentSong, 3000);
+
     // Check the song initially
     playRandomGameStateSong();
 
     // Add an event listener to handle track end
     audio.addEventListener('ended', playRandomGameStateSong);
-
-    // Continuously check the music.json file 
-    setInterval(checkCurrentSong, 3000);
 };

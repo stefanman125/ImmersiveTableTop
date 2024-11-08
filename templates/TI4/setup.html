@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilight Imperium Setup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/TI4/ti-setup.css') }}">
+    <style>
+        @font-face {
+            font-family: 'Nasalization';
+            src: url("{{ url_for('static', filename='fonts/nasalization-rg.otf') }}") format('opentype');
+        }
+    </style>
+</head>
+<body>
+    <!--This Line Below Renders the Space Scene -->
+    <canvas id="space"></canvas>
+    <canvas id="visualizer-canvas" width="600" height="100"></canvas>
+    <audio id="warp-sound" src="{{ url_for('static', filename='Sounds/TI4/Hyperspace-Jump-2.mp3') }}" preload="auto"></audio>
+    <a class="setup-btn" id="startGameBtn">Start Game</a>
+
+    <a class="setup-btn" id="setupBtn">Setup</a>
+    <div id="info-box" class="hidden">
+        To perform setup, go to /ti/admin
+    </div>
+
+
+    <a class="setup-btn" id="menuBtn">Back to Main Menu</a>
+    <!--This Is where you would render the text on the screen -->
+    <div class="title">TWILIGHT IMPERIUM</div>
+    <div class="subtitle">-- Setup In Progress --</div>
+    <script src="{{ url_for('static', filename='js/TI4/ti-setup.js') }}"></script>
+
+    <!-- Audio Visualizer -->
+    <div class="visualizer">
+        <!-- Music Selection -->
+        <script>
+            musicFileURL = "{{ url_for('static', filename='data/TI4/music.json') }}"
+        </script>
+        <canvas id="visualizer" width="600" height="100"></canvas>
+        <audio id="visualizer-sound" preload="auto" autoplay>
+            <source id="visualizer-sound" src="" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <h1 class="visualizer-text" id="visualizer-text" >
+            Song Name 
+        </h1>
+        <!-- Used to set the bar color -->
+        <script> 
+            const visualizerBarColor = 'rgba(255, 140, 0.6)' 
+            const gameState = "Pre-Game"
+            const musicUrl = "/ti/admin/music"
+        </script> 
+        <script src="{{ url_for('static', filename='js/music_player.js') }}"></script>
+    </div>
+   
+   
+</body>
+</html>

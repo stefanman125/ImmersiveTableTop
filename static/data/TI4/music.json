@@ -1,0 +1,114 @@
+{
+    "override": "",
+    "currentlyPlaying": {
+        "songId": "2",
+        "currentTime": 0,
+        "maxTime": 504
+    },
+    "available": {
+        "1": {
+            "song": "/static/Music/TI4/Peace/INFINITY - Epic Futuristic Music Mix Atmospheric Sci-Fi Music.mp3",
+            "category": "Peace"
+        },
+        "2": {
+            "song": "/static/Music/TI4/Peace/MATAMIA - ENERVATED.mp3",
+            "category": "Peace"
+        },
+        "3": {
+            "song": "/static/Music/TI4/Peace/MATAMIA - NETRUNNER.mp3",
+            "category": "Peace"
+        },
+        "4": {
+            "song": "/static/Music/TI4/Peace/Songs for Dead Planets.mp3",
+            "category": "Peace"
+        },
+        "5": {
+            "song": "/static/Music/TI4/Peace/Stellaris OST Music Mix - Beautiful & Calming Ambient Sci-Fi Atmospheric Space Orchestral Music.mp3",
+            "category": "Peace"
+        },
+        "6": {
+            "song": "/static/Music/TI4/Pre-Game/Black Ops 2 - Adrenaline.mp3",
+            "category": "Pre-Game"
+        },
+        "7": {
+            "song": "/static/Music/TI4/Pre-Game/Dune- Paul's Dream.mp3",
+            "category": "Pre-Game"
+        },
+        "8": {
+            "song": "/static/Music/TI4/Pre-Game/MGS 3 - Snake Eater (Instrumental).mp3",
+            "category": "Pre-Game"
+        },
+        "9": {
+            "song": "/static/Music/TI4/War/Acid Race - Dok and Martin.mp3",
+            "category": "War"
+        },
+        "10": {
+            "song": "/static/Music/TI4/War/Adrian Von Ziegler - Tech War.mp3",
+            "category": "War"
+        },
+        "11": {
+            "song": "/static/Music/TI4/War/Alpha Portal - Acid Rain.mp3",
+            "category": "War"
+        },
+        "12": {
+            "song": "/static/Music/TI4/War/CP 2077 - Scavenger Hideout Music Extended.mp3",
+            "category": "War"
+        },
+        "13": {
+            "song": "/static/Music/TI4/War/Electric Universe - Bansuri.mp3",
+            "category": "War"
+        },
+        "14": {
+            "song": "/static/Music/TI4/War/F.O.O.L & Power Glove - Mercenary.mp3",
+            "category": "War"
+        },
+        "15": {
+            "song": "/static/Music/TI4/War/GTA Online - Please Use Caution.mp3",
+            "category": "War"
+        },
+        "16": {
+            "song": "/static/Music/TI4/War/Halo 3 ODST - We're the Desperate Measures.mp3",
+            "category": "War"
+        },
+        "17": {
+            "song": "/static/Music/TI4/War/Lex Digital - Clandestine.mp3",
+            "category": "War"
+        },
+        "18": {
+            "song": "/static/Music/TI4/War/Mad Maxx & CPU - Shiva on Acid (V-Society Remix).mp3",
+            "category": "War"
+        },
+        "19": {
+            "song": "/static/Music/TI4/War/Meganeko - The Cyber Grind.mp3",
+            "category": "War"
+        },
+        "20": {
+            "song": "/static/Music/TI4/War/Modern Warfare 2007 - Mile High Club.mp3",
+            "category": "War"
+        },
+        "21": {
+            "song": "/static/Music/TI4/War/Payday 2 - Blastaway (Assault Extended).mp3",
+            "category": "War"
+        },
+        "22": {
+            "song": "/static/Music/TI4/War/Payday 2 - Razormind (Assault).mp3",
+            "category": "War"
+        },
+        "23": {
+            "song": "/static/Music/TI4/War/Payday 2 - Tick Tock (Assault).mp3",
+            "category": "War"
+        },
+        "24": {
+            "song": "/static/Music/TI4/War/PERTURBATOR - Neo Tokyo.mp3",
+            "category": "War"
+        },
+        "25": {
+            "song": "/static/Music/TI4/War/Play My Game - Spartaque.mp3",
+            "category": "War"
+        },
+        "26": {
+            "song": "/static/Music/TI4/War/You Are a Grand Strategist War General Inside the War Room.mp3",
+            "category": "War"
+        }
+    }
+}

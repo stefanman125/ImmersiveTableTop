@@ -1,7 +1,71 @@
 # ImmersiveTableTop
 
-A web companion for tabletop gamers who are running a Frosthaven campaign, or like to frequent Twilight Imperium.
+A web companion for tabletop gamers. Allows for immersive dashboards to appear on a big screen near the tabletop game. Games are separated by modules. Also comes with a leaderboard to track global games.
 
-### Fonts Used
+Currently supported games:
 
-Ambroise Firmin Bold
+- Twilight Imperium Fourth Edition
+- Frosthaven (WIP)
+- Blood Bowl (WIP)
+- Root (WIP)
+
+## Twilight Imperium Fourth Edition
+
+Some features included in the TI4 module include:
+
+- Public Objectives Tracking
+- Scoreboard
+- Music Player
+- Video Player
+- News Reel
+- Peace/War Mode
+- Log Viewer
+- Admin Panel
+
+This module is meant to be set in fullscreen mode on a 16:9 screen.
+
+### Public Objectives Tracking
+
+A semi-transparent pane shows all the currently active public objectives, as well as which players have scored the objectives. Objectives have either a '(I)', or '(II)' at the end to specify their tier. These objectives can be added/removed in the admin panel, as well as which objectives a player has scored.
+
+### Scoreboard
+
+A semi-transparent bar shows all the players and their current score. Score needs to be manually added/removed in the admin panel. Players in first place get a gold border around their faction icon. Players tied for first (up to a 3-way tie) get a silver border around their faction icon.
+
+### Music Player
+
+A music player with a visualizer that moves with the song, and a currently playing song text object that displays the currently playing song. All loaded songs can be viewed in the admin panel, and specific songs can queued to override the current playing song.
+
+### Video Player
+
+A video player in a frame object that plays random video clips in a .mp4 format. These clips are meant to look like bodycam/news footage, and are categorized by "Peace", and "War" videos, playing in the respective game state.
+
+Between each clip, a random-length pause happens, where a "no signal" gif plays. Once the pause ends and a new video clip plays, an overlay is displayed over the clip, introducing a bit of white noise and some camera UI elements, such as the "Live" text object.
+
+For best results, use videos with a 22:13 aspect ratio, and a 24 FPS framerate. Name the clips in a way that may resemble what would happen in the TI universe. For example, if you were to use the Call of Duty Advanced Warfare Battle of Earth cutscene as one of the clips, renaming it something like "MECATOL REX PDS HACKED.mp4" may be more immersive (capitalization and other text modifications is up to your preference). Video filenames are displayed in the video player as part of the `right-frame-filter` UI elements.
+
+Some ideas for getting videos include:
+
+- Call of Duty: Infinite Warfare
+- Call of Duty: Advanced Warfare
+- Halo 2: Anniversary Edition
+- Star Wars Movies
+- The Expanse
+
+### News Reel
+
+At the bottom of the dashboard, a news reel scrolls fake news headlines from right to left. The headlines are categorized by "Peace" and "War" headlines. Headlines are read from the `static/data/TI4/sourcetexts-peace.txt` and `static/data/TI4/sourcetexts-war.txt` files.
+
+### Peace/War Mode
+
+When the game starts, it is in "Peace" mode. This means that no players have fought each other yet, and everyone is doing their own thing, trying to complete the public objectives without conflict. However, sooner or later a player becomes the aggressor, and starts a fight with another player. When this happens, the admin can change the dashboard to "War" mode, signifying the start of conflict in the universe; the end of the "cold" war. This change can be done from the admin panel, and will log the time before the first shot was fired in the leaderboard once the game has finished.
+
+### Log Viewer
+
+A logger that logs actions done by the admin, such as changing a players score, or adding a new public objective. These logs can be seen from the admin panel. Logs will show the time when the action was performed, which private IP address the action came from, and will highlight any important words such as "score".
+
+### Admin Panel
+
+#### API
+
+swagger file coming soon TM
