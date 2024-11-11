@@ -69,3 +69,17 @@ A logger that logs actions done by the admin, such as changing a players score, 
 #### API
 
 swagger file coming soon TM
+
+# Immersive Table
+
+This part of the project is still being brainstormed. The idea is to have a face-up display, inside of a table acting as the game board. As the game board, players would place supplementary pieces on the display as they would on a game board. 
+
+This lets users select many different types of game boards, such that dont have a physical game mat or board. 
+
+Some things under consideration are:
+
+- Should the display have touchscreen capabilities?
+- Should there be a textured film/cover on top of the display to not damage it and make it feel better?
+- What viewing angles does the display need in order for all the players to see it well?
+- How big should the display be?
+- How much space on the borders of the table should be left?
