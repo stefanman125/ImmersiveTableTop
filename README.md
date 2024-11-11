@@ -79,7 +79,11 @@ This lets users select many different types of game boards, such that dont have 
 Some things under consideration are:
 
 - Should the display have touchscreen capabilities?
+    - Games that have metal pieces may unintentionally touch parts of the screen?
 - Should there be a textured film/cover on top of the display to not damage it and make it feel better?
+    - Games that have metal pieces may damage the screen
 - What viewing angles does the display need in order for all the players to see it well?
 - How big should the display be?
-- How much space on the borders of the table should be left?
+    - Imagine big games with large player sizes like Twilight Imperium with 8 players
+- How much space on the borders of the table should be left for players to put the games pieces?
+- Should the table be at regular height, or bar height?
