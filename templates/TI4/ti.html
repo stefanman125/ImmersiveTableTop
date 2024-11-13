@@ -56,7 +56,7 @@
     </script>
 
     <!-- Title Text -->
-    <h1 id="title-text" class="title-text">  I . C . C  </h1>
+    <!--<h1 id="title-text" class="title-text">  I . C . C  </h1>-->
 
     <!-- Background Video -->
     <script>
@@ -143,7 +143,7 @@
         <!-- Music Selection -->
         <script>
             musicFileURL = "{{ url_for('static', filename='data/TI4/music.json') }}"
-            musicUrl = "/ti/admin/music"
+            musicUrl = `${window.location.origin}/ti/admin/music`
             gameState = "Peace"
         </script>
         <canvas id="visualizer" width="900" height="100"></canvas>

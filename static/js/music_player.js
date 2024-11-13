@@ -46,7 +46,8 @@ function setupAudioVisualizer(audioElementId, canvasElementId) {
 function getFileName(url) {
     const decodedUrl = decodeURIComponent(url);
     const fileNameWithExtension = decodedUrl.substring(decodedUrl.lastIndexOf('/') + 1);
-    return fileNameWithExtension.split('.')[0]; // Return file name without extension
+    const lastDotIndex = fileNameWithExtension.lastIndexOf('.');
+    return lastDotIndex !== -1 ? fileNameWithExtension.substring(0, lastDotIndex) : fileNameWithExtension;
 }
 
 async function fetchMusicData() {

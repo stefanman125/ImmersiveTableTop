@@ -91,20 +91,35 @@ async function displayObjectives() {
         // Reverse the list of objectives shown so that the newer ones are at the top, just some flavor I thought of
         objectives = objectives.slice().reverse();
 
-        avatarSize = 60; // 35px is good enough for 10 objectives, it should be the minimum. 60px is the size of the avatars in the players div. Add scaling here in the future if you want
-
+        // Loop through each objective
         objectives.forEach(objective => {
             const row = document.createElement('tr');
-
             const emptyCell = document.createElement('td'); // First column (empty)
+
+            let numPlayers = 0;
+            let avatarSize = '25%';
+
+            // Need to loop here again to see how many players have the objective
+            players.forEach(player => {
+                if (player.objectives.includes(objective)){
+                    numPlayers ++;
+                }
+            })
+
+            if (numPlayers > 3 && numPlayers < 7) {
+                avatarSize = '23%';
+            } else if (numPlayers > 6) {
+                avatarSize = '17%';
+            }
 
             players.forEach(player => {
                 // If the current objective in the for loop is in the players list of objectives, add their avatar to the cell
                 if (player.objectives.includes(objective)){
                     const imgElement = document.createElement('img');
                     imgElement.src = player.avatar;
-                    imgElement.style.width = `${avatarSize}px`;
-                    //imgElement.style.height = `${avatarSize}px`;
+                    imgElement.classList.add("objectives-table-avatar")
+                    imgElement.style.width = avatarSize;
+                    imgElement.style.height = `auto`;
                     imgElement.style.borderRadius = '50%';
                     emptyCell.appendChild(imgElement);
                 }

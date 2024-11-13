@@ -57,7 +57,7 @@ def get_news_texts(newsFile):
 def change_music():
     return render_template("TI4/music.html")
 
-@app.route('/ti/admin/music/', methods=['POST'])
+@app.route('/ti/admin/music', methods=['POST'])
 def change_currently_playing():
     try:
         # Parse the JSON data from the request

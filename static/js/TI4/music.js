@@ -8,7 +8,8 @@ function formatTime(seconds) {
 // Function to fetch music data from the JSON file
 async function fetchMusicData() {
     try {
-        const response = await fetch(musicFileUrl);
+        const cacheBusterUrl = `${musicFileUrl}?t=${new Date().getTime()}`;
+        const response = await fetch(cacheBusterUrl);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
