@@ -27,6 +27,7 @@ frost_background_type = ["Outpost", "Boss", "SummerCombat", "WinterCombat"]
 ti_music_type = ["Combat", "Idle", "Pre-Game"]
 ti_players_filepath = "./static/data/TI4/players.json" # File containing the player names
 ti_objectives_filepath = "./static/data/TI4/objectives.json" # File containing public objectives
+ti_agendas_filepath = "./static/data/TI4/agendas.json"
 ti_music_filepath = "./static/data/TI4/music.json"
 ti_gamedata_filepath = "./static/data/TI4/gamedata.json"
 
@@ -179,6 +180,18 @@ def ti_update_players():
         return jsonify({"message": "New Player data saved successfully!"}), 200
     except Exception as e:
         print("Error when updating players file")
+        print(e)
+
+@app.route('/ti/admin/agendas', methods=['POST'])
+@auth.login_required
+def ti_agendas():
+    try:
+        new_data = request.get_json()
+        with open(ti_agendas_filepath, 'w') as file:
+            json.dump(new_data, file, indent=4)
+        return jsonify({"message": "New Agenda data saved successfully!"}), 200
+    except Exception as e:
+        print("Error when updating Agendas file")
         print(e)
 
 @app.route('/ti/admin/objectives', methods=['GET'])

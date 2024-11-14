@@ -55,16 +55,19 @@
     </style>
 </head>
 <body>
-    <h1>Objectives Management</h1>
+    <h1>Objectives & Agenda Management</h1>
 
     <!-- Current Objectives Table -->
-    <div id="tableContainer"></div>
+    <div id="tableContainerObjectives"></div>
     <button id="addObjectiveBtn">Add New Objective</button>
+    <div id="tableContainerAgendas"></div>
+    <button id="addAgendaBtn">Add New Agenda</button>
     <button id="backToMenuBtn">Back To Menu</button>
 
     <!-- Load players file -->
     <script>
         const objectivesFileUrl = "{{ url_for('static', filename='data/TI4/objectives.json') }}";
+        const agendasFileUrl = "{{ url_for('static', filename='data/TI4/agendas.json') }}"
         const logUrl = "/ti/admin/log"
     </script>
     <script src="{{ url_for('static', filename='js/TI4/objectives.js') }}"></script>

@@ -8,6 +8,7 @@ Currently supported games:
 - Frosthaven (WIP)
 - Blood Bowl (WIP)
 - Root (WIP)
+- Risk 2210 AD (WIP)
 
 ## Twilight Imperium Fourth Edition
 
@@ -72,18 +73,20 @@ swagger file coming soon TM
 
 # Immersive Table
 
-This part of the project is still being brainstormed. The idea is to have a face-up display, inside of a table acting as the game board. As the game board, players would place supplementary pieces on the display as they would on a game board. 
+This part of the project is still being brainstormed. The idea is to have a face-up display, inside of a table acting as the game board. As the game board, players would place supplementary pieces on the display as they would on a game board.
 
-This lets users select many different types of game boards, such that dont have a physical game mat or board. 
+This lets users select many different types of game boards, such that dont have a physical game mat or board.
 
 Some things under consideration are:
 
 - Should the display have touchscreen capabilities?
-    - Games that have metal pieces may unintentionally touch parts of the screen?
+  - Games that have metal pieces may unintentionally touch parts of the screen?
 - Should there be a textured film/cover on top of the display to not damage it and make it feel better?
-    - Games that have metal pieces may damage the screen
+  - Games that have metal pieces may damage the screen
 - What viewing angles does the display need in order for all the players to see it well?
 - How big should the display be?
-    - Imagine big games with large player sizes like Twilight Imperium with 8 players
+  - Imagine big games with large player sizes like Twilight Imperium with 8 players
+  - 32" and 40" and pretty common sizes for TVs
+  - check aspect ratio. Maybe there are non-16:9 displays
 - How much space on the borders of the table should be left for players to put the games pieces?
 - Should the table be at regular height, or bar height?
