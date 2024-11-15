@@ -57,11 +57,7 @@ video {
     height: 83%;
 }
 
-#left-frame-title {
-    position: absolute;
-    left: 50%;
-    translate: -50% -50%;
-    top: -3%;
+.left-frame-title {
     text-align: center;
     font-family: 'Nasalization';
     font-size: 2vw;
@@ -83,17 +79,55 @@ video {
     border: 2px solid rgba(0, 0, 255, 0.5);
 }
 
+#left-frame-objectives {
+    position: absolute;
+    height: 83%;
+    left: 0%;
+    width: 100%;
+}
+
+#left-frame-objectives-title {
+    position: relative;
+    left: 50%;
+    translate: -50% -50%;
+    top: -3%;
+}
+
 #objectives-table {
     position: absolute;
+    top: 7%;
     font-size: 1vw;
     table-layout: fixed; /* Ensure fixed table layout */
     width: 100%;
     background-color: rgba(0, 0, 255, 0.3);
     border-radius: 1%;
-    height: 76%;
-    top: 7%;
-    /*border: 2px solid rgba(0, 0, 255, 0.5);*/
+    height: 92%;
     border-collapse: collapse /* Used to show the borders for each row */
+}
+
+#left-frame-agendas {
+    position: absolute;
+    height: 83%;
+    left: -110%; /* Start off-screen and re-appear programmatically once an agenda is created*/
+    width: 100%;
+}
+
+#left-frame-agendas-title {
+    position: relative;
+    left: 50%;
+    translate: -50% -50%;
+    top: -3%;
+}
+
+#agendas-table {
+    position: absolute;
+    top: 7%;
+    font-size: 1vw;
+    table-layout: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.3);
+    border-radius: 1%;
+    height: 92%;
 }
 
 .objectives-table-avatar {

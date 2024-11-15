@@ -48,11 +48,33 @@
             font-family: 'AXON';
             src: url("{{ url_for('static', filename='fonts/axon-body.otf') }}") format('opentype');
         }
+
+        @keyframes animateObjectivesTable {
+            0% { left: 0%; }
+            5% { left: -110%; }
+            50% { left: -110%; }
+            55% { left: 0%; }
+            100% { left: 0%; }  
+        }
+
+        /* Recommended to add this animation with a 5 second time value*/
+        @keyframes slideLeft {
+            0% { left: 0%; }
+            100% {left: -110%; }
+        }
+
+        /* Recommended to add this animation with a 5 second time value*/
+        @keyframes slideRight {
+            0% { left: -110%; }
+            100% {left: 0%; }
+        }
+
     </style>
 </head>
 <body>
     <script>
         gamedataFileUrl = "{{ url_for('static', filename='data/TI4/gamedata.json') }}" 
+        agendasFileUrl = "{{ url_for('static', filename='data/TI4/agendas.json') }}" 
     </script>
 
     <!-- Title Text -->
@@ -74,13 +96,26 @@
     <div class="left-frame">
 
         <!-- Scoreboard -->
-        <h3 id="left-frame-title" >Objectives</h3>
+        <div id="left-frame-objectives">
+            <h3 class="left-frame-title" id="left-frame-objectives-title">Objectives</h3>
 
-        <table id="objectives-table">
-            <tbody>
+            <table id="objectives-table">
+                <tbody>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Agendas -->
+        <div id="left-frame-agendas">
+            <h3 class="left-frame-title" id="left-frame-agendas-title">Agendas</h3>
+
+            <table id="agendas-table">
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
 
         <table id="players-table">
             <tbody>

@@ -282,11 +282,15 @@ def reset_game():
             with open(ti_objectives_filepath, 'w') as file:
                 json.dump([], file)
 
+            # Clear Agendas
+            with open(ti_agendas_filepath, 'w') as file:
+                json.dump([], file)
+
             # Clear Players
             with open(ti_players_filepath, 'w') as file:
                 json.dump([], file)
 
-            # Change gamestate back to Peace
+            # Change gamestate back to Peace and agendas to False
             with open(ti_gamedata_filepath, 'w') as file:
                 json.dump({"gameState":"Peace"}, file, indent=4)
 
