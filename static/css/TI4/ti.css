@@ -65,6 +65,11 @@ video {
     color: white;
 }
 
+#objectives-table {
+    width: 100%;
+    table-layout: fixed; /* Ensures table cells don't expand */
+}
+
 #players-table {
     position: absolute;
     bottom: 0;
@@ -130,15 +135,8 @@ video {
     height: 92%;
 }
 
-.objectives-table-avatar {
-    width: 30%;
-    height: auto;
-    border-radius: 50%;
-}
-
 td {
-    width: 20%; /* Each column takes up 1/8th of the table width */
-    height: 20px;  /* Set a fixed height to prevent resizing */
+    /*width: 100%; /* Each column takes up 1/8th of the table width */
     color: rgba(255, 255, 255, 1);
     font-family: 'Nasalization', sans-serif;
 }
@@ -151,7 +149,7 @@ tbody tr td {
 #objectives-table tr {
     border: 2px solid rgba(0, 0, 255, 0.4);
     border-radius: 1%;
-    height: 10%;
+    /*height: 10%;*/
     overflow: hidden;
 }
 

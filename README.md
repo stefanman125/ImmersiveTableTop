@@ -25,9 +25,11 @@ Some features included in the TI4 module include:
 
 This module is meant to be set in fullscreen mode on a 16:9 screen.
 
-### Public Objectives Tracking
+### Public Objectives and Agendas Tracking
 
 A semi-transparent pane shows all the currently active public objectives, as well as which players have scored the objectives. Objectives have either a '(I)', or '(II)' at the end to specify their tier. These objectives can be added/removed in the admin panel, as well as which objectives a player has scored.
+
+Once agendas start being passed, they can be added to the agendas pane, which swaps out with the objectives pane every few seconds. The Objectives pane stays for 10 seconds + 5 seconds for each objective added. The Agendas pane stays for 5 seconds + 10 seconds for each agenda added.
 
 ### Scoreboard
 
@@ -52,6 +54,7 @@ Some ideas for getting videos include:
 - Halo 2: Anniversary Edition
 - Star Wars Movies
 - The Expanse
+- Armored Core
 
 ### News Reel
 

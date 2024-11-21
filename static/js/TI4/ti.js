@@ -1,4 +1,3 @@
-
 async function loadJsonFile(url) {
     try {
         // Add a cache-busting query parameter to the URL
@@ -104,85 +103,6 @@ async function checkGameState() {
     }, 5000); 
 }
 
-function slideLeft(element){
-    element.animation = 'slideLeft 5s ease-in-out';
-}
 
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function tablesAnimation() {
-    while (isTablesAnimationRunning) {
-        const leftFrameObjectives = document.getElementById("left-frame-objectives");
-        const leftFrameAgendas = document.getElementById('left-frame-agendas');
-
-        // Slide objectives table away
-        leftFrameObjectives.style.animation = 'slideLeft 5s ease-in-out';
-
-        // Wait for animation to finish
-        await delay(4000); 
-        
-        // Set permanent position out of frame
-        leftFrameObjectives.style.left = "-110%"; 
-
-        // Slide the agendas table in
-        leftFrameAgendas.style.animation = 'slideRight 5s ease-in-out';
-
-        // Wait for animation to finish
-        await delay(4000); 
-
-        // Set permanent position in frame
-        leftFrameAgendas.style.left = "0%";
-
-        // Let the Agenda table stay for a while
-        await delay(10000);
-
-        // Slide the agendas table away
-        leftFrameAgendas.style.animation = 'slideLeft 5s ease-in-out';
-
-        // Wait for animation to finish
-        await delay(4000); 
-
-        // Set permanent position out of frame
-        leftFrameAgendas.style.left = "-110%";
-
-        // Slide the objectives table back in
-        leftFrameObjectives.style.animation = 'slideRight 5s ease-in-out';
-
-        // Wait for the animation to finish
-        await delay(4000);
-
-        // Set permanent position in frame
-        leftFrameObjectives.style.left = "0%"; // Set permanent position
-
-        // Let the Objectives table stay for a while
-        await delay(10000);
-    }
-}
-
-async function checkAgendas() {
-    const intervalId = setInterval(async () => {
-        const agendas = await loadJsonFile(agendasFileUrl);
-
-        try {
-            // Check if at least one agenda exists
-            if (agendas[0].name && !isTablesAnimationRunning) {
-                //console.log("Agenda found");
-                isTablesAnimationRunning = true;
-                tablesAnimation();
-            } else {
-                //console.log("Agenda found, but animation is currently running");
-            }
-        } catch (error) {
-            // No Agendas exist, return all tables back to their starting positions
-            //console.log("No Agendas currently active")
-            isTablesAnimationRunning = false;
-        }
-    }, 5000);  
-}
-
-let isTablesAnimationRunning = false;
 let currentGamestate = "Peace";
 checkGameState();
-checkAgendas();

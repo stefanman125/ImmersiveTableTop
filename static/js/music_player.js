@@ -52,7 +52,7 @@ function getFileName(url) {
 
 async function fetchMusicData() {
     try {
-        const response = await fetch(musicFileURL);
+        const response = await fetch(musicFileUrl);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

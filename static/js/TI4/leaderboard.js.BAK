@@ -85,70 +85,33 @@ async function displayObjectives() {
     try {
 
         // Clear existing rows
-        const objectivesTable = document.querySelector("#objectives-table")
-        objectivesTable.innerHTML = '';
-        objectivesTable.style.display = "flex";
-        objectivesTable.style.flexDirection = "column";
+        const objectivesTableBody = document.querySelector('#objectives-table tbody');
+        objectivesTableBody.innerHTML = '';
 
         // Reverse the list of objectives shown so that the newer ones are at the top, just some flavor I thought of
         objectives = objectives.slice().reverse();
 
-        let numObjectives = objectives.length;
-        let numPlayers = 0;
-        // Constants for scaling
-        const baseSize = 6; // Base size in vw
-        const minSize = 2.0;  // Minimum size in vw
-        const maxPlayersPerRow = 8; // Threshold for maximum players before scaling heavily
-        const maxRows = 10; // Threshold for maximum rows before scaling
-        const playerWeight = 0.2; // Weight for player-based scaling
-        const rowWeight = 0.8; // Weight for row-based scaling
-
         // Loop through each objective
         objectives.forEach(objective => {
-            const row = document.createElement('div')
-            row.style.height = "100%";
-            row.style.width = "auto";
-            row.style.display = "flex";
-            row.style.border = "2px solid rgba(0, 0, 255, 0.4)";
-            row.style.borderRadius = "1%";
+            const row = document.createElement('tr');
+            const playerCell = document.createElement('td'); // First column (empty)
 
-            const playerCell = document.createElement('div'); // First column (empty)
-            playerCell.style.display = "flex";
-            playerCell.style.flexFlow = "row wrap";
-            playerCell.style.width = "30%";
-            playerCell.style.alignItems = "center";
-            playerCell.style.justifyContent = "center";
-            playerCell.style.gap = "0.5vw";
+            let numObjectives = objectives.length;
+            let numPlayers = 0;
+            let avatarSize = '4vw';
 
             // Need to loop here again to see how many players have the objective
             players.forEach(player => {
-                if (player.objectives.includes(objective)) {
-                    numPlayers++;
+                if (player.objectives.includes(objective)){
+                    numPlayers ++;
                 }
-            });
+            })
 
-            // Calculate image size
-            const rowFactor = Math.min(objectives.length / maxRows, 1); // Scale down if rows exceed maxRows
-            const playerFactor = Math.min(numPlayers / maxPlayersPerRow, 1); // Scale down if players exceed maxPlayersPerRow
-
-            let avatarSize = baseSize * (1 - (rowWeight * rowFactor + playerWeight * playerFactor));
-            avatarSize = Math.max(avatarSize, minSize); // Ensure size is above minimum
-            console.log(avatarSize);
-
-            //avatarSize = baseSize - (numObjectives * (0.07*numObjectives))
-            //console.log(avatarSize);
-
-            //players.forEach(player => {
-            //    if (player.objectives.includes(objective)){
-            //        numPlayers ++;
-            //    }
-            //})
-
-            //if (numPlayers > 3 && numPlayers < 7) {
-            //    avatarSize = '3.5vw';
-            //} else if (numPlayers > 6) {
-            //    avatarSize = '3vw';
-            //}
+            if (numPlayers > 3 && numPlayers < 7) {
+                avatarSize = '3.5vw';
+            } else if (numPlayers > 6) {
+                avatarSize = '3vw';
+            }
 
             players.forEach(player => {
                 // If the current objective in the for loop is in the players list of objectives, add their avatar to the cell
@@ -156,26 +119,23 @@ async function displayObjectives() {
                     const imgElement = document.createElement('img');
                     imgElement.src = player.avatar;
                     imgElement.classList.add("objectives-table-avatar")
-                    imgElement.style.width = `${avatarSize}vw`;
-                    imgElement.style.height = `${avatarSize}vw`;
+                    imgElement.style.width = avatarSize;
+                    imgElement.style.height = `auto`;
                     imgElement.style.borderRadius = '50%';
                     playerCell.appendChild(imgElement);
                 }
             });
 
             const objectiveCell = document.createElement('td'); // Second column (objective)
-            objectiveCell.style.display = "flex";
-            objectiveCell.style.alignItems = "center";
-            objectiveCell.style.justifyContent = "center";
-            objectiveCell.style.width = "70%";
-            objectiveCell.style.heigh = "100%";
+            objectiveCell.style.textAlign = "left";
+            objectiveCell.style.width = "60%";
 
             objectiveCell.textContent = objective;
 
             row.appendChild(playerCell);
             row.appendChild(objectiveCell);
 
-            objectivesTable.appendChild(row);
+            objectivesTableBody.appendChild(row);
         });
     } catch (error) {
         console.error('Error displaying objectives:', error);

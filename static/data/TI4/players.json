@@ -1,73 +1,67 @@
 [
     {
-        "name": "Stefan",
+        "name": "Player 1",
         "points": 0,
         "objectives": [
-            "Have 4 or more structures. (I)",
-            "Taste cum (I) (Secret)",
-            "Have structures on 3 planets outside of your home system. (I)",
-            "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's System. (I)",
-            "Control 6 planets in non-home systems. (I)",
-            "Have units in 3 systems on the edge of the game board other than your home system. (I)"
+            "Control 2 planets that have attachments. (I)"
         ],
-        "avatar": "/static/UI/sol.png"
+        "avatar": "/static/UI/rokha.png"
     },
     {
-        "name": "Adam",
+        "name": "Player 2",
         "points": 0,
         "objectives": [
-            "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's System. (I)",
-            "Have 4 or more structures. (I)",
-            "Have units in 3 systems on the edge of the game board other than your home system. (I)"
+            "Control 2 planets that have attachments. (I)"
         ],
-        "avatar": "/static/UI/l1.png"
+        "avatar": "/static/UI/cabal.png"
     },
     {
-        "name": "Max",
+        "name": "Player 3",
         "points": 0,
         "objectives": [
-            "Have structures on 3 planets outside of your home system. (I)",
-            "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's System. (I)"
+            "Control 2 planets that have attachments. (I)"
+        ],
+        "avatar": "/static/UI/creuss.png"
+    },
+    {
+        "name": "Player 4",
+        "points": 0,
+        "objectives": [
+            "Control 2 planets that have attachments. (I)"
         ],
         "avatar": "/static/UI/muaat.png"
     },
     {
-        "name": "Justin",
-        "points": 1,
+        "name": "Player 5",
+        "points": 0,
         "objectives": [
-            "Have structures on 3 planets outside of your home system. (I)",
-            "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's System. (I)",
-            "Have 4 or more structures. (I)",
-            "Have units in 3 systems on the edge of the game board other than your home system. (I)"
+            "Control 2 planets that have attachments. (I)"
         ],
-        "avatar": "/static/UI/nekro.png"
+        "avatar": "/static/UI/sol.png"
     },
     {
-        "name": "Gresha",
-        "points": 1,
+        "name": "Player 6",
+        "points": 0,
         "objectives": [
-            "Have structures on 3 planets outside of your home system. (I)",
-            "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's System. (I)"
+            "Control 3 planets that have technology specialties. (I)",
+            "Control 2 planets that have attachments. (I)"
+        ],
+        "avatar": "/static/UI/yin.png"
+    },
+    {
+        "name": "Player 7",
+        "points": 0,
+        "objectives": [
+            "Control 2 planets that have attachments. (I)"
+        ],
+        "avatar": "/static/UI/nomad.png"
+    },
+    {
+        "name": "Player 8",
+        "points": 0,
+        "objectives": [
+            "Control 2 planets that have attachments. (I)"
         ],
         "avatar": "/static/UI/letnev.png"
-    },
-    {
-        "name": "Gideon",
-        "points": 0,
-        "objectives": [
-            "Have structures on 3 planets outside of your home system. (I)",
-            "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's System. (I)"
-        ],
-        "avatar": "/static/UI/hacan.png"
-    },
-    {
-        "name": "Mikil",
-        "points": 0,
-        "objectives": [
-            "Have 4 or more structures. (I)",
-            "Have structures on 3 planets outside of your home system. (I)",
-            "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's System. (I)"
-        ],
-        "avatar": "/static/UI/titans.png"
     }
 ]
