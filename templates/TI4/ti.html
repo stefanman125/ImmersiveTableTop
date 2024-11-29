@@ -73,8 +73,8 @@
 </head>
 <body>
     <script>
-        gamedataFileUrl = "{{ url_for('static', filename='data/TI4/gamedata.json') }}" 
-        agendasFileUrl = "{{ url_for('static', filename='data/TI4/agendas.json') }}" 
+        let gamedataFileUrl = "{{ url_for('static', filename='data/TI4/gamedata.json') }}" 
+        let agendasFileUrl = "{{ url_for('static', filename='data/TI4/agendas.json') }}" 
     </script>
 
     <!-- Title Text -->
@@ -82,8 +82,9 @@
 
     <!-- Background Video -->
     <script>
-        backgroundSrcPeace = "{{ url_for('static', filename='Backgrounds/TI4/Peace/space-horizon-moewalls-com.mp4') }}" 
-        backgroundSrcWar = "{{ url_for('static', filename='Backgrounds/TI4/War/battle-in-outer-space-preview.mp4') }}"
+        let backgroundSrcPeace = "{{ url_for('static', filename='Backgrounds/TI4/Peace/space-horizon-moewalls-com.mp4') }}" 
+        let backgroundSrcWar = "{{ url_for('static', filename='Backgrounds/TI4/War/battle-in-outer-space-preview.mp4') }}"
+        let objectivesTableRowBorder = "2px solid rgba(0, 0, 255, 0.4)" // Border needs to be changed using a global var in the ti.html script because changing multiple elements dynamically using JS doesn't work for some reason???*
     </script>
     <video id="background-video" autoplay muted loop>
         <source id="background-video-source" src="{{ url_for('static', filename='Backgrounds/TI4/Peace/space-horizon-moewalls-com.mp4') }}" type="video/mp4">
@@ -103,11 +104,6 @@
 
             </div>
 
-            <!--<table id="objectives-table">
-                <tbody>
-
-                </tbody>
-            </table>-->
         </div>
 
         <!-- Agendas -->
@@ -178,14 +174,14 @@
     </div>
 
     <!-- Audio Visualizer -->
-    <div class="visualizer-box">
+    <div id="visualizer-box">
         <!-- Music Selection -->
         <script>
             musicFileUrl = "{{ url_for('static', filename='data/TI4/music.json') }}"
             musicUrl = `${window.location.origin}/ti/admin/music`
             gameState = "Peace"
         </script>
-        <canvas id="visualizer" width="900" height="100"></canvas>
+        <canvas id="visualizer"></canvas>
         <audio id="visualizer-sound" preload="auto" autoplay>
             <source id="visualizer-sound" src="" type="audio/mp3">
             Your browser does not support the audio element.

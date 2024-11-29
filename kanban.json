@@ -1,0 +1,89 @@
+{
+    "title": "Kanban",
+    "cols": [
+        {
+            "title": "Bugs",
+            "tasks": [
+                {
+                    "text": "crop the video a little more",
+                    "id": "e5xvmamtgp7nznj0gfzf51gn"
+                },
+                {
+                    "text": "fix video text being too big",
+                    "id": "qkssfxacdfub77ly2kywzvvi"
+                },
+                {
+                    "text": "admin players page not formatted correctly on mobile either",
+                    "id": "zuhwqgm7ov1cgvh7fcb077sc"
+                },
+                {
+                    "text": "home page is fucked up on mobile",
+                    "id": "sqtyaiipgpwiqzho864d9zdz"
+                },
+                {
+                    "text": "fix admin panel button texts not being centered\n",
+                    "id": "evn2ut5jp7hn122nnnzbsg1y"
+                }
+            ],
+            "id": "oj5bbxgpe6nwp0ktm6pg4440",
+            "color": "#eb144c"
+        },
+        {
+            "title": "Features",
+            "tasks": [
+                {
+                    "text": "winning faction screen?",
+                    "id": "t4pkzbjvysdpjym0pbcy35i3"
+                },
+                {
+                    "text": "consider adding a \"draw random objective\" button in the objectives screen",
+                    "id": "iphs2qxobh9b654lj0wvxrqb"
+                },
+                {
+                    "text": "adding music via youtube/spotify URL?",
+                    "id": "u2pktxwp7vxdp961idjwte6v"
+                },
+                {
+                    "text": "better music controls for TI4 (seek bar)",
+                    "id": "u2ijdn3ku13hr21ynwr48a4v"
+                },
+                {
+                    "text": "add timer to how long the peace phase was active for (might be cool to show up in the leaderboard)",
+                    "id": "kwarbbi9cqzwvk9vahc8a5ck"
+                },
+                {
+                    "text": "add secret objectives to list of objectives (due to the classified leaked documents law)",
+                    "id": "ldz6gdhyslkgdmfcd5v99p8w"
+                },
+                {
+                    "text": "consider adding a functionality to the reset button that automatically logs the session to scoreboard/sessionss",
+                    "id": "bo9g3y12ek8gwq4ykxcr5ly3"
+                }
+            ],
+            "id": "led41ud89iqf4sfwysilah86",
+            "color": "#fcb900"
+        },
+        {
+            "title": "Optimization",
+            "tasks": [
+                {
+                    "text": "add error checking to agendas with elects",
+                    "id": "gjnoplzfl4prq2n7943hxrjl"
+                },
+                {
+                    "text": "add image associated with each planet for the agenda table ",
+                    "id": "d1on0p1m1jy11m8ou7ycnv4z"
+                },
+                {
+                    "text": "add a nice looking modal to the add player flow",
+                    "id": "qldscb5yonwf4pmjt8wo9up5"
+                }
+            ],
+            "id": "e1b3jb9mf2rpvjdkidnvtozy",
+            "color": "#8ed1fc"
+        }
+    ],
+    "autosave": true,
+    "saveToFile": true,
+    "timestamp": 1732899801664
+}

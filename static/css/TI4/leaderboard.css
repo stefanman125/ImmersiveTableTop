@@ -47,9 +47,9 @@
 
 .highlighted {
     /* Gold Color */
-    border: 4px dashed rgb(255, 215, 0);
+    border: 0.4vw solid rgb(255, 215, 0);
 }
 
 .tied {
-    border: 8px dashed silver;
+    border: 0.4vw solid silver;
 }

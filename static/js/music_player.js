@@ -120,7 +120,12 @@ window.onload = function () {
                 audio.src = currentSongUrl; // Set the new song URL
                 audio.volume = 0.3;
                 const visualizer_text = document.getElementById('visualizer-text');
-                visualizer_text.textContent = getFileName(currentSongUrl); // Update the visualizer text
+                // If song name is too long
+                newSongName = getFileName(currentSongUrl) 
+                if (newSongName.length > 44) {
+                    newSongName = newSongName.slice(0, 44) + "...";
+                }
+                visualizer_text.textContent = newSongName; // Update the visualizer text
                 console.log("Now playing:", getFileName(currentSongUrl)); // Log the currently playing song
                 await audio.play(); // Play the new song
                 await postCurrentlyPlaying(currentSongId); // POST the current song ID
@@ -170,7 +175,12 @@ window.onload = function () {
 
             audio.src = randomSongData.song; // Set the new random song URL
             const visualizer_text = document.getElementById('visualizer-text');
-            visualizer_text.textContent = getFileName(randomSongData.song); // Update the visualizer text
+            // If song name is too long
+            newSongName = getFileName(randomSongData.song) 
+            if (newSongName.length > 44) {
+                newSongName = newSongName.slice(0, 44) + "...";
+            }
+            visualizer_text.textContent = newSongName; // Update the visualizer text
             console.log("Now playing random:", getFileName(randomSongData.song)); // Log the randomly playing song
             await audio.play(); // Play the random song
             currentTime = Math.round(audio.currentTime);

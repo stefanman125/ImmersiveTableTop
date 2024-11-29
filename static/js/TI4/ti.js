@@ -26,9 +26,6 @@ function changeToPeace() {
     document.getElementById("background-video-source").src = backgroundSrcPeace;
     document.getElementById("background-video").load();
 
-    // Change Title
-    document.getElementById("title-text").style.color = "rgba(0, 0, 255, 1)";
-
     // Change Visualizer and text
     visualizerBarColor = "rgba(0, 0, 255, 0.6)";
     document.getElementById("visualizer-text").style.color = "rgba(0, 0, 220, 1)";
@@ -39,7 +36,14 @@ function changeToPeace() {
 
     // Change leaderboard colors
     document.getElementById("objectives-table").style.backgroundColor = "rgba(0, 0, 255, 0.3)";
+    document.getElementById("objectives-table").style.border = "2px solid rgba(0, 0, 255, 0.5)";
+    objectivesTableRowBorder = "2px solid rgba(0, 0, 255, 0.4)"; // Border needs to be changed using a global var in the ti.html script because changing multiple elements dynamically using JS doesn't work for some reason???*
+
+    document.getElementById("players-table").style.border = "2px solid rgba(0, 0, 255, 0.5)";
     document.getElementById("players-table").style.backgroundColor = "rgba(0, 0, 255, 0.3)";
+
+    document.getElementById("agendas-table").style.backgroundColor = "rgba(0, 0, 255, 0.3)";
+    document.getElementById("agendas-table").style.border = "2px solid rgba(0, 0, 255, 0.5)";
 
     // Change videos to peace videos
     currentVideos = peaceVideos;
@@ -61,9 +65,6 @@ function changeToWar() {
     document.getElementById("background-video-source").src = backgroundSrcWar;
     document.getElementById("background-video").load();
 
-    // Change Title
-    document.getElementById("title-text").style.color = "rgba(255, 0, 0, 1)";
-
     // Change Visualizer and text
     visualizerBarColor = "rgba(255, 0, 0, 1)";
     document.getElementById("visualizer-text").style.color = "rgba(255, 0, 0, 1)";
@@ -73,8 +74,15 @@ function changeToWar() {
     newsHeadlines.textContent = warHeadlines;
 
     // Change leaderboard colors
-    document.getElementById("objectives-table").style.backgroundColor = "rgba(255, 0, 0, 0.7)";
+    document.getElementById("objectives-table").style.backgroundColor = "rgba(255, 0, 0, 0.8)";
+    document.getElementById("objectives-table").style.border = "2px solid rgba(255, 0, 0, 1)";
+    objectivesTableRowBorder = "2px solid rgba(255, 0, 0, 1)"; // Border needs to be changed using a global var in the ti.html script because changing multiple elements dynamically using JS doesn't work for some reason???*
+
     document.getElementById("players-table").style.backgroundColor = "rgba(255, 0, 0, 0.7)";
+    document.getElementById("players-table").style.border = "2px solid rgba(255, 0, 0, 1)";
+
+    document.getElementById("agendas-table").style.backgroundColor = "rgba(255, 0, 0, 0.7)";
+    document.getElementById("agendas-table").style.border = "2px solid rgba(255, 0, 0, 1)";
 
     // Change videos to war videos
     currentVideos = warVideos;

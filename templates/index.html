@@ -3,62 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Buttons</title>
+    <title>Home Page</title>
     <style>
-        /* Reset styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Banner Font */
+        @font-face {
+            font-family: 'BebasNeue';
+            src: url("{{ url_for('static', filename='fonts/BebasNeue-Regular.ttf') }}") format('truetype');
         }
-
-        /* Full-screen centered layout for 16:9 screens */
-        body, html {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f4f8;
-            font-family: Arial, sans-serif;
-        }
-
-        .button-container {
-            width: 60%;
-            max-width: 1000px;
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            padding: 20px;
-        }
-
-        /* Button styling */
-        .button-container button {
-            flex: 1;
-            padding: 20px;
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #ffffff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .button-container button:hover {
-            background-color: #0056b3;
-        }
-
     </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-    <div class="button-container">
-        <button onclick="window.location.href='/ti/setup';">Play Twilight Imperium (Fourth Edition)</button>
-        <button onclick="window.location.href='/frost/setup';">Play Frosthaven (Coming Soon)</button>
-        <button onclick="window.location.href='/bb/setup';">Play Blood Bowl (Coming Soon)</button>
-        <button onclick="window.location.href='/root/setup';">Play Root (Coming Soon)</button>
-        <button onclick="window.location.href='/leaderboard';">Leaderboard (todo)</button>
+    <!-- Have this be more dynamic in the future when authentication is implemented -->
+    <div id="welcome-banner">
+        <span class="banner-text">Welcome back, Stefan</span> 
     </div>
+
+    <div id="index-buttons">
+        <button id="gamesButton">Games</button>
+        <button id="sessionsButton">Sessions</button>
+    </div>
+
+    <div id="games-container">
+        <div id="game-ti4" class="game">
+            <span class="game-title">Twilight Imperium (Fourth Edition)</span>
+            <div class="game-middle-content">
+                <img class="game-image" src="{{ url_for('static', filename='Backgrounds/TI4/setup.png') }}">
+                <span class="game-description">Twilight Imperium (Fourth Edition) is a game of galactic conquest in which three to six players each take on the role of one of seventeen factions vying for galactic domination through military might, political maneuvering, and economic bargaining. Every faction offers a completely different play experience, from the wormhole-hopping Ghosts of Creuss to the Emirates of Hacan, masters of trade and economics. These seventeen races are offered many paths to victory, but only one may sit upon the throne of Mecatol Rex as the new masters of the galaxy.</span>
+            </div>
+            <div class="game-buttons">
+                <button onclick="window.location.href='/ti/setup';">Dashboard</button>
+                <button onclick="window.location.href='#';">Map</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sessions-container">
+
+    </div>
+
+    <script>
+        sessionsFileUrl = "{{ url_for('static', filename='data/sessions.json') }}"
+    </script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sessions.js') }}"></script>
 </body>
 </html>

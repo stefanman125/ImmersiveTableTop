@@ -25,10 +25,10 @@ html, body {
 #gamestate-text {
     position: absolute;
     top: 5%;
-    right: 8%;
+    right: 5%;
     translate: -50% -50%;
     color: rgba(0, 255, 0, 1);
-    font-size: 35px;
+    font-size: 2vw;
     font-family: 'Nasalization';
     font-style: italic;
 }
@@ -141,16 +141,19 @@ td {
     font-family: 'Nasalization', sans-serif;
 }
 
-tbody tr td {
-    text-align: center;
-    /*flex-basis: 12.5%;*/
-}
-
 #objectives-table tr {
-    border: 2px solid rgba(0, 0, 255, 0.4);
+    /*border: 2px solid rgba(0, 0, 255, 0.4);*/
     border-radius: 1%;
     /*height: 10%;*/
     overflow: hidden;
+}
+
+.objectives-table-row {
+    height: 100%;
+    width: auto;
+    display: flex;
+    /*border: 2px solid rgba(0, 0, 255, 0.4); /* Border needs to be changed using a global var in the ti.html script because changing multiple elements dynamically using JS doesn't work for some reason???*/ 
+    border-radius: 1%;
 }
 
 .gold-border {
@@ -262,13 +265,14 @@ tbody tr td {
 
 .news-content {
     display: inline-block;
-    /* Animation to scroll the text and the speed in Seconds */
-    animation: scroll 400s linear infinite;
+    /* Animation to scroll the text and the speed in Seconds. Set to 11 hours because games usually take that long. */
+    /*animation: scroll 39600s linear infinite;*/
+    animation: scroll 3200s linear infinite;
 }
 
 @keyframes scroll {
     0% {
-        transform: translateX(15%); /* Lower percentage ensures the text starts scrolling already on the screen. */
+        transform: translateX(0%); /* Lower percentage ensures the text starts scrolling already on the screen. */
     }
 
     100% {
@@ -276,20 +280,30 @@ tbody tr td {
     }
 }
 
-/* MUSIC VISUALIZER */
-.visualizer-box {
-    position: fixed;
-    top: 75%;
-    left: 50%;
+/* Visualizer Box */
+#visualizer-box {
+    position: relative;
+    bottom: 7%;
+    left: 49%;
     z-index: 2;
+    width: 48%;
+    height: 15%;
+}
+
+/* Visualizer */
+#visualizer {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    top: -3%;
 }
 
 /* Visualizer Text */
 #visualizer-text {
-    position: relative;
-    top: 82%;
+    position: absolute;
+    bottom: -19%;
     left: 0%;
-    max-width: 900px;
+    font-size: 2vw;
     font-family: 'Nasalization', sans-serif;
     font-style: italic;
     color: rgb(0, 0, 220); /* Change to your desired color */

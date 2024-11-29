@@ -93,8 +93,6 @@ async function displayObjectives() {
         // Reverse the list of objectives shown so that the newer ones are at the top, just some flavor I thought of
         objectives = objectives.slice().reverse();
 
-        let numObjectives = objectives.length;
-        let numPlayers = 0;
         // Constants for scaling
         const baseSize = 6; // Base size in vw
         const minSize = 2.0;  // Minimum size in vw
@@ -106,11 +104,8 @@ async function displayObjectives() {
         // Loop through each objective
         objectives.forEach(objective => {
             const row = document.createElement('div')
-            row.style.height = "100%";
-            row.style.width = "auto";
-            row.style.display = "flex";
-            row.style.border = "2px solid rgba(0, 0, 255, 0.4)";
-            row.style.borderRadius = "1%";
+            row.classList.add("objectives-table-row");
+            row.style.border = objectivesTableRowBorder; // Border needs to be changed using a global var in the ti.html script because changing multiple elements dynamically using JS doesn't work for some reason???*
 
             const playerCell = document.createElement('div'); // First column (empty)
             playerCell.style.display = "flex";
@@ -121,6 +116,7 @@ async function displayObjectives() {
             playerCell.style.gap = "0.5vw";
 
             // Need to loop here again to see how many players have the objective
+            let numPlayers = 0;
             players.forEach(player => {
                 if (player.objectives.includes(objective)) {
                     numPlayers++;
@@ -133,22 +129,6 @@ async function displayObjectives() {
 
             let avatarSize = baseSize * (1 - (rowWeight * rowFactor + playerWeight * playerFactor));
             avatarSize = Math.max(avatarSize, minSize); // Ensure size is above minimum
-            console.log(avatarSize);
-
-            //avatarSize = baseSize - (numObjectives * (0.07*numObjectives))
-            //console.log(avatarSize);
-
-            //players.forEach(player => {
-            //    if (player.objectives.includes(objective)){
-            //        numPlayers ++;
-            //    }
-            //})
-
-            //if (numPlayers > 3 && numPlayers < 7) {
-            //    avatarSize = '3.5vw';
-            //} else if (numPlayers > 6) {
-            //    avatarSize = '3vw';
-            //}
 
             players.forEach(player => {
                 // If the current objective in the for loop is in the players list of objectives, add their avatar to the cell

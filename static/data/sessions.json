@@ -1,0 +1,34 @@
+[
+  {
+    "gameName": "ti4",
+    "winner": "Stefan",
+    "avatar": "/static/UI/sol.png",
+    "players": ["Stefan", "Max", "Wet Adam", "Dry Adam", "Gideon", "Gresha"],
+    "playtime": 1234,
+    "date": 1700832000000
+  },
+  {
+    "gameName": "ti4",
+    "winner": "Wet Adam",
+    "avatar": "/static/UI/xxcha.png",
+    "players": ["Stefan", "Max", "Wet Adam", "Dry Adam", "Gideon", "Gresha"],
+    "playtime": 1234,
+    "date": 1728086400000
+  },
+  {
+    "gameName": "ti4",
+    "winner": "Max",
+    "avatar": "/static/UI/muaat.png",
+    "players": ["Stefan", "Max", "Wet Adam", "Dry Adam", "Gideon", "Gresha"],
+    "playtime": 1234,
+    "date": 1722211200000
+  },
+  {
+    "gameName": "ti4",
+    "winner": "Dry Adam",
+    "avatar": "/static/UI/l1.png",
+    "players": ["Stefan", "Max", "Wet Adam", "Dry Adam", "Gideon", "Gresha"],
+    "playtime": 1234,
+    "date": 1707436800000
+  }
+]
