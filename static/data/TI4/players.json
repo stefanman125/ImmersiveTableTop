@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "name": "Adam",
+        "points": 0,
+        "objectives": [],
+        "avatar": "/static/UI/l1.png"
+    }
+]

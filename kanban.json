@@ -5,6 +5,10 @@
             "title": "Bugs",
             "tasks": [
                 {
+                    "text": "fix the \"musicData is not defined\" error that shows up sometimes",
+                    "id": "pjhu9h1vcvyaoxoqljoxkk7w"
+                },
+                {
                     "text": "make objectives screen in the admin panel more mobile friendly (references to px)",
                     "id": "x0kbewbns744u59f7vcvdcbr"
                 },
@@ -36,6 +40,10 @@
             "title": "Features",
             "tasks": [
                 {
+                    "text": "add text that shows up if no players/objectives are on the dashboard",
+                    "id": "aex8xikly8khx4kwvte9t7oa"
+                },
+                {
                     "text": "add a slideshow animation to the home page game image",
                     "id": "bqi1vbqapfyj257usawecfzj"
                 },
@@ -46,10 +54,6 @@
                 {
                     "text": "winning faction screen?",
                     "id": "t4pkzbjvysdpjym0pbcy35i3"
-                },
-                {
-                    "text": "consider adding a \"draw random objective\" button in the objectives screen",
-                    "id": "iphs2qxobh9b654lj0wvxrqb"
                 },
                 {
                     "text": "adding music via youtube/spotify URL?",
@@ -97,5 +101,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1732933757997
+    "timestamp": 1732936188053
 }

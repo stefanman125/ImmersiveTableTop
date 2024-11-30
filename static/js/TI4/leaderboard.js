@@ -299,6 +299,15 @@ async function updateLeaderboard() {
     displayPlayers();
     displayObjectives();
     checkAgendas();
+
+    // Check if any objectives are on the board
+    if (objectives.length >= 1) {
+        document.getElementById("noObjectivesText").style.display = "none";
+    }
+    // Check if any players are on the board
+    if (players.length >= 1) {
+        document.getElementById("noPlayersText").style.display = "none";
+    }
 }
 
 let isTablesAnimationRunning = false;

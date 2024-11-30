@@ -77,9 +77,6 @@
         let agendasFileUrl = "{{ url_for('static', filename='data/TI4/agendas.json') }}" 
     </script>
 
-    <!-- Title Text -->
-    <!--<h1 id="title-text" class="title-text">  I . C . C  </h1>-->
-
     <!-- Background Video -->
     <script>
         let backgroundSrcPeace = "{{ url_for('static', filename='Backgrounds/TI4/Peace/space-horizon-moewalls-com.mp4') }}" 
@@ -99,6 +96,7 @@
         <!-- Scoreboard -->
         <div id="left-frame-objectives">
             <h3 class="left-frame-title" id="left-frame-objectives-title">Objectives</h3>
+            <h1 id="noObjectivesText" class="error-text" style="position: absolute; bottom: 50%; z-index: 100;">Add some Objectives from the admin panel</h1>
 
             <div id="objectives-table">
             </div>
@@ -116,6 +114,7 @@
             </table>
         </div>
 
+        <h1 id="noPlayersText" class="error-text" style="position: absolute; top: 85%;">Add some Players from the admin panel</h1>
         <table id="players-table">
             <tbody>
 

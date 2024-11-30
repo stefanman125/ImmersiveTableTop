@@ -1,9 +1,9 @@
 {
     "override": "",
     "currentlyPlaying": {
-        "songId": "21",
-        "currentTime": 5,
-        "maxTime": 281
+        "songId": "1",
+        "currentTime": 28,
+        "maxTime": 229
     },
     "available": {
         "1": {
@@ -87,95 +87,95 @@
             "category": "Peace"
         },
         "21": {
-            "song": "/static/Music/TI4/Peace/SW Battle of The Heroes x Duel of The Fates.mp3",
-            "category": "Peace"
-        },
-        "22": {
             "song": "/static/Music/TI4/Pre-Game/Black Ops 2 - Adrenaline.mp3",
             "category": "Pre-Game"
         },
-        "23": {
+        "22": {
             "song": "/static/Music/TI4/Pre-Game/Dune- Paul's Dream.mp3",
             "category": "Pre-Game"
         },
-        "24": {
+        "23": {
             "song": "/static/Music/TI4/Pre-Game/MGS 3 - Snake Eater (Instrumental).mp3",
             "category": "Pre-Game"
         },
-        "25": {
+        "24": {
             "song": "/static/Music/TI4/War/Acid Race - Dok and Martin.mp3",
             "category": "War"
         },
-        "26": {
+        "25": {
             "song": "/static/Music/TI4/War/Adrian Von Ziegler - Tech War.mp3",
             "category": "War"
         },
-        "27": {
+        "26": {
             "song": "/static/Music/TI4/War/Alpha Portal - Acid Rain.mp3",
             "category": "War"
         },
-        "28": {
+        "27": {
             "song": "/static/Music/TI4/War/CP 2077 - Scavenger Hideout Music Extended.mp3",
             "category": "War"
         },
-        "29": {
+        "28": {
             "song": "/static/Music/TI4/War/Dok & Martin, Kuvoka - Destroy.mp3",
             "category": "War"
         },
-        "30": {
+        "29": {
             "song": "/static/Music/TI4/War/Electric Universe - Bansuri.mp3",
             "category": "War"
         },
-        "31": {
+        "30": {
             "song": "/static/Music/TI4/War/F.O.O.L & Power Glove - Mercenary.mp3",
             "category": "War"
         },
-        "32": {
+        "31": {
             "song": "/static/Music/TI4/War/GTA Online - Please Use Caution.mp3",
             "category": "War"
         },
-        "33": {
+        "32": {
             "song": "/static/Music/TI4/War/Halo 3 ODST - We're the Desperate Measures.mp3",
             "category": "War"
         },
-        "34": {
+        "33": {
             "song": "/static/Music/TI4/War/Halo Reach - The Package.mp3",
             "category": "War"
         },
-        "35": {
+        "34": {
             "song": "/static/Music/TI4/War/Lex Digital - Clandestine.mp3",
             "category": "War"
         },
-        "36": {
+        "35": {
             "song": "/static/Music/TI4/War/Mad Maxx & CPU - Shiva on Acid (V-Society Remix).mp3",
             "category": "War"
         },
-        "37": {
+        "36": {
             "song": "/static/Music/TI4/War/Meganeko - The Cyber Grind.mp3",
             "category": "War"
         },
-        "38": {
+        "37": {
             "song": "/static/Music/TI4/War/Modern Warfare 2007 - Mile High Club.mp3",
             "category": "War"
         },
-        "39": {
+        "38": {
             "song": "/static/Music/TI4/War/Payday 2 - Blastaway (Assault Extended).mp3",
             "category": "War"
         },
-        "40": {
+        "39": {
             "song": "/static/Music/TI4/War/Payday 2 - Razormind (Assault).mp3",
             "category": "War"
         },
-        "41": {
+        "40": {
             "song": "/static/Music/TI4/War/Payday 2 - Tick Tock (Assault).mp3",
             "category": "War"
         },
-        "42": {
+        "41": {
             "song": "/static/Music/TI4/War/PERTURBATOR - Neo Tokyo.mp3",
             "category": "War"
         },
-        "43": {
+        "42": {
             "song": "/static/Music/TI4/War/Play My Game - Spartaque.mp3",
+            "category": "War"
+        },
+        "43": {
+            "song": "/static/Music/TI4/War/SW Battle of The Heroes x Duel of The Fates.mp3",
             "category": "War"
         },
         "44": {

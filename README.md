@@ -10,7 +10,7 @@ Currently supported games:
 - Root (WIP)
 - Risk 2210 AD (WIP)
 
-## Twilight Imperium Fourth Edition
+## Twilight Imperium Fourth Edition (Including the Prophecy of Kings Expansion)
 
 Some features included in the TI4 module include:
 

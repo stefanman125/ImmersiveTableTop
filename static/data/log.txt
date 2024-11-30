@@ -507,3 +507,7 @@
 [2024-11-29 22:00:42] [GAME] Objective "Control 2 planets that are each in or adjacent to a different, other player's home system. (II)" was added by [192.168.0.100]
 [2024-11-29 22:00:43] [GAME] Objective "Control 6 planets that each have the same planet trait. (II)" was added by [192.168.0.100]
 [2024-11-29 22:00:43] [GAME] Objective "undefined (II)" was added by [192.168.0.100]
+[2024-11-29 22:18:48] [GAME] Objective "Control 4 planets that each have the same planet trait. (I)" was added by [192.168.0.100]
+[2024-11-29 22:18:49] [GAME] Objective "Have units in 3 systems that do not contain planets. (I)" was added by [192.168.0.100]
+[2024-11-29 22:22:15] [GAME] New player "Player 1" playing "l1" was added by [192.168.0.100]
+[2024-11-29 22:22:22] [GAME] Player "Player 1" was renamed to "Adam" by [192.168.0.100]

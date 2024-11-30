@@ -9,16 +9,11 @@ html, body {
     /*background-color: black;*/
 }
 
-/* Title Text */
-.title-text {
-    font-size: 90px; /* Large font size */
-    font-family: 'Nasalization', sans-serif;
-    color: rgb(0, 0, 255); /* Change to your desired color */
-    z-index: 10; /* Ensure it is above other elements */
-    position: absolute; 
-    top: 3%;
-    left: 50%;
-    translate: -50% -50%;
+/* Dashboard UI error texts */
+.error-text {
+    color: white;
+    font-size: 2vw;
+    font-family: 'Nasalization';
 }
 
 /* Gamestate Text */
