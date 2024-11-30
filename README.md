@@ -25,6 +25,8 @@ Some features included in the TI4 module include:
 
 This module is meant to be set in fullscreen mode on a 16:9 screen.
 
+![](static/images/ti4-dashboard-preview.png)
+
 ### Public Objectives and Agendas Tracking
 
 A semi-transparent pane shows all the currently active public objectives, as well as which players have scored the objectives. Objectives have either a '(I)', or '(II)' at the end to specify their tier. These objectives can be added/removed in the admin panel, as well as which objectives a player has scored.
@@ -70,9 +72,35 @@ A logger that logs actions done by the admin, such as changing a players score, 
 
 ### Admin Panel
 
-#### API
+The admin panel allows an administrator to change various elements in the dashboard while the game is running.
 
-swagger file coming soon TM
+#### Game Data
+
+Administrators can change between the `Peace` and `War` modes.
+
+#### Players
+
+Administrators can add/remove players to the game, change their names, scores, which objectives they've completed, and secret objectives.
+
+#### Objectives and Agendas
+
+Administrators can add or remove specific public Objectives and Agendas, or add random ones.
+
+#### Music
+
+Administrators can override which song is currently playing by choosing from the list of available music.
+
+#### Log
+
+Administrators can view the log of administrative actions that have been recently performed.
+
+#### Reset Game
+
+Administrators can reset the game, which removes all players, public objectives, agendas, and resets the game state back to "Peace".
+
+### API
+
+openapi file coming soon TM
 
 # Immersive Table
 
@@ -93,3 +121,4 @@ Some things under consideration are:
   - check aspect ratio. Maybe there are non-16:9 displays
 - How much space on the borders of the table should be left for players to put the games pieces?
 - Should the table be at regular height, or bar height?
+- Should each seat at the table have something like a stream deck, and/or small screen that only the player can see? I imagine it would show player specific stats, and needs an on/off button to prevent bleeding.

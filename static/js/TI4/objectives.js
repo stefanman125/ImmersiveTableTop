@@ -1,6 +1,98 @@
 let objectives = []; // Current objectives displayed in the table
 let agendas = []; // Current agendas displayed in the table
 
+// Tier 1 Objectives list
+let objectivesDataT1 = [
+    "Control 4 planets that each have the same planet trait.",
+    "Own 2 unit upgrade technologies.",
+    "Own 2 technologies in each of 2 colors.",
+    "Spend 8 resources.",
+    "Control 6 planets in non-home systems.",
+    "Control 3 planets that have technology specialties.",
+    "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's System.",
+    "Spend a total of 3 tokens from your tactic and/or strategy pools.",
+    "Spend 5 trade goods.",
+    "Spend 8 influence.",
+    "Spend 3 influence, 3 resources, and 3 trade goods.",
+    "Have 4 or more structures.",
+    "Control 2 planets that have attachments.",
+    "Have your flagship or a war sun on the game board.",
+    "Have units in 3 systems that do not contain planets.",
+    "Have structures on 3 planets outside of your home system.",
+    "Have units in 2 systems that contain legendary planets, Mecatol Rex, or anomalies.",
+    "Have units in 3 systems on the edge of the game board other than your home system.",
+    "Control more planets than each of 2 of your neighbors.",
+    "Have 5 or more non-fighter ships in 1 system."
+]
+
+// Tier 2 Objectives list
+let objectivesDataT2 = [
+    "Spend 10 trade goods.",
+    "Control 1 planet that is in another player's home system.",
+    "Control 5 planets that have technology specialties.",
+    "Spend 16 resources.",
+    "Spend a total of 6 tokens from your tactic and/or strategy pools.",
+    "Spend 16 influence.",
+    "Own 2 technologies in each of 4 colors.",
+    "Own 3 unit upgrade technologies.",
+    "Control 11 planets in non-home systems.",
+    "Control 6 planets that each have the same planet trait.",
+    "Have your flagship or a war sun in another player's home system or the Mecatol Rex system.",
+    "Have units in 4 systems that contain legendary planets, Mecatol Rex, or anomalies.",
+    "Have 8 or more non-fighter ships in 1 system.",
+    "Have 7 or more structures.",
+    "Have units in 5 systems on the edge of the game board other than your home system.",
+    "Spend 6 influence, 6 resources, and 6 trade goods.",
+    "Have units in 5 systems that do not contain planets.",
+    "Have structures on 5 planets outside of your home system.",
+    "Control 3 planets that have attachments.",
+    "Control 2 planets that are each in or adjacent to a different, other player's home system."
+]
+
+// Secret Objectives list
+let objectivesDataSO = [
+    "Destroy another player's war sun or flagship.",
+    "Destroy the last of a player's ground forces on a planet during the bombardment step.",
+    "Win a combat against a player who has the most victory points.",
+    "Destroy the last of a player's non-fighter ships in the active system during the space cannon offense step.",
+    "Win a space combat in a system that contains your flagship. You cannot score this objective if your flagship is destroyed in the combat.",
+    "Lose control of a planet in a home system.",
+    "Win a combat against a player whose promissory note you had in your play area at the start of your tactical action.",
+    "Win a combat in an anomaly.",
+    "Win a combat in another player's home system.",
+    "Have 3 or more non-fighter ships in the active system at the end of a space combat.",
+    "Destroy the last of a player's fighters in the active system during the anti-fighter barrage step.",
+    "Be the last player to pass during a game round.",
+    "Own 2 faction technologies. (Valefar Assimilator technologies do not count toward this objective.)",
+    "Have 1 or more ships in a system that contains an alpha wormhole and 1 or more ships in a system that contains a beta wormhole.",
+    "Have 1 or more ships in 6 systems.",
+    "Have 1 or more ships in the same system as another player's space dock.",
+    "Have 4 PDS units on the game board.",
+    "Control 4 cultural planets.",
+    "Discard 5 Action Cards.",
+    "Have 3 space docks on the game board.",
+    "Have 5 dreadnoughts on the game board.",
+    "Have 1 or more ships in 3 systems that are each adjacent to an anomaly.",
+    "Own 4 technologies of the same color.",
+    "Control 4 hazardous planets.",
+    "Control 4 industrial planets.",
+    "Control Mecatol Rex and have 3 or more ships in its system.",
+    "Have 1 or more ships in a system that is adjacent to another player's home system.",
+    "Have units in the wormhole nexus.",
+    "Purge 2 of your relic fragments of any type.",
+    "Control planets that have a combined influence value of at least 12.",
+    "Be neighbors with all other players.",
+    "Control planets that have a combined resource value of at least 12.",
+    "Have 1 mech on each of 4 planets.",
+    "Have 9 or more ground forces on a planet that does not contain 1 of your space docks.",
+    "Have units with a combined PRODUCTION value of at least 8 in a single system.",
+    "Control a legendary planet.",
+    "Control a planet in a system that contains a planet controlled by another player.",
+    "Have another player's promissory note in your play area.",
+    "There are 3 or more laws in play.",
+    "You or a planet you control are elected by an agenda.",
+]
+
 // Load objectives from JSON file
 async function loadDataFromFile(type, fileUrl) {
     try {
@@ -141,8 +233,6 @@ function removeItem(mode, itemIndex) {
 // Efficiently update the table (remove a row)
 function updateTableRow(tableId, rowIndex) {
     const table = document.getElementById(tableId);
-    console.log(tableId);
-    console.log(table);
     table.deleteRow(rowIndex + 1); // +1 to account for the header row
 }
 
@@ -284,29 +374,6 @@ function addNewObjectiveModal() {
     modalText.innerText = "Tier 1";
     modalContent.appendChild(modalText);
 
-    // Tier 1 Objectives list
-    let objectivesDataT1 = [
-        "Control 4 planets that each have the same planet trait.",
-        "Own 2 unit upgrade technologies.",
-        "Own 2 technologies in each of 2 colors.",
-        "Spend 8 resources.",
-        "Control 6 planets in non-home systems.",
-        "Control 3 planets that have technology specialties.",
-        "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's System.",
-        "Spend a total of 3 tokens from your tactic and/or strategy pools.",
-        "Spend 5 trade goods.",
-        "Spend 8 influence.",
-        "Spend 3 influence, 3 resources, and 3 trade goods.",
-        "Have 4 or more structures.",
-        "Control 2 planets that have attachments.",
-        "Have your flagship or a war sun on the game board.",
-        "Have units in 3 systems that do not contain planets.",
-        "Have structures on 3 planets outside of your home system.",
-        "Have units in 2 systems that contain legendary planets, Mecatol Rex, or anomalies.",
-        "Have units in 3 systems on the edge of the game board other than your home system.",
-        "Control more planets than each of 2 of your neighbors.",
-        "Have 5 or more non-fighter ships in 1 system."
-    ]
     objectivesDataT1 = objectivesDataT1.sort();
 
     // Create the table element
@@ -354,29 +421,6 @@ function addNewObjectiveModal() {
     modalTextT2.innerText = "Tier 2";
     modalContent.appendChild(modalTextT2);
 
-    // Tier 2 Objectives list
-    let objectivesDataT2 = [
-        "Spend 10 trade goods.",
-        "Control 1 planet that is in another player's home system.",
-        "Control 5 planets that have technology specialties.",
-        "Spend 16 resources.",
-        "Spend a total of 6 tokens from your tactic and/or strategy pools.",
-        "Spend 16 influence.",
-        "Own 2 technologies in each of 4 colors.",
-        "Own 3 unit upgrade technologies.",
-        "Control 11 planets in non-home systems.",
-        "Control 6 planets that each have the same planet trait.",
-        "Have your flagship or a war sun in another player's home system or the Mecatol Rex system.",
-        "Have units in 4 systems that contain legendary planets, Mecatol Rex, or anomalies.",
-        "Have 8 or more non-fighter ships in 1 system.",
-        "Have 7 or more structures.",
-        "Have units in 5 systems on the edge of the game board other than your home system.",
-        "Spend 6 influence, 6 resources, and 6 trade goods.",
-        "Have units in 5 systems that do not contain planets.",
-        "Have structures on 5 planets outside of your home system.",
-        "Control 3 planets that have attachments.",
-        "Control 2 planets that are each in or adjacent to a different, other player's home system."
-    ]
     objectivesDataT2 = objectivesDataT2.sort();
 
         // Create the table element
@@ -418,6 +462,53 @@ function addNewObjectiveModal() {
 
     // Append the T2 table to the document body or a specific element
     modalContent.appendChild(tableT2);
+
+    // Secret Objectives Separator
+    const modalTextSO = document.createElement("h3");
+    modalTextSO.innerText = "Secret Objectives";
+    modalContent.appendChild(modalTextSO);
+
+    objectivesDataSO = objectivesDataSO.sort();
+
+    // Create the table element
+    const tableSO = document.createElement("table");
+    tableSO.style.width = "100%";
+    tableSO.style.borderCollapse = "collapse";
+
+    // Loop through data and create rows
+    objectivesDataSO.forEach((objective) => {
+      const rowSO = document.createElement("tr");
+
+      // Objective cell
+      const objectiveCellSO = document.createElement("td");
+      objectiveCellSO.innerText = objective;
+      objectiveCellSO.style.padding = "8px";
+      objectiveCellSO.style.border = "1px solid #ddd";
+      rowSO.appendChild(objectiveCellSO);
+
+      // Button cell
+      const addBtnCellSO = document.createElement("td");
+      addBtnCellSO.style.padding = "8px";
+      addBtnCellSO.style.border = "1px solid #ddd";
+      addBtnCellSO.style.textAlign = "center";
+
+      const buttonSO = document.createElement("button");
+      buttonSO.innerText = "Add";
+      buttonSO.style.padding = "5px 10px";
+      buttonSO.style.cursor = "pointer";
+      buttonSO.onclick = () => {
+            addNewObjective(objective + " (Secret Objective)");
+            document.body.removeChild(modalOverlay)
+      };
+
+      addBtnCellSO.appendChild(buttonSO);
+      rowSO.appendChild(addBtnCellSO);
+
+      tableSO.appendChild(rowSO);
+    });
+
+    // Append the SO table to the document body or a specific element
+    modalContent.appendChild(tableSO);
 
     // Create the close button
     const closeButton = document.createElement("span");
@@ -738,6 +829,23 @@ function addNewAgendaModal() {
     
 }
 
+function addRandomObjective(type) {
+    let availableObjectives;
+    if (type === "T1") {
+        // Filter the available T1 objectives to exclude objectives already in play
+        availableObjectives = objectivesDataT1.filter(item => !objectives.includes(`${item} (I)`));
+        const randomIndex = Math.floor(Math.random() * availableObjectives.length);
+        addNewObjective(`${availableObjectives[randomIndex]} (I)`);
+        console.log(`Added random T1 objective: ${availableObjectives[randomIndex]}`);
+    } else if (type === "T2") {
+        // Filter the available T2 objectives to exclude objectives already in play
+        availableObjectives = objectivesDataT2.filter(item => !objectives.includes(`${item} (II)`));
+        const randomIndex = Math.floor(Math.random() * availableObjectives.length);
+        addNewObjective(`${availableObjectives[randomIndex]} (II)`);
+        console.log(`Added random T2 objective: ${availableObjectives[randomIndex]}`);
+    }
+}
+
 // Load objectives and create table
 loadDataFromFile("Objective", objectivesFileUrl).then(() => {
     createTable("Objective"); // Populate the table with loaded objectives
@@ -750,6 +858,14 @@ loadDataFromFile("Agenda", agendasFileUrl).then(() => {
 
 // Add event listener for "Add Objective" button
 document.getElementById('addObjectiveBtn').addEventListener('click', addNewObjectiveModal);
+
+// Add event listeners for the "Add Random Objective" buttons
+document.getElementById('addRandomT1ObjectiveBtn').addEventListener('click', () => {
+    addRandomObjective("T1")
+});
+document.getElementById('addRandomT2ObjectiveBtn').addEventListener('click', () => {
+    addRandomObjective("T2")
+});
 
 // Add event listener for "Add Agenda" button
 document.getElementById('addAgendaBtn').addEventListener('click', addNewAgendaModal);

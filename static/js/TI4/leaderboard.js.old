@@ -91,27 +91,33 @@ async function displayObjectives() {
         // Reverse the list of objectives shown so that the newer ones are at the top, just some flavor I thought of
         objectives = objectives.slice().reverse();
 
+        // Constants for scaling
+        const baseSize = 6; // Base size in vw
+        const minSize = 2.0;  // Minimum size in vw
+        const maxPlayersPerRow = players.length; // Threshold for maximum players before scaling heavily
+        const maxRows = 10; // Threshold for maximum rows before scaling
+        const playerWeight = 0.2; // Weight for player-based scaling
+        const rowWeight = 0.8; // Weight for row-based scaling
+
         // Loop through each objective
         objectives.forEach(objective => {
             const row = document.createElement('tr');
             const playerCell = document.createElement('td'); // First column (empty)
-
-            let numObjectives = objectives.length;
-            let numPlayers = 0;
-            let avatarSize = '4vw';
+            playerCell.style.textAlign = "center";
 
             // Need to loop here again to see how many players have the objective
+            let numPlayers = 0;
             players.forEach(player => {
-                if (player.objectives.includes(objective)){
-                    numPlayers ++;
+                if (player.objectives.includes(objective)) {
+                    numPlayers++;
                 }
-            })
+            });
 
-            if (numPlayers > 3 && numPlayers < 7) {
-                avatarSize = '3.5vw';
-            } else if (numPlayers > 6) {
-                avatarSize = '3vw';
-            }
+            // Calculate image size
+            const rowFactor = Math.min(objectives.length / maxRows, 1); // Scale down if rows exceed maxRows
+            const playerFactor = Math.min(numPlayers / maxPlayersPerRow, 1); // Scale down if players exceed maxPlayersPerRow
+            let avatarSize = baseSize * (1 - (rowWeight * rowFactor + playerWeight * playerFactor));
+            avatarSize = Math.max(avatarSize, minSize); // Ensure size is above minimum
 
             players.forEach(player => {
                 // If the current objective in the for loop is in the players list of objectives, add their avatar to the cell
@@ -119,8 +125,8 @@ async function displayObjectives() {
                     const imgElement = document.createElement('img');
                     imgElement.src = player.avatar;
                     imgElement.classList.add("objectives-table-avatar")
-                    imgElement.style.width = avatarSize;
-                    imgElement.style.height = `auto`;
+                    imgElement.style.width = `${avatarSize}vw`;
+                    imgElement.style.height = `${avatarSize}vw`;
                     imgElement.style.borderRadius = '50%';
                     playerCell.appendChild(imgElement);
                 }

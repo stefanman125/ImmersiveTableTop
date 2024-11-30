@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: ImmersiveTableTop
+  version: 2.0.0
+paths:
+  /ti/admin/music:
+    get:
+      summary: Music GET endpoint.
+      description: Returns the Admin Music page, where an admin can see the list of music and change it via the UI.
+      security:
+        - BasicAuth: []
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Music POST endpoint.
+      description: Send a request with the new music ID which overrides the current song playing.
+      security:
+        - BasicAuth: []
+      responses:
+        '200':
+          description: currentlyPlaying successfully changed.
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic

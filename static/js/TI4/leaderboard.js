@@ -96,7 +96,7 @@ async function displayObjectives() {
         // Constants for scaling
         const baseSize = 6; // Base size in vw
         const minSize = 2.0;  // Minimum size in vw
-        const maxPlayersPerRow = 8; // Threshold for maximum players before scaling heavily
+        const maxPlayersPerRow = players.length; // Threshold for maximum players before scaling heavily
         const maxRows = 10; // Threshold for maximum rows before scaling
         const playerWeight = 0.2; // Weight for player-based scaling
         const rowWeight = 0.8; // Weight for row-based scaling
@@ -146,7 +146,7 @@ async function displayObjectives() {
             const objectiveCell = document.createElement('td'); // Second column (objective)
             objectiveCell.style.display = "flex";
             objectiveCell.style.alignItems = "center";
-            objectiveCell.style.justifyContent = "center";
+            //objectiveCell.style.justifyContent = "center";
             objectiveCell.style.width = "70%";
             objectiveCell.style.heigh = "100%";
 

@@ -5,6 +5,10 @@
             "title": "Bugs",
             "tasks": [
                 {
+                    "text": "make objectives screen in the admin panel more mobile friendly (references to px)",
+                    "id": "x0kbewbns744u59f7vcvdcbr"
+                },
+                {
                     "text": "crop the video a little more",
                     "id": "e5xvmamtgp7nznj0gfzf51gn"
                 },
@@ -32,6 +36,14 @@
             "title": "Features",
             "tasks": [
                 {
+                    "text": "add a slideshow animation to the home page game image",
+                    "id": "bqi1vbqapfyj257usawecfzj"
+                },
+                {
+                    "text": "openapi spec\n",
+                    "id": "blvqtduw58xlv46msw82d903"
+                },
+                {
                     "text": "winning faction screen?",
                     "id": "t4pkzbjvysdpjym0pbcy35i3"
                 },
@@ -52,10 +64,6 @@
                     "id": "kwarbbi9cqzwvk9vahc8a5ck"
                 },
                 {
-                    "text": "add secret objectives to list of objectives (due to the classified leaked documents law)",
-                    "id": "ldz6gdhyslkgdmfcd5v99p8w"
-                },
-                {
                     "text": "consider adding a functionality to the reset button that automatically logs the session to scoreboard/sessionss",
                     "id": "bo9g3y12ek8gwq4ykxcr5ly3"
                 }
@@ -66,6 +74,10 @@
         {
             "title": "Optimization",
             "tasks": [
+                {
+                    "text": "separate the TI module from the main module (look up flask blueprints)",
+                    "id": "cvthorl8tprpc89c3z2v1vly"
+                },
                 {
                     "text": "add error checking to agendas with elects",
                     "id": "gjnoplzfl4prq2n7943hxrjl"
@@ -85,5 +97,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1732899801664
+    "timestamp": 1732933757997
 }
