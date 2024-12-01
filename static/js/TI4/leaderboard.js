@@ -185,9 +185,12 @@ async function displayAgendas() {
                 imgElement.style.width = '40%';
                 imgElement.style.height = `auto`;
                 imgElement.style.borderRadius = '50%';
+                imgElement.style.translate = '80% 10%';
                 electCell.appendChild(imgElement);
             } else { // Else just put the elect text, which will probably be a secret objective or planet of some kind
                 electCell.textContent = agenda.elect;
+                electCell.style.translate = "35% 10%";
+                electCell.style.fontSize = "3vw";
             }
 
             const agendaCell = document.createElement('td'); 
@@ -303,10 +306,14 @@ async function updateLeaderboard() {
     // Check if any objectives are on the board
     if (objectives.length >= 1) {
         document.getElementById("noObjectivesText").style.display = "none";
+    } else {
+        document.getElementById("noObjectivesText").style.display = "block";
     }
     // Check if any players are on the board
     if (players.length >= 1) {
         document.getElementById("noPlayersText").style.display = "none";
+    } else {
+        document.getElementById("noPlayersText").style.display = "block";
     }
 }
 

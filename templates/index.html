@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Immersive Tabletop</title>
     <style>
         /* Banner Font */
         @font-face {
@@ -34,7 +34,7 @@
         <div id="game-ti4" class="game">
             <span class="game-title">Twilight Imperium (Fourth Edition)</span>
             <div class="game-middle-content">
-                <img class="game-image" src="{{ url_for('static', filename='Backgrounds/TI4/setup.png') }}">
+                <img class="game-image" src="{{ url_for('static', filename='UI/TI4/cover.png') }}">
                 <span class="game-description">Twilight Imperium (Fourth Edition) is a game of galactic conquest in which three to six players each take on the role of one of seventeen factions vying for galactic domination through military might, political maneuvering, and economic bargaining. Every faction offers a completely different play experience, from the wormhole-hopping Ghosts of Creuss to the Emirates of Hacan, masters of trade and economics. These seventeen races are offered many paths to victory, but only one may sit upon the throne of Mecatol Rex as the new masters of the galaxy.</span>
             </div>
             <div class="game-buttons">
@@ -44,9 +44,12 @@
         </div>
     </div>
 
-    <div id="sessions-container">
+    <div id="sessions-container"> </div>
 
-    </div>
+    <script> 
+        UiFilesPath = "/static/UI/TI4/"
+    </script>
+    <div id="session-container"> </div>
 
     <script>
         sessionsFileUrl = "{{ url_for('static', filename='data/sessions.json') }}"

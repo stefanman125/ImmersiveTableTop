@@ -1,6 +1,6 @@
 # ImmersiveTableTop
 
-A web companion for tabletop gamers. Allows for immersive dashboards to appear on a big screen near the tabletop game. Games are separated by modules. Also comes with a leaderboard to track global games.
+A web companion for tabletop gamers. Allows for immersive dashboards to appear on a big screen near the tabletop game, as well as a leaderboard to track game sessions.
 
 Currently supported games:
 
@@ -25,7 +25,7 @@ Some features included in the TI4 module include:
 
 This module is meant to be set in fullscreen mode on a 16:9 screen.
 
-![](static/images/ti4-dashboard-preview.png)
+![](images/TI4/dashboard-preview.png)
 
 ### Public Objectives and Agendas Tracking
 

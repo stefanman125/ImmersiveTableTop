@@ -5,6 +5,14 @@
             "title": "Bugs",
             "tasks": [
                 {
+                    "text": "fix resolution of the rest of the winner banner faction images (810x200)",
+                    "id": "cav1uhu6kpcb9dxwx5t8u5fa"
+                },
+                {
+                    "text": "fix \"date played\" sorting in the index page",
+                    "id": "w2ltgf8mep3lfdna16r5s4hv"
+                },
+                {
                     "text": "fix the \"musicData is not defined\" error that shows up sometimes",
                     "id": "pjhu9h1vcvyaoxoqljoxkk7w"
                 },
@@ -40,8 +48,20 @@
             "title": "Features",
             "tasks": [
                 {
-                    "text": "add text that shows up if no players/objectives are on the dashboard",
-                    "id": "aex8xikly8khx4kwvte9t7oa"
+                    "text": "add ability to change stats while in a sessions screen",
+                    "id": "npyt2iji6fs8j2ky9fss1dz6"
+                },
+                {
+                    "text": "add a tooltip that asks the player to make the page fullscreen if it isnt",
+                    "id": "hs2w3123awuae67ot1npwgws"
+                },
+                {
+                    "text": "add session button",
+                    "id": "z2u4zg0do796jd8c0tcil1mw"
+                },
+                {
+                    "text": "sessions screen when a session is clicked",
+                    "id": "zige7dr7gtkeu9j6sy1tsy03"
                 },
                 {
                     "text": "add a slideshow animation to the home page game image",
@@ -79,6 +99,10 @@
             "title": "Optimization",
             "tasks": [
                 {
+                    "text": "change the avatarFilesUrl in players.html from a static URL, to a dynamic Flask generated one (no idea how to approach this)",
+                    "id": "xcjja0fxjaqt15py1auir2qs"
+                },
+                {
                     "text": "separate the TI module from the main module (look up flask blueprints)",
                     "id": "cvthorl8tprpc89c3z2v1vly"
                 },
@@ -101,5 +125,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1732936188053
+    "timestamp": 1733028944939
 }

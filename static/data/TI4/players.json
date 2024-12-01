@@ -1,8 +1,14 @@
 [
     {
-        "name": "Adam",
+        "name": "Stefan",
         "points": 0,
         "objectives": [],
-        "avatar": "/static/UI/l1.png"
+        "avatar": "/static/UI/TI4/sol.png"
+    },
+    {
+        "name": "Dry Adam",
+        "points": 0,
+        "objectives": [],
+        "avatar": "/static/UI/TI4/nekro.png"
     }
 ]

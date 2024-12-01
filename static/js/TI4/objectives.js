@@ -302,7 +302,7 @@ function addNewAgenda(newAgenda) {
                 alert("Entered faction is not in the list of factions.")
                 return;
             } else {
-                newAgenda.elect = `/static/UI/${newElect}.png`;
+                newAgenda.elect = `${UiFilesPath}${newElect}.png`;
             }
         } else if (newAgenda.elect === "Scored Secret Objective") { 
             newAgenda.elect = prompt("Enter the Secret Objective elected:")

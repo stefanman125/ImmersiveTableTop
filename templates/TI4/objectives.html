@@ -69,8 +69,9 @@
     <!-- Load players file -->
     <script>
         const objectivesFileUrl = "{{ url_for('static', filename='data/TI4/objectives.json') }}";
-        const agendasFileUrl = "{{ url_for('static', filename='data/TI4/agendas.json') }}"
-        const logUrl = "/ti/admin/log"
+        const agendasFileUrl = "{{ url_for('static', filename='data/TI4/agendas.json') }}";
+        const logUrl = "/ti/admin/log";
+        const UiFilesPath = "/static/UI/TI4/";
     </script>
     <script src="{{ url_for('static', filename='js/TI4/objectives.js') }}"></script>
     <script src="{{ url_for('static', filename='js/logger.js') }}"></script>

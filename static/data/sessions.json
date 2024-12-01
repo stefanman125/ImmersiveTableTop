@@ -2,33 +2,151 @@
   {
     "gameName": "ti4",
     "winner": "Stefan",
-    "avatar": "/static/UI/sol.png",
-    "players": ["Stefan", "Max", "Wet Adam", "Dry Adam", "Gideon", "Gresha"],
+    "avatar": "/static/UI/TI4/sol.png",
+    "players": [
+      {
+        "name": "Stefan",
+        "avatar": "/static/UI/TI4/sol.png"
+      },
+      {
+        "name": "Max",
+        "avatar": "/static/UI/TI4/muaat.png"
+      },
+      {
+        "name": "Wet Adam",
+        "avatar": "/static/UI/TI4/xxcha.png"
+      },
+      {
+        "name": "Dry Adam",
+        "avatar": "/static/UI/TI4/l1.png"
+      },
+      {
+        "name": "Gresha",
+        "avatar": "/static/UI/TI4/letnev.png"
+      }
+    ],
     "playtime": 1234,
-    "date": 1700832000000
+    "date": 1700832000000,
+    "gameState": "war"
   },
   {
     "gameName": "ti4",
     "winner": "Wet Adam",
-    "avatar": "/static/UI/xxcha.png",
-    "players": ["Stefan", "Max", "Wet Adam", "Dry Adam", "Gideon", "Gresha"],
+    "avatar": "/static/UI/TI4/xxcha.png",
+    "players": [
+      {
+        "name": "Stefan",
+        "avatar": "/static/UI/TI4/sol.png"
+      },
+      {
+        "name": "Max",
+        "avatar": "/static/UI/TI4/muaat.png"
+      },
+      {
+        "name": "Wet Adam",
+        "avatar": "/static/UI/TI4/xxcha.png"
+      },
+      {
+        "name": "Dry Adam",
+        "avatar": "/static/UI/TI4/l1.png"
+      },
+      {
+        "name": "Gresha",
+        "avatar": "/static/UI/TI4/letnev.png"
+      }
+    ],
     "playtime": 1234,
-    "date": 1728086400000
+    "date": 1728086400000,
+    "gameState": "war"
   },
   {
     "gameName": "ti4",
     "winner": "Max",
-    "avatar": "/static/UI/muaat.png",
-    "players": ["Stefan", "Max", "Wet Adam", "Dry Adam", "Gideon", "Gresha"],
+    "avatar": "/static/UI/TI4/muaat.png",
+    "players": [
+      {
+        "name": "Stefan",
+        "avatar": "/static/UI/TI4/sol.png"
+      },
+      {
+        "name": "Max",
+        "avatar": "/static/UI/TI4/muaat.png"
+      },
+      {
+        "name": "Wet Adam",
+        "avatar": "/static/UI/TI4/xxcha.png"
+      },
+      {
+        "name": "Dry Adam",
+        "avatar": "/static/UI/TI4/l1.png"
+      },
+      {
+        "name": "Gresha",
+        "avatar": "/static/UI/TI4/letnev.png"
+      }
+    ],
     "playtime": 1234,
-    "date": 1722211200000
+    "date": 1722211200000,
+    "gameState": "peace"
   },
   {
     "gameName": "ti4",
     "winner": "Dry Adam",
-    "avatar": "/static/UI/l1.png",
-    "players": ["Stefan", "Max", "Wet Adam", "Dry Adam", "Gideon", "Gresha"],
+    "avatar": "/static/UI/TI4/mentak.png",
+    "players": [
+      {
+        "name": "Stefan",
+        "avatar": "/static/UI/TI4/sol.png"
+      },
+      {
+        "name": "Max",
+        "avatar": "/static/UI/TI4/muaat.png"
+      },
+      {
+        "name": "Wet Adam",
+        "avatar": "/static/UI/TI4/xxcha.png"
+      },
+      {
+        "name": "Dry Adam",
+        "avatar": "/static/UI/TI4/l1.png"
+      },
+      {
+        "name": "Gresha",
+        "avatar": "/static/UI/TI4/letnev.png"
+      }
+    ],
     "playtime": 1234,
-    "date": 1707436800000
+    "date": 1707436800000,
+    "gameState": "war"
+  },
+  {
+    "gameName": "ti4",
+    "winner": "Gresha",
+    "avatar": "/static/UI/TI4/hacan.png",
+    "players": [
+      {
+        "name": "Stefan",
+        "avatar": "/static/UI/TI4/sol.png"
+      },
+      {
+        "name": "Max",
+        "avatar": "/static/UI/TI4/muaat.png"
+      },
+      {
+        "name": "Wet Adam",
+        "avatar": "/static/UI/TI4/xxcha.png"
+      },
+      {
+        "name": "Dry Adam",
+        "avatar": "/static/UI/TI4/l1.png"
+      },
+      {
+        "name": "Gresha",
+        "avatar": "/static/UI/TI4/letnev.png"
+      }
+    ],
+    "playtime": 1234,
+    "date": 1707436800000,
+    "gameState": "war"
   }
 ]

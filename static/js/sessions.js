@@ -149,6 +149,7 @@ function renderTableRows(data) {
     data.forEach(item => {
         // Create the row
         const tr = document.createElement("tr");
+        tr.addEventListener("click", () => viewSession(item));
 
         // Game name cell
         const gameNameTd = document.createElement("td");
@@ -159,6 +160,7 @@ function renderTableRows(data) {
         } 
         gameNameTd.textContent = gameName;
         gameNameTd.style.fontSize = "2vw";
+        gameNameTd.style.fontFamily = "Oswald";
         gameNameTd.style.border = "0.1vw solid black";
         gameNameTd.style.padding = "1vw";
         gameNameTd.style.textAlign = "center";
@@ -185,6 +187,7 @@ function renderTableRows(data) {
             winnerTd.appendChild(winnerContainer);
         }; 
         winnerTd.style.fontSize = "2vw";
+        winnerTd.style.fontFamily = "Oswald";
         winnerTd.style.border = "0.1vw solid black";
         winnerTd.style.padding = "1vw";
         winnerTd.style.textAlign = "center";
@@ -195,6 +198,7 @@ function renderTableRows(data) {
         const date = changeDateFormat(item.date);
         datePlayedTd.textContent = date;
         datePlayedTd.style.fontSize = "2vw";
+        datePlayedTd.style.fontFamily = "Oswald";
         datePlayedTd.style.border = "0.1vw solid black";
         datePlayedTd.style.padding = "1vw";
         datePlayedTd.style.textAlign = "center";

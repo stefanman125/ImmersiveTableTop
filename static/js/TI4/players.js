@@ -117,7 +117,7 @@ function addNewPlayer() {
             name: `Player ${players.length + 1}`, // Default name
             points: 0, // Default points
             objectives: [], // No objectives
-            avatar: `/static/UI/${avatar}.png` // Chosen avatar
+            avatar: `${avatarFilesUrl}${avatar}.png` // Chosen avatar
         };
 
         players.push(newPlayer); // Add the new player to the array
