@@ -1,20 +1,4 @@
 {
-    "currentDisputedAgenda": {
-        "name": "Committee Formation",
-        "type": "Law",
-        "elect": "Player",
-        "description": "The elected player gains this card. Before players vote on an agenda that requires a player to be elected, the owner of this card may discard this card to choose a player to be elected. Players do not vote on that agenda."
-    },
-    "currentAgendas": [
-        {
-            "name": "Anti-Intellectual Revolution (Against)",
-            "elect": "",
-            "effect": "At the start of the next strategy phase, each player chooses and exhausts 1 planet for each technology they own."
-        },
-        {
-            "name": "Demilitarized Zone",
-            "elect": "Jord",
-            "effect": "Attach this card to the elected planet's card. Then, destroy all units on that planet. Player's units cannot land, be produced, or be placed on this planet."
-        }
-    ]
+    "currentDisputedAgenda": "",
+    "currentAgendas": []
 }

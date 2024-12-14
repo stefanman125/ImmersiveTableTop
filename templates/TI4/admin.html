@@ -93,7 +93,7 @@
         document.getElementById('resetGameBtn').addEventListener('click', resetGame);
 
         async function resetGame() {
-            const areYouSure = prompt("Are you sure you want to reset the game? (Type \"Yes, I want to Reset\" to reset the game).\n\nResetting the game does the following:\n- Removes all players\n- Removes all objectives\n- Resets back to peace phase");
+            const areYouSure = prompt("Are you sure you want to reset the game? (Type \"Yes, I want to Reset\" to reset the game).\n\nResetting the game does the following:\n- Removes all players\n- Removes all objectives\n- Removes all the current agendas\n- Resets back to peace phase");
             if (areYouSure === "Yes, I want to Reset") {
                 const data = JSON.stringify({ "resetGame": true });
                 const headers = { 'Content-Type': 'application/json' };

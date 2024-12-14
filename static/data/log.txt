@@ -549,3 +549,6 @@
 [2024-12-14 13:02:57] [GAME] Player "Player 4" was removed by [192.168.0.169]
 [2024-12-14 13:03:01] [GAME] New player "Player 4" playing "l1" was added by [192.168.0.169]
 [2024-12-14 13:03:06] [GAME] New player "Player 5" playing "nomad" was added by [192.168.0.169]
+[2024-12-14 15:21:35] [GAME] New player "Player 4" playing "yin" was added by [192.168.0.100]
+[2024-12-14 15:22:10] [GAME] New player "Player 1" playing "l1" was added by [192.168.0.100]
+[2024-12-14 15:26:09] [GAME] New player "Player 1" playing "nekro" was added by [192.168.0.100]

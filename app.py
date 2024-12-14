@@ -284,7 +284,7 @@ def reset_game():
 
             # Clear Agendas
             with open(ti_agendas_filepath, 'w') as file:
-                json.dump([], file)
+                json.dump({"currentDisputedAgenda": "", "currentAgendas": []}, file)
 
             # Clear Players
             with open(ti_players_filepath, 'w') as file:

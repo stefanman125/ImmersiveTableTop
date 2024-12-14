@@ -1,9 +1,9 @@
 {
     "override": "",
     "currentlyPlaying": {
-        "songId": "7",
-        "currentTime": 246,
-        "maxTime": 278
+        "songId": "",
+        "currentTime": 0,
+        "maxTime": 0
     },
     "available": {
         "1": {
