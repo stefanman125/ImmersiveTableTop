@@ -122,3 +122,4 @@ Some things under consideration are:
 - How much space on the borders of the table should be left for players to put the games pieces?
 - Should the table be at regular height, or bar height?
 - Should each seat at the table have something like a stream deck, and/or small screen that only the player can see? I imagine it would show player specific stats, and needs an on/off button to prevent bleeding.
+- Distance between two people sitting at the table should be about ~2 meters

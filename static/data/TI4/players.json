@@ -1,14 +1,38 @@
 [
     {
         "name": "Stefan",
-        "points": 0,
+        "points": 2,
         "objectives": [],
-        "avatar": "/static/UI/TI4/sol.png"
+        "avatar": "/static/UI/TI4/sol.png",
+        "for": 0,
+        "against": 0,
+        "rider": "choose 1 system that contains a planet you control. Each other player places a command token from their reinforcements in that system.",
+        "speaker": false,
+        "abstain": false,
+        "elect": "Construction"
     },
     {
         "name": "Dry Adam",
+        "points": 1,
+        "objectives": [],
+        "avatar": "/static/UI/TI4/nekro.png",
+        "for": 0,
+        "against": 0,
+        "rider": "None",
+        "speaker": false,
+        "abstain": false,
+        "elect": "None"
+    },
+    {
+        "name": "Max",
         "points": 0,
         "objectives": [],
-        "avatar": "/static/UI/TI4/nekro.png"
+        "avatar": "/static/UI/TI4/rokha.png",
+        "for": 0,
+        "against": 0,
+        "rider": "None",
+        "speaker": false,
+        "abstain": false,
+        "elect": "None"
     }
 ]

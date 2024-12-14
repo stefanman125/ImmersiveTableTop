@@ -75,7 +75,26 @@
     <script>
         let gamedataFileUrl = "{{ url_for('static', filename='data/TI4/gamedata.json') }}" 
         let agendasFileUrl = "{{ url_for('static', filename='data/TI4/agendas.json') }}" 
+        let playersFileUrl = "{{ url_for('static', filename='data/TI4/players.json') }}"
+        let objectivesFileUrl = "{{ url_for('static', filename='data/TI4/objectives.json') }}"
+        let musicFileUrl = "{{ url_for('static', filename='data/TI4/music.json') }}"
     </script>
+    <!-- Continously updates all data variables with data from files -->
+    <script src="{{ url_for('static', filename='js/TI4/update-data.js') }}"></script> 
+
+    <!-- Agenda Phase Pane -->
+    <div id="agendaPhaseOverlay">
+        <div id="agendaPhaseBg">
+            <div id="agendaPhasePane">
+                <h1 id="agendaPhaseTitle">Agenda Phase</h1>
+                <hr id="agendaPhaseLinebreak">
+                <div id="agendaPhaseBody">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/TI4/agenda-phase.js') }}"></script>
 
     <!-- Background Video -->
     <script>
@@ -173,7 +192,6 @@
     <div id="visualizer-box">
         <!-- Music Selection -->
         <script>
-            musicFileUrl = "{{ url_for('static', filename='data/TI4/music.json') }}"
             musicUrl = `${window.location.origin}/ti/admin/music`
             gameState = "Peace"
         </script>

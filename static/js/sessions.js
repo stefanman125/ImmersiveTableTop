@@ -157,7 +157,9 @@ function renderTableRows(data) {
         // Check which game is the session belongs to, to apply special formatting to the gameName cell
         if (item.gameName === "ti4") {
             gameName = "Twilight Imperium";
-        } 
+        } else if (item.gameName === "dominion") {
+            gameName = "Dominion";
+        }
         gameNameTd.textContent = gameName;
         gameNameTd.style.fontSize = "2vw";
         gameNameTd.style.fontFamily = "Oswald";
@@ -185,7 +187,9 @@ function renderTableRows(data) {
             winnerContainer.appendChild(text);
             winnerContainer.appendChild(avatar);
             winnerTd.appendChild(winnerContainer);
-        }; 
+        } else if (item.gameName === "dominion") {
+            winnerTd.textContent = item.winner;
+        };
         winnerTd.style.fontSize = "2vw";
         winnerTd.style.fontFamily = "Oswald";
         winnerTd.style.border = "0.1vw solid black";

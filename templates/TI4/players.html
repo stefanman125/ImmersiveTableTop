@@ -32,6 +32,10 @@
             cursor: pointer;
         }
 
+        #resetAgendaPhaseBtn {
+            background-color: rgba(200, 0, 0, 1);
+        }
+
         button:hover {
             background-color: #6A0DAD;
         }
@@ -72,7 +76,7 @@
             margin: 15% auto; /* Center the modal */
             padding: 20px;
             border: 1px solid #4B0082; /* Border color to match buttons */
-            width: 60%; /* Width of modal content */
+            max-width: 90%; /* Width of modal content */
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Slightly darker shadow */
         }
@@ -117,6 +121,7 @@
     <!-- Players Table -->
     <div id="tableContainer"></div>
     <button id="addPlayerBtn">Add New Player</button>
+    <button id="resetAgendaPhaseBtn">Reset Agenda Phase Stats</button>
     <button id="backToMenuBtn">Back to Menu</button>
 
     <!-- Load players file -->
@@ -124,6 +129,7 @@
         const avatarFilesUrl = "/static/UI/TI4/"
         const playersFileUrl = "{{ url_for('static', filename='data/TI4/players.json') }}"; 
         const objectivesFileUrl = "{{ url_for('static', filename='data/TI4/objectives.json') }}";
+        const agendasFileUrl = "{{ url_for('static', filename='data/TI4/agendas.json') }}";
         const logUrl = "/ti/admin/log"
     </script>
     <script src="{{ url_for('static', filename='js/TI4/players.js') }}"></script>

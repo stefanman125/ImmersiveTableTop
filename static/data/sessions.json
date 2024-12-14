@@ -6,23 +6,28 @@
     "players": [
       {
         "name": "Stefan",
-        "avatar": "/static/UI/TI4/sol.png"
+        "avatar": "/static/UI/TI4/sol.png",
+        "score": 8
       },
       {
         "name": "Max",
-        "avatar": "/static/UI/TI4/muaat.png"
+        "avatar": "/static/UI/TI4/muaat.png",
+        "score": 6
       },
       {
         "name": "Wet Adam",
-        "avatar": "/static/UI/TI4/xxcha.png"
+        "avatar": "/static/UI/TI4/xxcha.png",
+        "score": 5
       },
       {
         "name": "Dry Adam",
-        "avatar": "/static/UI/TI4/l1.png"
+        "avatar": "/static/UI/TI4/l1.png",
+        "score": 3
       },
       {
         "name": "Gresha",
-        "avatar": "/static/UI/TI4/letnev.png"
+        "avatar": "/static/UI/TI4/letnev.png",
+        "score": 3
       }
     ],
     "playtime": 1234,
@@ -36,23 +41,28 @@
     "players": [
       {
         "name": "Stefan",
-        "avatar": "/static/UI/TI4/sol.png"
+        "avatar": "/static/UI/TI4/sol.png",
+        "score": 8
       },
       {
         "name": "Max",
-        "avatar": "/static/UI/TI4/muaat.png"
+        "avatar": "/static/UI/TI4/muaat.png",
+        "score": 6
       },
       {
         "name": "Wet Adam",
-        "avatar": "/static/UI/TI4/xxcha.png"
+        "avatar": "/static/UI/TI4/xxcha.png",
+        "score": 5
       },
       {
         "name": "Dry Adam",
-        "avatar": "/static/UI/TI4/l1.png"
+        "avatar": "/static/UI/TI4/l1.png",
+        "score": 3
       },
       {
         "name": "Gresha",
-        "avatar": "/static/UI/TI4/letnev.png"
+        "avatar": "/static/UI/TI4/letnev.png",
+        "score": 3
       }
     ],
     "playtime": 1234,
@@ -66,23 +76,28 @@
     "players": [
       {
         "name": "Stefan",
-        "avatar": "/static/UI/TI4/sol.png"
+        "avatar": "/static/UI/TI4/sol.png",
+        "score": 8
       },
       {
         "name": "Max",
-        "avatar": "/static/UI/TI4/muaat.png"
+        "avatar": "/static/UI/TI4/muaat.png",
+        "score": 6
       },
       {
         "name": "Wet Adam",
-        "avatar": "/static/UI/TI4/xxcha.png"
+        "avatar": "/static/UI/TI4/xxcha.png",
+        "score": 5
       },
       {
         "name": "Dry Adam",
-        "avatar": "/static/UI/TI4/l1.png"
+        "avatar": "/static/UI/TI4/l1.png",
+        "score": 3
       },
       {
         "name": "Gresha",
-        "avatar": "/static/UI/TI4/letnev.png"
+        "avatar": "/static/UI/TI4/letnev.png",
+        "score": 3
       }
     ],
     "playtime": 1234,
@@ -96,23 +111,28 @@
     "players": [
       {
         "name": "Stefan",
-        "avatar": "/static/UI/TI4/sol.png"
+        "avatar": "/static/UI/TI4/sol.png",
+        "score": 8
       },
       {
         "name": "Max",
-        "avatar": "/static/UI/TI4/muaat.png"
+        "avatar": "/static/UI/TI4/muaat.png",
+        "score": 6
       },
       {
         "name": "Wet Adam",
-        "avatar": "/static/UI/TI4/xxcha.png"
+        "avatar": "/static/UI/TI4/xxcha.png",
+        "score": 5
       },
       {
         "name": "Dry Adam",
-        "avatar": "/static/UI/TI4/l1.png"
+        "avatar": "/static/UI/TI4/l1.png",
+        "score": 3
       },
       {
         "name": "Gresha",
-        "avatar": "/static/UI/TI4/letnev.png"
+        "avatar": "/static/UI/TI4/letnev.png",
+        "score": 3
       }
     ],
     "playtime": 1234,
@@ -126,27 +146,51 @@
     "players": [
       {
         "name": "Stefan",
-        "avatar": "/static/UI/TI4/sol.png"
+        "avatar": "/static/UI/TI4/sol.png",
+        "score": 8
       },
       {
         "name": "Max",
-        "avatar": "/static/UI/TI4/muaat.png"
+        "avatar": "/static/UI/TI4/muaat.png",
+        "score": 6
       },
       {
         "name": "Wet Adam",
-        "avatar": "/static/UI/TI4/xxcha.png"
+        "avatar": "/static/UI/TI4/xxcha.png",
+        "score": 5
       },
       {
         "name": "Dry Adam",
-        "avatar": "/static/UI/TI4/l1.png"
+        "avatar": "/static/UI/TI4/l1.png",
+        "score": 3
       },
       {
         "name": "Gresha",
-        "avatar": "/static/UI/TI4/letnev.png"
+        "avatar": "/static/UI/TI4/letnev.png",
+        "score": 3
       }
     ],
     "playtime": 1234,
     "date": 1707436800000,
     "gameState": "war"
+  },
+  {
+    "gameName": "dominion",
+    "winner": "Max",
+    "players": [
+      {
+        "name": "Gresha",
+        "score": 12
+      },
+      {
+        "name": "Stefan",
+        "score": 27
+      },
+      {
+        "name": "Max",
+        "score": 31
+      }
+    ],
+    "date": 1733011200000
   }
 ]

@@ -126,7 +126,8 @@ function displayMusicData(musicData) {
 
 // Main function to load and display music data
 async function loadMusic() {
-    musicData = await fetchMusicData();
+    //musicData = await fetchMusicData();
+    musicData = music;
     if (musicData) {
         if (musicData.currentlyPlaying) {
             displayCurrentlyPlaying(musicData); // Display the currently playing data

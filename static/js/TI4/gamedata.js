@@ -1,15 +1,28 @@
+let gamedata;
+
 // Function to fetch file and set gamedata
 async function initializeGameData() {
     // Wait for fetchFile to resolve and set gamedata
-    let gamedata = await fetchFile(gamedataFileUrl);
+    gamedata = await fetchFile(gamedataFileUrl);
     const gamestateText = document.getElementById("currentGamestateText");
+    const agendaPhaseText = document.getElementById("agendaPhaseText");
 
+    // Set gamestate
     if (gamedata.gameState === "Peace") {
         newGamestate = "War";
         gamestateText.textContent = "Current gamestate: Peace";
     } else if (gamedata.gameState === "War") {
         newGamestate = "Peace";
         gamestateText.textContent = "Current gamestate: War";
+    }
+
+    // Set agenda phase state
+    if (gamedata.agendaPhase === true) {
+        newAgendaPhase = false;
+        agendaPhaseText.textContent = "Agenda Phase: True"
+    } else if (gamedata.agendaPhase === false) {
+        newAgendaPhase = true;
+        agendaPhaseText.textContent = "Agenda Phase: False"
     }
 }
 
@@ -57,7 +70,7 @@ async function postJson(url, json) {
 async function changeGamestate() {
     const areyousure = confirm(`This will change the gamestate to ${newGamestate}.\n\nAre you sure you would like to change the gamestate?`);
     if (areyousure) {
-        postJson('/ti/admin/gamedata', { gameState: newGamestate});
+        postJson('/ti/admin/gamedata', { gameState: newGamestate, agendaPhase: gamedata.agendaPhase });
         alert(`Gamestate changed to ${newGamestate}`);
         initializeGameData();
         if (newGamestate === "War") {
@@ -77,8 +90,23 @@ async function changeGamestate() {
     }
 }
 
+async function changeAgendaPhase() {
+    const areyousure = confirm(`This will change the Agenda Phase to ${newAgendaPhase}.\n\nAre you sure you would like to change the Agenda Phase?`);
+    if (areyousure) {
+        postJson('/ti/admin/gamedata', { gameState: gamedata.gameState, agendaPhase: newAgendaPhase });
+        alert(`Agenda Phase changed to ${newAgendaPhase}`);
+        initializeGameData();
+    } else {
+        alert("Agenda Phase unchanged.");
+    }
+
+}
+
 // Add event listener for "Change Gamestate" button
 document.getElementById('changeGamestateBtn').addEventListener('click', changeGamestate);
+
+// Add event listener for "Change Agenda Phase State" button
+document.getElementById('changeAgendaPhaseBtn').addEventListener('click', changeAgendaPhase);
 
 // Add event listener for "Back to Menu" button
 document.getElementById('backToMenuBtn').addEventListener('click', function() {

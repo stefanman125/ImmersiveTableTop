@@ -23,9 +23,18 @@ function playVideo() {
 
         // Update the video source
         rightFrameVideo.src = shuffledVideoPlaylist[currentVideoTrackIndex];
+
         // Update the body cam text source if in war mode (checks if the no-signal gif is the war one, instead of the peace one)
-        //if (document.getElementById('no-signal-gif').src.includes(warNoSignalUrl)) {
-        const filename = getFileNameWithoutExtension(shuffledVideoPlaylist[currentVideoTrackIndex]);
+        let filename = getFileNameWithoutExtension(shuffledVideoPlaylist[currentVideoTrackIndex]);
+
+        // If the filename is too long, decrease the font size of the info text
+        if (filename.length > 40) {
+            newScale = (1.5 - Math.floor((filename.length - 40) / 10) * 0.1);
+            document.getElementById("right-frame-filter-video-info").style.fontSize = `${newScale}vw`;
+        } else {
+            document.getElementById("right-frame-filter-video-info").style.fontSize = "1.5vw";
+        };
+
         // Final video info text
         rightFrameFilterVideoInfo.innerHTML = "STARDATE" + " " + getRandomNumber(2222, 99999) + "-" + getRandomNumber(1, 99) + " -0500<br>" + filename + " " + getRandomId();
 

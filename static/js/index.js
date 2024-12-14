@@ -46,6 +46,7 @@ function viewSession(session) {
     bannerContainer.style.backgroundColor = "rgba(0, 200, 0, 1)";
     bannerContainer.style.height = "10vh";
     bannerContainer.style.borderRadius = "25px 25px 0px 0px";
+    bannerContainer.style.position = "relative";
 
     bannerText = document.createElement('p');
     bannerText.textContent = `WINNER ${session.winner} (${winnerFaction})`
@@ -55,7 +56,7 @@ function viewSession(session) {
     bannerText.style.position = "absolute";
     bannerText.style.translate = "-50% -50%";
     bannerText.style.left = "50%";
-    bannerText.style.top = "-5%";
+    bannerText.style.top = "-30%";
     bannerText.style.color = "rgba(255, 255, 0, 1)";
     bannerContainer.appendChild(bannerText);
 
@@ -141,7 +142,6 @@ function viewSession(session) {
     playersContainer.style.display = "flex";
     playersContainer.style.flexDirection = "row";
     playersContainer.style.justifyContent = "space-around";
-    //playersContainer.style.gap = "5%";
 
     playersTitle = document.createElement('p');    
     playersTitle.textContent = "Players";
@@ -152,9 +152,22 @@ function viewSession(session) {
     playersTitle.style.marginLeft = "2%";
     sessionContainer.appendChild(playersTitle);
 
-    session.players.forEach(player => {
+    // Sort players by score
+    playersSorted = session.players.sort((a, b) => b.score - a.score);
+    playersSorted.forEach(player => {
         playerContainer = document.createElement('div');        
 
+        // Player Score
+        playerScore = document.createElement('p');
+        playerScore.textContent = player.score;
+        playerScore.style.fontSize = "2vw";
+        playerScore.style.fontFamily = "Oswald";
+        playerScore.style.textAlign = "center";
+        playerScore.style.marginTop = "-5%";
+        playerScore.style.marginBottom = "-5%";
+        playerContainer.appendChild(playerScore);
+
+        // Player Image
         playerImage = document.createElement('img');
         playerImage.src = player.avatar;
         playerImage.style.width = "5vw";
@@ -162,11 +175,14 @@ function viewSession(session) {
         playerImage.style.borderRadius = "50%";
         playerContainer.appendChild(playerImage);
 
+        // Player Name
         playerName = document.createElement('p');
         playerName.textContent = player.name;
         playerName.style.fontSize = "2vw";
         playerName.style.fontFamily = "Oswald";
         playerName.style.textAlign = "center";
+        playerName.style.marginTop = "-5%";
+        playerName.style.marginBottom = "-5%";
         playerContainer.appendChild(playerName);
 
         playersContainer.appendChild(playerContainer);

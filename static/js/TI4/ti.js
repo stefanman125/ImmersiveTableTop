@@ -18,9 +18,10 @@ function changeToPeace() {
     // Change "No signal" gif to another one
     document.getElementById("no-signal-gif").src = peaceNoSignalUrl;
 
-    // Change gamestate text
+    // Change gamestate text and position (since a different text length changes its position)
     document.getElementById("gamestate-text").textContent = "PEACE ESTABLISHED";
     document.getElementById("gamestate-text").style.color = "rgba(0, 255, 0, 1)";
+    document.getElementById("gamestate-text").style.right = "5%";
 
     // Change Background
     document.getElementById("background-video-source").src = backgroundSrcPeace;
@@ -57,9 +58,10 @@ function changeToWar() {
     // Change "No signal" gif to another one
     document.getElementById("no-signal-gif").src = warNoSignalUrl;
 
-    // Change gamestate text
+    // Change gamestate text and its position (since the text length is different, its position changes)
     document.getElementById("gamestate-text").textContent = "PEACE BROKEN";
     document.getElementById("gamestate-text").style.color = "rgba(255, 0, 0, 1)";
+    document.getElementById("gamestate-text").style.right = "11%";
 
     // Change Background
     document.getElementById("background-video-source").src = backgroundSrcWar;
@@ -92,21 +94,39 @@ function changeToWar() {
     // Music change is handled in the admin panel, since it requires creds to call the music override
 }
 
+function enterAgendaPhase() {
+    agendaPhaseOverlay = document.getElementById("agendaPhaseOverlay");
+    agendaPhaseOverlay.style.display = "block";
+}
+
+function exitAgendaPhase() {
+    agendaPhaseOverlay = document.getElementById("agendaPhaseOverlay");
+    agendaPhaseOverlay.style.display = "none";
+}
+
 async function checkGameState() {
     const intervalId = setInterval(async () => {
-        const gamedata = await loadJsonFile(gamedataFileUrl);
+        //console.log("Checking");
+        //const gamedata = await loadJsonFile(gamedataFileUrl);
         
-        // Check if gamedata exists and gameState is set to "War"
-        if (gamedata.gameState === currentGamestate) {
-            return;
-        } else if (gamedata && gamedata.gameState === "War") {
-            changeToWar();
-            currentGamestate = gamedata.gameState;
-            gameState = currentGamestate; // Global var in the HTML page
-        } else if (gamedata && gamedata.gameState === "Peace") { // Just in case that for whatever reason, the game goes back to being peaceful.
-            changeToPeace();
-            currentGamestate = gamedata.gameState;
-            gameState = currentGamestate;
+        // ONLY change gamestate if its different from the current game state
+        if (gamedata.gameState !== currentGamestate) {
+            if (gamedata && gamedata.gameState === "War") {
+                changeToWar();
+                currentGamestate = gamedata.gameState;
+                gameState = currentGamestate; // Global var in the HTML page
+            } else if (gamedata && gamedata.gameState === "Peace") { // Just in case that for whatever reason, the game goes back to being peaceful.
+                changeToPeace();
+                currentGamestate = gamedata.gameState;
+                gameState = currentGamestate;
+            }
+        } 
+
+        // Check if agenda phase is active
+        if (gamedata.agendaPhase === true) {
+            enterAgendaPhase();
+        } else if (gamedata.agendaPhase === false) {
+            exitAgendaPhase();
         }
     }, 5000); 
 }

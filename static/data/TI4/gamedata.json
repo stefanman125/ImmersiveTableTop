@@ -1,3 +1,4 @@
 {
-    "gameState": "Peace"
+    "gameState": "Peace",
+    "agendaPhase": false
 }

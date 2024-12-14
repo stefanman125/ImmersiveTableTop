@@ -112,7 +112,6 @@ async function displayObjectives() {
             playerCell.style.flexFlow = "row wrap";
             playerCell.style.width = "30%";
             playerCell.style.alignItems = "center";
-            playerCell.style.justifyContent = "center";
             playerCell.style.gap = "0.5vw";
 
             // Need to loop here again to see how many players have the objective
@@ -295,9 +294,9 @@ async function checkAgendas() {
 
 async function updateLeaderboard() {
     // Fetch up to date objectives, players file, and agendas
-    objectives = await fetchData('objectives.json');
-    players = await fetchData('players.json');
-    agendas = await fetchData('agendas.json')
+    //objectives = await fetchData('objectives.json');
+    //players = await fetchData('players.json');
+    //agendas = await fetchData('agendas.json')
 
     displayPlayers();
     displayObjectives();
@@ -318,9 +317,6 @@ async function updateLeaderboard() {
 }
 
 let isTablesAnimationRunning = false;
-let objectives = [];
-let players = [];
-let agendas = [];
 
 updateLeaderboard();
-setInterval(updateLeaderboard, 5000);
+setInterval(updateLeaderboard, 2000);

@@ -55,26 +55,17 @@
     </style>
 </head>
 <body>
-    <h1>Objectives & Agenda Management</h1>
+    <h1>Agenda Phase</h1>
 
-    <!-- Current Objectives Table -->
-    <div id="tableContainerObjectives"></div>
-    <button id="addObjectiveBtn">Add New Objective</button>
-    <button id="addRandomT1ObjectiveBtn">Add Random T1 Objective</button>
-    <button id="addRandomT2ObjectiveBtn">Add Random T2 Objective</button>
-    <div id="tableContainerAgendas"></div>
-    <button id="addAgendaBtn">Add New Agenda</button>
-    <button id="agendaPhaseOptionsBtn">Agenda Phase Options</button>
-    <button id="backToMenuBtn">Back To Menu</button>
+    <table id="playersTable">
+        <tbody>
 
-    <!-- Load players file -->
+        </tbody>
+    </table>
+
     <script>
-        const objectivesFileUrl = "{{ url_for('static', filename='data/TI4/objectives.json') }}";
         const agendasFileUrl = "{{ url_for('static', filename='data/TI4/agendas.json') }}";
-        const logUrl = "/ti/admin/log";
-        const UiFilesPath = "/static/UI/TI4/";
     </script>
-    <script src="{{ url_for('static', filename='js/TI4/objectives.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/logger.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/TI4/agenda-phase.js') }}"></script>
 </body>
 </html>

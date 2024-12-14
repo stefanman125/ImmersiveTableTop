@@ -306,3 +306,53 @@ td {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* Agenda Phase pane that appears and disappears*/ 
+#agendaPhaseOverlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none; /* Starts hidden and is controlled by ti.js */
+}
+
+/* A blur pane */
+#agendaPhaseBg {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+
+/* The main, green pane */
+#agendaPhasePane {
+    position: absolute;
+    background-color: rgba(75, 83, 32, 1);
+    width: 90%;
+    height: 90%;
+    z-index: 5;
+    translate: -50% -50%;
+    left: 50%;
+    top: 50%;
+    border-radius: 30px;
+}
+
+#agendaPhaseTitle {
+    position: absolute;
+    color: rgba(141, 145, 141, 1);
+    font-size: 4vw;
+    font-family: 'Nasalization', sans-serif;
+    font-style: italic;
+    translate: -50%;
+    left: 50%;
+    margin-top: 1%;
+}
+
+#agendaPhaseLinebreak {
+    position: absolute;
+    top: 13%;
+    width: 100%;
+    height: 0.3%;
+    background-color: rgba(141, 145, 141, 1);
+}

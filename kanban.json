@@ -5,8 +5,24 @@
             "title": "Bugs",
             "tasks": [
                 {
-                    "text": "fix resolution of the rest of the winner banner faction images (810x200)",
-                    "id": "cav1uhu6kpcb9dxwx5t8u5fa"
+                    "text": "double check players agenda phase options error checking (such as cant put some votes into for and some into against)",
+                    "id": "e1k49bxhfic9svfru8zye51i"
+                },
+                {
+                    "text": "remove directives from the \"Add New Agenda\" list? Since they are one-time effects",
+                    "id": "glfiy571djlio89qunwz00gs"
+                },
+                {
+                    "text": "Add Random New Disputed Agenda button shouldn't draw the same agenda again",
+                    "id": "e0ouw8jjdyw3ekd08o55s3fj"
+                },
+                {
+                    "text": "visualizer bars looks kinda blurry",
+                    "id": "r4r1vhn95mafcf0g3d1ziip4"
+                },
+                {
+                    "text": "When changing the Rider for a player in the Agenda Phase Options, letting the default option of \"None\" doesn't change the actual rider value",
+                    "id": "frqua7gtx4bxttisas7imk6c"
                 },
                 {
                     "text": "fix \"date played\" sorting in the index page",
@@ -23,10 +39,6 @@
                 {
                     "text": "crop the video a little more",
                     "id": "e5xvmamtgp7nznj0gfzf51gn"
-                },
-                {
-                    "text": "fix video text being too big",
-                    "id": "qkssfxacdfub77ly2kywzvvi"
                 },
                 {
                     "text": "admin players page not formatted correctly on mobile either",
@@ -48,6 +60,38 @@
             "title": "Features",
             "tasks": [
                 {
+                    "text": "add a list of active laws in the agenda phase screen in case of agenda that requires electing a law",
+                    "id": "rib8kmzflqyfgaa5bx42elyp"
+                },
+                {
+                    "text": "Consider adding a \"Prophecy of Kings Expansion\" checkbox somewhere in the settings, since it changes some elements of the game (such as removing some agendas)",
+                    "id": "n7x8rtwqomjc0fwttp252j4g"
+                },
+                {
+                    "text": "pass for and against Agenda buttons in the agenda phase options menu",
+                    "id": "af5xzbjd7jv3dd5ablbhcjr1"
+                },
+                {
+                    "text": "add a little tooltip that asks the user to go into fullscreen if they're not currently in fullscreen",
+                    "id": "w7xdncbfsuya3n8vt6tlobgs"
+                },
+                {
+                    "text": "agenda phase options button in the player menu which opens a modal that allows admins to change players: for, against, rider, speaker, and abstain",
+                    "id": "g1k6u9z5bbm0m9b16q82ycox"
+                },
+                {
+                    "text": "agenda phase screen\n\n",
+                    "id": "p9kirwniubm2lmchfuzl13yj"
+                },
+                {
+                    "text": "consider adding images of the games in the sessions screen, rather than just the name",
+                    "id": "orc8m9wb700fk4ge77czdrfl"
+                },
+                {
+                    "text": "add sliding peace/war scale to session screen",
+                    "id": "zz5fygpppvbyhufmgrq1qx7i"
+                },
+                {
                     "text": "add ability to change stats while in a sessions screen",
                     "id": "npyt2iji6fs8j2ky9fss1dz6"
                 },
@@ -56,7 +100,7 @@
                     "id": "hs2w3123awuae67ot1npwgws"
                 },
                 {
-                    "text": "add session button",
+                    "text": "\"add session\" button",
                     "id": "z2u4zg0do796jd8c0tcil1mw"
                 },
                 {
@@ -90,6 +134,10 @@
                 {
                     "text": "consider adding a functionality to the reset button that automatically logs the session to scoreboard/sessionss",
                     "id": "bo9g3y12ek8gwq4ykxcr5ly3"
+                },
+                {
+                    "text": "dominion session screen",
+                    "id": "gy0sevwkh2jzhvu0gxg2fozi"
                 }
             ],
             "id": "led41ud89iqf4sfwysilah86",
@@ -98,6 +146,18 @@
         {
             "title": "Optimization",
             "tasks": [
+                {
+                    "text": "put all file update functions into one file and function",
+                    "id": "xk3qyn28ciiqpczlmjvezrrt"
+                },
+                {
+                    "text": "buy domain, something like:\n* immersivetabletop.ca",
+                    "id": "mw7g4mvfqmzbh49wsb9yfabe"
+                },
+                {
+                    "text": "add URI references to individual sessions. For example, the following url can be used to visit a specific session: https://immersivetabletop.com/session#123",
+                    "id": "encpldv64owyxdkswc0j308f"
+                },
                 {
                     "text": "change the avatarFilesUrl in players.html from a static URL, to a dynamic Flask generated one (no idea how to approach this)",
                     "id": "xcjja0fxjaqt15py1auir2qs"
@@ -125,5 +185,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1733028944939
+    "timestamp": 1734198348486
 }
