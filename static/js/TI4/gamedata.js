@@ -72,6 +72,7 @@ async function changeGamestate() {
     if (areyousure) {
         postJson('/ti/admin/gamedata', { gameState: newGamestate, agendaPhase: gamedata.agendaPhase });
         alert(`Gamestate changed to ${newGamestate}`);
+        logAction(`gamedata changed to ${newGamestate} by `);
         initializeGameData();
         if (newGamestate === "War") {
             const musicJson = await fetchFile(musicFileUrl);
@@ -82,7 +83,6 @@ async function changeGamestate() {
                     break;
                 } // Put any song name here
             }
-            console.log(warTransitionSongId);
             postJson('/ti/admin/music', { override: warTransitionSongId }) 
         }
     } else {
@@ -96,6 +96,7 @@ async function changeAgendaPhase() {
         postJson('/ti/admin/gamedata', { gameState: gamedata.gameState, agendaPhase: newAgendaPhase });
         alert(`Agenda Phase changed to ${newAgendaPhase}`);
         initializeGameData();
+        logAction(`agenda phase changed to ${newAgendaPhase} by `);
     } else {
         alert("Agenda Phase unchanged.");
     }

@@ -289,7 +289,7 @@ function removeItem(mode, itemIndex) {
         logAction(`${mode} "${objective}" was removed by`) // Log the action for non-repudation
     } else if (mode === "Agenda") {
         const agenda = agendas[itemIndex];
-        agendas.splice(itemIndex, 1); // Remove Agenda
+        agendas.currentAgendas.splice(itemIndex, 1); // Remove Agenda
         updateTableRow("tableAgenda", itemIndex);
         logAction(`${mode} "${agenda}" was removed by`)
     }

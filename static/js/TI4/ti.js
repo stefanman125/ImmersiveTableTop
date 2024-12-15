@@ -106,7 +106,6 @@ function exitAgendaPhase() {
 
 async function checkGameState() {
     const intervalId = setInterval(async () => {
-        //console.log("Checking");
         //const gamedata = await loadJsonFile(gamedataFileUrl);
         
         // ONLY change gamestate if its different from the current game state
@@ -128,6 +127,19 @@ async function checkGameState() {
         } else if (gamedata.agendaPhase === false) {
             exitAgendaPhase();
         }
+
+        // Check if window is not in fullscreen and remind the user
+            const infoBox = document.getElementById("info-box");
+        if (!window.fullScreen) {
+            // Add the 'visible' class to make it slide into view
+            infoBox.classList.remove("hidden");
+            infoBox.classList.add("visible");
+            console.log("Show fullscreen alert");
+        } else {
+            infoBox.classList.remove("visible");
+            infoBox.classList.add("hidden");
+            console.log("Hide fullscreen alert");
+        };
     }, 5000); 
 }
 

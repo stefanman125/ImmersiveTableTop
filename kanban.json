@@ -5,6 +5,10 @@
             "title": "Bugs",
             "tasks": [
                 {
+                    "text": "logger showing the server as the IP used to perform action",
+                    "id": "rck6fli1r5ys427yrzls57mc"
+                },
+                {
                     "text": "double check players agenda phase options error checking (such as cant put some votes into for and some into against)",
                     "id": "e1k49bxhfic9svfru8zye51i"
                 },
@@ -185,5 +189,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1734198348486
+    "timestamp": 1734210870666
 }

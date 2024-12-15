@@ -1,4 +1,9 @@
 {
-    "currentDisputedAgenda": "",
+    "currentDisputedAgenda": {
+        "name": "Economic Equality",
+        "type": "Directive",
+        "elect": "-",
+        "description": "FOR : Each player returns all of their trade goods to the supply. Then, each player gains 5 trade goods.\nAGAINST : Each player returns all of their trade goods to the supply."
+    },
     "currentAgendas": []
 }
