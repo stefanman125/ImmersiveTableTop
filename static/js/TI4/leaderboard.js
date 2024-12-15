@@ -90,9 +90,6 @@ async function displayObjectives() {
         objectivesTable.style.display = "flex";
         objectivesTable.style.flexDirection = "column";
 
-        // Reverse the list of objectives shown so that the newer ones are at the top, just some flavor I thought of
-        objectives = objectives.slice().reverse();
-
         // Constants for scaling
         const baseSize = 6; // Base size in vw
         const minSize = 2.0;  // Minimum size in vw
@@ -145,7 +142,6 @@ async function displayObjectives() {
             const objectiveCell = document.createElement('td'); // Second column (objective)
             objectiveCell.style.display = "flex";
             objectiveCell.style.alignItems = "center";
-            //objectiveCell.style.justifyContent = "center";
             objectiveCell.style.width = "70%";
             objectiveCell.style.heigh = "100%";
 
@@ -163,16 +159,12 @@ async function displayObjectives() {
 
 async function displayAgendas() {
     try {
-
         // Clear existing rows
         const agendasTableBody = document.querySelector('#agendas-table tbody');
         agendasTableBody.innerHTML = '';
 
-        // Reverse the list of objectives shown so that the newer ones are at the top, just some flavor I thought of
-        //agendas = objectives.slice().reverse();
-
         // Loop through each agenda
-        agendas.forEach(agenda => {
+        agendas.currentAgendas.forEach(agenda => {
             const row = document.createElement('tr');
             const electCell = document.createElement('td'); // First column (empty)
 
@@ -225,7 +217,7 @@ async function tablesAnimation() {
         const objectivesDelay = 10000 + (objectives.length * 5000);
 
         // How long the agendas frame stays depends on how many agendas there are (in milliseconds)
-        const agendasDelay = 5000 + (agendas.length * 10000);
+        const agendasDelay = 5000 + (agendas.currentAgendas.length * 10000);
 
         // Slide objectives table away
         leftFrameObjectives.style.animation = 'slideLeft 5s ease-in-out';
@@ -275,7 +267,7 @@ async function checkAgendas() {
     const intervalId = setInterval(async () => {
         try {
             // Check if at least one agenda exists
-            if (agendas[0].name && !isTablesAnimationRunning) {
+            if (agendas.currentAgendas[0].name && !isTablesAnimationRunning) {
                 //console.log("Agenda found");
                 isTablesAnimationRunning = true;
                 displayAgendas();

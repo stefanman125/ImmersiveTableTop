@@ -93,18 +93,19 @@ let objectivesDataSO = [
     "You or a planet you control are elected by an agenda.",
 ]
 
-agendasData = [
-    {"name":"Anti-Intellectual Revolution", "type":"Law", "elect":"-", "description":"FOR : After a player researches a technology, they must destroy 1 of their non-fighter ships.\nAGAINST : At the start of the next strategy phase, each player chooses and exhausts 1 planet for each technology they own."},
+// Agendas List
+let agendasData = [
+    {"name":"Anti-Intellectual Revolution", "type":"Law", "elect":"", "For":"After a player researches a technology, they must destroy 1 of their non-fighter ships.", "Against": "At the start of the next strategy phase, each player chooses and exhausts 1 planet for each technology they own."},
     {"name":"Classified Document Leaks", "type":"Law", "elect":"Scored Secret Objective", "description":"When this agenda is revealed, if there are no scored secret objectives, discard this card and reveal another agenda from the top of the deck. The elected secret objective becomes a public objective; place it near the other public objectives in the common play area."},
     {"name":"Committee Formation", "type":"Law", "elect":"Player", "description":"The elected player gains this card. Before players vote on an agenda that requires a player to be elected, the owner of this card may discard this card to choose a player to be elected. Players do not vote on that agenda."},
-    {"name":"Conventions of War", "type":"Law", "elect":"-", "description":"FOR : Players cannot use BOMBARDMENT against units that are on cultural planets.\nAGAINST : Each player that voted \"Against\" discards all of their action cards."},
+    {"name":"Conventions of War", "type":"Law", "elect":"", "For":"Players cannot use BOMBARDMENT against units that are on cultural planets.", "Against": "Each player that voted \"Against\" discards all of their action cards."},
     //{"name":"Core Mining", "type":"Law", "elect":"Planet", "description": "Attach this card to the elected planet's card. Then, destroy 1 infantry on the planet.\nThe resource value of this planet is increased by 2."},
     //{"name":"Demilitarized Zone", "type":"Law", "elect":"Cultural Planet", "description": "Attach this card to the elected planet's card. Then, destroy all units on that planet.\nPlayer's units cannot land, be produced, or be placed on this planet."},
     {"name":"Enforced Travel Ban", "type":"Law", "elect":"Cultural Planet", "description": "FOR : Alpha and beta wormholes have no effect during movement.\nAGAINST : Destroy each PDS in or adjacent to a system that contains a wormhole."},
-    {"name":"Executive Sanctions", "type":"Law", "elect":"-", "description": "FOR : Each player can have a maximum of 3 action cards in their hand.\nAGAINST : Each player discards 1 random action card from their hand."},
-    {"name":"Fleet Regulations", "type":"Law", "elect":"-", "description": "FOR : Each player cannot have more than 4 tokens in their fleet pool.\nAGAINST : Each player places 1 command token from their reinforcements in their fleet pool."},
+    {"name":"Executive Sanctions", "type":"Law", "elect":"", "For": "Each player can have a maximum of 3 action cards in their hand.", "Against": "Each player discards 1 random action card from their hand."},
+    {"name":"Fleet Regulations", "type":"Law", "elect":"", "For": "Each player cannot have more than 4 tokens in their fleet pool.", "Against": "Each player places 1 command token from their reinforcements in their fleet pool."},
     //{"name":"Holy Planet of Ixth", "type":"Law", "elect":"Cultural Planet", "description": "Attach this card to the elected planet's card. The planet's owner gains 1 victory point. Units on this planet cannot use PRODUCTION. When a player gains control of this planet, they gain 1 victory point. When a player loses control of this planet, they lose 1 victory point."},
-    {"name":"Homeland Defense Act", "type":"Law", "elect":"", "description": "FOR : Each player can have any number of PDS units on planets they control.\nAGAINST : Each player destroys 1 of their PDS unit."},
+    {"name":"Homeland Defense Act", "type":"Law", "elect":"", "For": "Each player can have any number of PDS units on planets they control.", "Against": "Each player destroys 1 of their PDS unit."},
     {"name":"Imperial Arbiter", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nAt the end of the strategy phase, the owner of this card may discard this card to swap 1 of their strategy cards with 1 of another player's strategy cards."},
     {"name":"Minister of Commerce", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nAfter the owner of this card replenishes commodities, they gain 1 trade good for each player that is their neighbor."},
     {"name":"Minister of Exploration", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nWhen the owner of this card gains control of a planet, they gain 1 trade good."},
@@ -114,8 +115,8 @@ agendasData = [
     {"name":"Minister of Sciences", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nWhen the owner of this card resolves the primary or secondary ability of the \"Technology\" strategy card, they do not need to spend resources to research technology."},
     {"name":"Minister of War", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nThe owner of this card may discard this card after performing an action to remove 1 of their command counters from the game board and return it to their reinforcements; then they may perform 1 additional action."},
     {"name":"Prophecy of Ixth", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nThe owner of this card applies +1 to the result of their fighter's combat rolls. When the owner of this card uses PRODUCTION, they discard this card unless they produce 2 or more fighters."},
-    {"name":"Publicize Weapon Schematics", "type":"Law", "elect":"-", "description": "FOR : If any player owns a war sun technology, all players may ignore all prerequisites on war sun technologies. All war suns lose SUSTAIN DAMAGE.\nAGAINST : Each player that owns a war sun technology discards all of their action cards."},
-    {"name":"Regulated Conscription", "type":"Law", "elect":"-", "description": "FOR : When a player produces units, they produce only 1 fighter and infantry for its cost instead of 2.\nAGAINST : No effect."},
+    {"name":"Publicize Weapon Schematics", "type":"Law", "elect":"", "For": "If any player owns a war sun technology, all players may ignore all prerequisites on war sun technologies. All war suns lose SUSTAIN DAMAGE.", "Against": "Each player that owns a war sun technology discards all of their action cards."},
+    {"name":"Regulated Conscription", "type":"Law", "elect":"", "For": "When a player produces units, they produce only 1 fighter and infantry for its cost instead of 2.", "Against": "No effect."},
     //{"name":"Representative Government (TI4)", "type":"Law", "elect":"-", "description": "FOR : Players cannot exhaust planets to cast votes during the agenda phase. Each player may cast 1 vote on each agenda instead.\nAGAINST : At the start of the next strategy phase, each player that voted \"Against\" exhausts all of their cultural planets."},
     //{"name":"Research Team: Biotic", "type":"Law", "elect":"Industrial Planet", "description": "Attach this card to the elected planet's card.\nWhen the owner of this planet researches technology, they may exhaust this card to ignore 1 green prerequisite."},
     //{"name":"Research Team: Cybernetic ", "type":"Law", "elect":"Industrial Planet", "description": "Attach this card to the elected planet's card.\nWhen the owner of this planet researches technology, they may exhaust this card to ignore 1 yellow prerequisite."},
@@ -123,41 +124,43 @@ agendasData = [
     //{"name":"Research Team: Warfare", "type":"Law", "elect":"Hazardous Planet", "description": "Attach this card to the elected planet's card.\nWhen the owner of this planet researches technology, they may exhaust this card to ignore 1 red prerequisite."},
     //{"name":"Senate Sanctuary", "type":"Law", "elect":"Planet", "description": "Attach this card to the elected planet's card.\nThe influence value of this planet is increased by 2."},
     //{"name":"Shard of the Throne", "type":"Law", "elect":"Player", "description": "The elected player gains this card and 1 victory point.\nA player gains this card and 1 victory point when they win a combat against the owner of this card. Then, the previous owner of this card loses 1 victory point."},
-    {"name":"Shared Research", "type":"Law", "elect":"-", "description": "FOR : Each player's units can move through nebulae.\nAGAINST : Each player places a command token from their reinforcements in their home system, if able."},
+    {"name":"Shared Research", "type":"Law", "elect":"", "For": "Each player's units can move through nebulae.", "Against": "Each player places a command token from their reinforcements in their home system, if able."},
     //{"name":"Terraforming Initiative", "type":"Law", "elect":"Hazardous Planet", "description": "Attach this card to the elected planet's card.\nThe resource and influence values of this planet are increased by 1."},
     //{"name":"The Crown of Emphidia", "type":"Law", "elect":"Player", "description": "The elected player gains this card and 1 victory point.\nA player gains this card and 1 victory point after they gain control of a planet in the home system of this card's owner. Then, the previous owner of this card loses 1 victory point."},
     //{"name":"The Crown of Thalnos", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nDuring each combat round, the owner of this card may reroll any number of dice; they must destroy each of their units that did not produce a hit with its reroll."},
-    {"name":"Wormhole Reconstruction", "type":"Law", "elect":"-", "description": "FOR : All systems that contain either an alpha or beta wormhole are adjacent to each other.\nAGAINST : Each player places a command token from their reinforcements in each system that contains a wormhole and 1 or more of their ships."},
-    {"name":"Articles of War", "type":"Law", "elect":"", "description": "FOR : All mechs lose their printed abilities except for SUSTAIN DAMAGE. AGAINST : Each player that voted \"For\" gains 3 trade goods."},
-    {"name":"Checks and Balances", "type":"Law", "elect":"", "description": "FOR : When a player chooses a strategy card during the strategy phase, they give that strategy card to another player that does not have 1 (or a player that does not have 2 in a three- or four-player game), if able.\nAGAINST : Each player readies only 3 of their planets at the end of this agenda phase."},
-    {"name":"Nexus Sovereignty", "type":"Law", "elect":"", "description": "FOR : Alpha and beta wormholes in the wormhole nexus have no effect during movement.\nAGAINST : Place a gamma wormhole token in the Mecatol Rex system."},
+    {"name":"Wormhole Reconstruction", "type":"Law", "elect":"", "For": "All systems that contain either an alpha or beta wormhole are adjacent to each other.", "Against": "Each player places a command token from their reinforcements in each system that contains a wormhole and 1 or more of their ships."},
+    {"name":"Articles of War", "type":"Law", "elect":"", "For": "All mechs lose their printed abilities except for SUSTAIN DAMAGE.", "Against": "Each player that voted \"For\" gains 3 trade goods."},
+    {"name":"Checks and Balances", "type":"Law", "elect":"", "For": "When a player chooses a strategy card during the strategy phase, they give that strategy card to another player that does not have 1 (or a player that does not have 2 in a three- or four-player game), if able.", "Against": "Each player readies only 3 of their planets at the end of this agenda phase."},
+    {"name":"Nexus Sovereignty", "type":"Law", "elect":"", "For": "Alpha and beta wormholes in the wormhole nexus have no effect during movement.", "Against": "Place a gamma wormhole token in the Mecatol Rex system."},
     {"name":"Political Censure", "type":"Law", "elect":"Player", "description": "The elected player gains this card and 1 victory point.\nThe elected player cannot play action cards.\nIf the owner of this card loses this card, they lose 1 victory point."},
-    {"name":"Representative Government", "type":"Law", "elect":"", "description": "FOR : Players cannot exhaust planets to cast votes during the agenda phase; each player may cast 1 vote on each agenda instead. Players cannot cast additional votes.\nAGAINST : At the start of the next strategy phase, each player that voted \"Against\" exhausts all of their cultural planets."},
+    {"name":"Representative Government", "type":"Law", "elect":"", "For": "Players cannot exhaust planets to cast votes during the agenda phase; each player may cast 1 vote on each agenda instead. Players cannot cast additional votes.", "Against": "At the start of the next strategy phase, each player that voted \"Against\" exhausts all of their cultural planets."},
     {"name":"Search Warrant", "type":"Law", "elect":"Player", "description": "The elected player gains this card and draws 2 secret objectives.\nThe owner of this card plays with their secret objectives revealed."},
     {"name":"Archived Secret", "type":"Directive", "elect":"Player", "description": "Elected player draws 1 secret objective."},
-    {"name":"Arms Reduction", "type":"Directive", "elect":"-", "description": "FOR : Each player destroys all but 2 of their dreadnaughts and all but 4 of their cruisers.\nAGAINST : At the start of the next strategy phase, each player exhausts each of their planets that have a technology specialty."},
+    {"name":"Arms Reduction", "type":"Directive", "elect":"", "For": "Each player destroys all but 2 of their dreadnaughts and all but 4 of their cruisers.", "Against": "At the start of the next strategy phase, each player exhausts each of their planets that have a technology specialty."},
     {"name":"Colonial Redistribution", "type":"Directive", "elect":"Non-Home Planet Other Than Mecatol Rex", "description": "Destroy each unit on the elected planet. Then, the player who controls that planet chooses 1 player with the fewest victory points; that player may place 1 infantry from their reinforcements on the elected planet."},
     {"name":"Compensated Disarmament", "type":"Directive", "elect":"Planet", "description": "Destroy each ground force on the elected planet; for each unit that was destroyed, the player who controls that planet gains 1 trade good."},
-    {"name":"Economic Equality", "type":"Directive", "elect":"-", "description": "FOR : Each player returns all of their trade goods to the supply. Then, each player gains 5 trade goods.\nAGAINST : Each player returns all of their trade goods to the supply."},
-    {"name":"Incentive Program", "type":"Directive", "elect":"-", "description": "FOR : Draw and reveal 1 stage I public objective from the deck and place it near the public objectives.\nAGAINST : Draw and reveal 1 stage II public objective from the deck and place it near the public objectives."},
-    {"name":"Ixthian Artifact", "type":"Directive", "elect":"-", "description": "FOR : The speaker rolls 1 die. If the result is 6-10, each player may research 2 technologies. If the result is 1-5, destroy all units in Mecatol Rex's system, and each player with units in systems adjacent to Mecatol Rex's system destroys 3 of their units in each of those systems.\nAGAINST : No effect."},
+    {"name":"Economic Equality", "type":"Directive", "elect":"", "For": "Each player returns all of their trade goods to the supply. Then, each player gains 5 trade goods.", "Against": "Each player returns all of their trade goods to the supply."},
+    {"name":"Incentive Program", "type":"Directive", "elect":"", "For": "Draw and reveal 1 stage I public objective from the deck and place it near the public objectives.", "Against": "Draw and reveal 1 stage II public objective from the deck and place it near the public objectives."},
+    {"name":"Ixthian Artifact", "type":"Directive", "elect":"", "For": "The speaker rolls 1 die. If the result is 6-10, each player may research 2 technologies. If the result is 1-5, destroy all units in Mecatol Rex's system, and each player with units in systems adjacent to Mecatol Rex's system destroys 3 of their units in each of those systems.", "Against": "No effect."},
     {"name":"Judicial Abolishment", "type":"Directive", "elect":"Law", "description": "When this agenda is revealed, if there are no laws in play, discard this card and reveal another agenda from the top of the deck.\nDiscard the elected law from play."},
     {"name":"Miscount Disclosed", "type":"Directive", "elect":"Law", "description": "When this agenda is revealed, if there are no laws in play, discard this card and reveal another agenda from the top of the deck.\nVote on the elected law as if it were just revealed from the top of the deck."},
-    {"name":"Mutiny", "type":"Directive", "elect":"-", "description": "FOR : Each player who voted \"For\" gains 1 victory point.\nAGAINST : Each player who voted \"For\" loses 1 victory point."},
-    {"name":"New Constitution", "type":"Directive", "elect":"-", "description": "When this agenda is revealed, if there are no laws in play, discard this card and reveal another agenda from the top of the deck.\nFOR : Discard all laws in play. At the start of the next strategy phase, each player exhausts each planet in their home system.\nAGAINST : No effect."},
+    {"name":"Mutiny", "type":"Directive", "elect":"", "For": "Each player who voted \"For\" gains 1 victory point.", "Against": "Each player who voted \"For\" loses 1 victory point."},
+    {"name":"New Constitution", "type":"Directive", "elect":"", "For": "When this agenda is revealed, if there are no laws in play, discard this card and reveal another agenda from the top of the deck. Discard all laws in play. At the start of the next strategy phase, each player exhausts each planet in their home system.", "Against": "No effect."},
     {"name":"Public Execution", "type":"Directive", "elect":"Player", "description": "The elected player discards all of their action cards. If they have the speaker token, they give it to the player on their left. The elected player cannot vote on any agendas during this agenda phase."},
-    {"name":"Seed of an Empire", "type":"Directive", "elect":"-", "description": "FOR : The player with most victory points gains 1 victory point.\nAGAINST : The player with the fewest victory points gains 1 victory point."},
-    {"name":"Swords to Plowshares", "type":"Directive", "elect":"-", "description": "FOR : Each player destroys half of their infantry on each planet they control, rounded up. Then, each player gains trade goods equal to the number of their infantry that were destroyed.\nAGAINST : Each player places 1 infantry from their reinforcements on each planet they control."},
-    {"name":"Unconventional Measures", "type":"Directive", "elect":"-", "description": "FOR : Each player that voted \"For\" draws 2 action cards.\nAGAINST : Each player that voted \"For\" discards all of their action cards."},
-    {"name":"Wormhole Research", "type":"Directive", "elect":"-", "description": "FOR : Each player who has 1 or more ships in a system that contains a wormhole may research 1 technology. Then, destroy all ships in systems that contain an alpha or beta wormhole.\nAGAINST : Each player that voted \"Against\" removes 1 command token from their command sheet and returns it to their reinforcements."},
+    {"name":"Seed of an Empire", "type":"Directive", "elect":"", "For": "The player with most victory points gains 1 victory point.", "Against": "The player with the fewest victory points gains 1 victory point."},
+    {"name":"Swords to Plowshares", "type":"Directive", "elect":"", "For": "Each player destroys half of their infantry on each planet they control, rounded up. Then, each player gains trade goods equal to the number of their infantry that were destroyed.", "Against": "Each player places 1 infantry from their reinforcements on each planet they control."},
+    {"name":"Unconventional Measures", "type":"Directive", "elect":"", "For": "Each player that voted \"For\" draws 2 action cards.", "Against": "Each player that voted \"For\" discards all of their action cards."},
+    {"name":"Wormhole Research", "type":"Directive", "elect":"", "For": "Each player who has 1 or more ships in a system that contains a wormhole may research 1 technology. Then, destroy all ships in systems that contain an alpha or beta wormhole.", "Against": "Each player that voted \"Against\" removes 1 command token from their command sheet and returns it to their reinforcements."},
     {"name":"Armed Forces Standardization", "type":"Directive", "elect":"Player", "description": "The elected player places command tokens from their reinforcements so that they have 3 tokens in their tactic pool, 3 tokens in their fleet pool and 2 tokens in their strategy pool. They return any excess tokens to their reinforcements."},
-    {"name":"Clandestine Operations", "type":"Directive", "elect":"", "description": "FOR : Each player removes 2 command tokens from their command sheet and returns those tokens to their reinforcements.\nAGAINST : Each player removes 1 command token from their fleet pool and returns that token to their reinforcements."},
+    {"name":"Clandestine Operations", "type":"Directive", "elect":"", "For": "Each player removes 2 command tokens from their command sheet and returns those tokens to their reinforcements.", "Against": "Each player removes 1 command token from their fleet pool and returns that token to their reinforcements."},
     {"name":"Covert Legislation", "type":"Directive", "elect":"", "description": "When this agenda is revealed, the speaker draws the next card in the agenda deck but does not reveal it to the other players. Instead, the speaker reads the eligible outcomes aloud (for, against, elect player, etc.); the other players vote for these outcomes as if they were outcomes of this agenda, without knowing their effects."},
     {"name":"Galactic Crisis Pact", "type":"Directive", "elect":"Strategy Card", "description": "Each player may perform the secondary ability of the elected strategy card without spending a command token; command tokens placed by the ability are placed from a player's reinforcements instead."},
     {"name":"Minister of Antiques", "type":"Directive", "elect":"Player", "description": "The elected player gains 1 relic."},
-    {"name":"Rearmament Agreement", "type":"Directive", "elect":"", "description": "FOR : Each player places 1 mech from their reinforcements on a planet they control in their home system.\nAGAINST : Each player replaces each of their mechs with 1 infantry from their reinforcements."},
+    {"name":"Rearmament Agreement", "type":"Directive", "elect":"", "For": "Each player places 1 mech from their reinforcements on a planet they control in their home system.", "Against": "Each player replaces each of their mechs with 1 infantry from their reinforcements."},
     {"name":"Research Grant Reallocation", "type":"Directive", "elect":"Player", "description": "The elected player gains any 1 technology of their choice. Then, for each prerequisite on that technology, they remove 1 token from their fleet pool and return it to their reinforcements."},
 ]
+
+let agendaDeck = [];
 
 // Load objectives from JSON file
 async function loadDataFromFile(type, fileUrl) {
@@ -339,7 +342,7 @@ function addNewObjective(newObjectiveName) {
     if (objectives.includes(newObjectiveName)) {
         alert("Objective is already added.")
     } else {
-        objectives.push(newObjectiveName);
+        objectives.unshift(newObjectiveName);
         createTable("Objective"); // Refresh the table
         saveDataToJson("Objective"); // Save updated data to JSON file
         logAction(`Objective "${newObjectiveName}" was added by`) // Log the action for non-repudation
@@ -617,7 +620,7 @@ function addNewObjectiveModal() {
     
 }
 
-function addNewAgendaModal() {
+function addNewAgendaModal(type) {
 
     // Create the modal background
     const modalOverlay = document.createElement("div");
@@ -762,8 +765,13 @@ function addNewAgendaModal() {
       buttonLaw.style.padding = "5px 10px";
       buttonLaw.style.cursor = "pointer";
       buttonLaw.onclick = () => {
-            addNewAgenda(law);
-            document.body.removeChild(modalOverlay)
+            if (type === "permanent") {
+                addNewAgenda(law);
+                document.body.removeChild(modalOverlay)
+            } else if (type === "disputed") {
+                agendas.currentDisputedAgenda = law;
+                document.body.removeChild(modalOverlay)
+            }
       };
 
       addBtnCellLaw.appendChild(buttonLaw);
@@ -852,8 +860,13 @@ function addNewAgendaModal() {
       buttonDir.style.padding = "5px 10px";
       buttonDir.style.cursor = "pointer";
       buttonDir.onclick = () => {
-            addNewAgenda(directive);
-            document.body.removeChild(modalOverlay)
+            if (type === "permanent") {
+                addNewAgenda(directive);
+                document.body.removeChild(modalOverlay)
+            } else if (type === "disputed") {
+                agendas.currentDisputedAgenda = directive;
+                document.body.removeChild(modalOverlay)
+            }
       };
 
       addBtnCellDir.appendChild(buttonDir);
@@ -924,7 +937,6 @@ function addRandomObjective(type) {
 }
 
 function agendaPhaseOptions() {
-
     // Create the modal background
     const modalOverlay = document.createElement("div");
     modalOverlay.style.position = "fixed";
@@ -979,13 +991,22 @@ function agendaPhaseOptions() {
     modalContent.appendChild(disputedAgenda);
 
     // Generate Random New Disputed Agenda Button
-    const changeDisputedAgendaButton = document.createElement("button");
-    changeDisputedAgendaButton.textContent = "Change Disputed Agenda";
-    changeDisputedAgendaButton.style.width = "100%";
-    changeDisputedAgendaButton.onclick = () => {
+    const changeDisputedAgendaRandomButton = document.createElement("button");
+    changeDisputedAgendaRandomButton.textContent = "Change Disputed Agenda Randomly";
+    changeDisputedAgendaRandomButton.style.width = "100%";
+    changeDisputedAgendaRandomButton.onclick = () => {
         randomAgenda = agendasData[Math.floor(Math.random() * agendasData.length)];
         changeDisputedAgenda(randomAgenda);
         disputedAgenda.textContent = `${agendas.currentDisputedAgenda.name}: ${agendas.currentDisputedAgenda.description}`;
+    };
+    modalContent.appendChild(changeDisputedAgendaRandomButton);
+
+    // Change Disputed Agenda to specific Agenda Button
+    const changeDisputedAgendaButton = document.createElement("button");
+    changeDisputedAgendaButton.textContent = "Change Disputed Agenda To Specific Agenda";
+    changeDisputedAgendaButton.style.width = "100%";
+    changeDisputedAgendaButton.onclick = () => {
+        addNewAgendaModal("disputed")
     };
     modalContent.appendChild(changeDisputedAgendaButton);
 
@@ -1053,7 +1074,9 @@ document.getElementById('addRandomT2ObjectiveBtn').addEventListener('click', () 
 document.getElementById('agendaPhaseOptionsBtn').addEventListener('click', agendaPhaseOptions);
 
 // Add event listener for "Add Agenda" button
-document.getElementById('addAgendaBtn').addEventListener('click', addNewAgendaModal);
+document.getElementById('addAgendaBtn').addEventListener('click', () => {
+    addNewAgendaModal("permanent")
+});
 
 // Add event listener for "Back to Menu" button
 document.getElementById('backToMenuBtn').addEventListener('click', function() {
