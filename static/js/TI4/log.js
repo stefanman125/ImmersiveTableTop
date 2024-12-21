@@ -11,16 +11,18 @@ async function fetchAndDisplayLog() {
         document.getElementById("logContainer").textContent = reversedText;
 
         // Color important words
-        colorWord("reset", "red")
-        colorWord("score changed", "yellow")
-        colorWord("objective", "green")
-        colorWord("secret objective", "green")
-        colorWord("removed", "red")
-        colorWord("added", "green")
-        colorWord("renamed", "yellow")
-        colorWord("renamed", "yellow")
-        colorWord("overridden", "yellow")
-        colorWord("rebuild", "yellow")
+        colorWord("reset", "red");
+        colorWord("score changed", "yellow");
+        colorWord("objective", "green");
+        colorWord("secret objective", "green");
+        colorWord("removed", "red");
+        colorWord("added", "green");
+        colorWord("renamed", "yellow");
+        colorWord("renamed", "yellow");
+        colorWord("overridden", "yellow");
+        colorWord("rebuild", "yellow");
+        colorWord("agenda", "green");
+        colorWord("changed", "yellow");
     } catch (error) {
         console.error("Error fetching log file:", error);
         document.getElementById("logContainer").textContent = "Unable to load log file.";

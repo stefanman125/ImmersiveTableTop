@@ -1139,10 +1139,15 @@ function playPolitics() {
       }
     });
 
-    // Create the modal content
+    // Create the title
     const title = document.createElement("h1");
     title.textContent = "Politics Primary Ability";
     modalContent.appendChild(title);
+
+    // Little tooltip on changing the order by dragging
+    const tooltip = document.createElement("h3");
+    tooltip.textContent = "Change the order of the cards by dragging them up and down";
+    modalContent.appendChild(tooltip);
 
     // Two Agendas table
     const table = document.createElement("table");
@@ -1264,7 +1269,6 @@ function playPolitics() {
             let secondAgenda = agendas.agendaDeck[1];
             let firstAgendaNewPos; 
 
-            console.log(table.rows[0]);
             // Get the position of the deck relative to the re-ordered agenda cards
             for (let i = 0; i < table.rows.length+1; i++) {
                 if (table.rows[i].innerHTML.includes("Deck")) {
@@ -1312,6 +1316,7 @@ function playPolitics() {
             
             document.body.removeChild(modalOverlay);
             saveDataToJson("Agenda");
+            logAction("Agenda deck order was changed by");
         }
     } 
     modalContent.appendChild(submitButton);

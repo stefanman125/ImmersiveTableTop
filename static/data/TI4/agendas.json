@@ -15,26 +15,6 @@
             "against": "Each player that voted \"Against\" discards all of their action cards."
         },
         {
-            "name": "Arms Reduction",
-            "type": "Directive",
-            "elect": "",
-            "for": "Each player destroys all but 2 of their dreadnaughts and all but 4 of their cruisers.",
-            "against": "At the start of the next strategy phase, each player exhausts each of their planets that have a technology specialty."
-        },
-        {
-            "name": "Public Execution",
-            "type": "Directive",
-            "elect": "Player",
-            "description": "The elected player discards all of their action cards. If they have the speaker token, they give it to the player on their left. The elected player cannot vote on any agendas during this agenda phase."
-        },
-        {
-            "name": "Swords to Plowshares",
-            "type": "Directive",
-            "elect": "",
-            "for": "Each player destroys half of their infantry on each planet they control, rounded up. Then, each player gains trade goods equal to the number of their infantry that were destroyed.",
-            "against": "Each player places 1 infantry from their reinforcements on each planet they control."
-        },
-        {
             "name": "New Constitution",
             "type": "Directive",
             "elect": "",
@@ -276,6 +256,26 @@
             "elect": "",
             "for": "If any player owns a war sun technology, all players may ignore all prerequisites on war sun technologies. All war suns lose SUSTAIN DAMAGE.",
             "against": "Each player that owns a war sun technology discards all of their action cards."
+        },
+        {
+            "name": "Arms Reduction",
+            "type": "Directive",
+            "elect": "",
+            "for": "Each player destroys all but 2 of their dreadnaughts and all but 4 of their cruisers.",
+            "against": "At the start of the next strategy phase, each player exhausts each of their planets that have a technology specialty."
+        },
+        {
+            "name": "Public Execution",
+            "type": "Directive",
+            "elect": "Player",
+            "description": "The elected player discards all of their action cards. If they have the speaker token, they give it to the player on their left. The elected player cannot vote on any agendas during this agenda phase."
+        },
+        {
+            "name": "Swords to Plowshares",
+            "type": "Directive",
+            "elect": "",
+            "for": "Each player destroys half of their infantry on each planet they control, rounded up. Then, each player gains trade goods equal to the number of their infantry that were destroyed.",
+            "against": "Each player places 1 infantry from their reinforcements on each planet they control."
         }
     ]
 }
