@@ -1,0 +1,39 @@
+[
+  {
+    "gameName": "ti4",
+    "winner": "Stefan",
+    "avatar": "/static/UI/TI4/sol.png",
+    "players": [
+      {
+        "name": "Stefan",
+        "avatar": "/static/UI/TI4/sol.png",
+        "score": 11
+      },
+      {
+        "name": "Max",
+        "avatar": "/static/UI/TI4/xxcha.png",
+        "score": 10
+      },
+      {
+        "name": "Gresha",
+        "avatar": "/static/UI/TI4/arborec.png",
+        "score": 10
+      },
+      {
+        "name": "Justin",
+        "avatar": "/static/UI/TI4/sardakk.png",
+        "score": 9
+      },
+      {
+        "name": "Adam",
+        "avatar": "/static/UI/TI4/nomad.png",
+        "score": 9
+      }
+    ],
+    "playtime": 32400,
+    "date": 1734307200,
+    "gameState": "war",
+    "violence": 9,
+    "notes": "Justin became the aggressor by attacking Adam, and then Stefan on the second round.\nAdam's fighter got like 3 hits on Max's cruisers and Dreadnoughts"
+  }
+]

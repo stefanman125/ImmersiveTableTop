@@ -16,12 +16,20 @@ async function updateAgendaPhaseBody() {
     newAgendaBox.style.backgroundColor = "rgba(150, 150, 150, 1)";
 
     const newAgendaTitle = document.createElement("h2");
-    newAgendaTitle.textContent = `${agendas.currentDisputedAgenda.name} (${agendas.currentDisputedAgenda.type})`;
+    if (agendas.currentDisputedAgenda !== "") {
+        newAgendaTitle.textContent = `${agendas.currentDisputedAgenda.name} (${agendas.currentDisputedAgenda.type})`;
+    } else {
+        newAgendaTitle.textContent = "No currently disputed Agenda.";
+    }
     newAgendaTitle.style.fontSize = "2vw";
     newAgendaBox.appendChild(newAgendaTitle);
 
     const newAgendaDescription = document.createElement("p");
-    newAgendaDescription.textContent = agendas.currentDisputedAgenda.description;
+    if (agendas.currentDisputedAgenda !== "") {
+        newAgendaDescription.textContent = agendas.currentDisputedAgenda.description;
+    } else {
+        newAgendaDescription.textContent = "";
+    }
     newAgendaDescription.style.fontSize = "1.2vw";
     newAgendaBox.appendChild(newAgendaDescription);
 

@@ -164,7 +164,7 @@ async function displayAgendas() {
         agendasTableBody.innerHTML = '';
 
         // Loop through each agenda
-        agendas.currentAgendas.forEach(agenda => {
+        agendas.activeAgendas.forEach(agenda => {
             const row = document.createElement('tr');
             const electCell = document.createElement('td'); // First column (empty)
 
@@ -217,7 +217,7 @@ async function tablesAnimation() {
         const objectivesDelay = 10000 + (objectives.length * 5000);
 
         // How long the agendas frame stays depends on how many agendas there are (in milliseconds)
-        const agendasDelay = 5000 + (agendas.currentAgendas.length * 10000);
+        const agendasDelay = 5000 + (agendas.activeAgendas.length * 10000);
 
         // Slide objectives table away
         leftFrameObjectives.style.animation = 'slideLeft 5s ease-in-out';
@@ -267,7 +267,7 @@ async function checkAgendas() {
     const intervalId = setInterval(async () => {
         try {
             // Check if at least one agenda exists
-            if (agendas.currentAgendas[0].name && !isTablesAnimationRunning) {
+            if (agendas.activeAgendas[0].name && !isTablesAnimationRunning) {
                 //console.log("Agenda found");
                 isTablesAnimationRunning = true;
                 displayAgendas();

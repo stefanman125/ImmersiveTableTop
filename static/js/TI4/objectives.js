@@ -95,17 +95,17 @@ let objectivesDataSO = [
 
 // Agendas List
 let agendasData = [
-    {"name":"Anti-Intellectual Revolution", "type":"Law", "elect":"", "For":"After a player researches a technology, they must destroy 1 of their non-fighter ships.", "Against": "At the start of the next strategy phase, each player chooses and exhausts 1 planet for each technology they own."},
+    {"name":"Anti-Intellectual Revolution", "type":"Law", "elect":"", "for":"After a player researches a technology, they must destroy 1 of their non-fighter ships.", "against": "At the start of the next strategy phase, each player chooses and exhausts 1 planet for each technology they own."},
     {"name":"Classified Document Leaks", "type":"Law", "elect":"Scored Secret Objective", "description":"When this agenda is revealed, if there are no scored secret objectives, discard this card and reveal another agenda from the top of the deck. The elected secret objective becomes a public objective; place it near the other public objectives in the common play area."},
     {"name":"Committee Formation", "type":"Law", "elect":"Player", "description":"The elected player gains this card. Before players vote on an agenda that requires a player to be elected, the owner of this card may discard this card to choose a player to be elected. Players do not vote on that agenda."},
-    {"name":"Conventions of War", "type":"Law", "elect":"", "For":"Players cannot use BOMBARDMENT against units that are on cultural planets.", "Against": "Each player that voted \"Against\" discards all of their action cards."},
+    {"name":"Conventions of War", "type":"Law", "elect":"", "for":"Players cannot use BOMBARDMENT against units that are on cultural planets.", "against": "Each player that voted \"Against\" discards all of their action cards."},
     //{"name":"Core Mining", "type":"Law", "elect":"Planet", "description": "Attach this card to the elected planet's card. Then, destroy 1 infantry on the planet.\nThe resource value of this planet is increased by 2."},
     //{"name":"Demilitarized Zone", "type":"Law", "elect":"Cultural Planet", "description": "Attach this card to the elected planet's card. Then, destroy all units on that planet.\nPlayer's units cannot land, be produced, or be placed on this planet."},
     {"name":"Enforced Travel Ban", "type":"Law", "elect":"Cultural Planet", "description": "FOR : Alpha and beta wormholes have no effect during movement.\nAGAINST : Destroy each PDS in or adjacent to a system that contains a wormhole."},
-    {"name":"Executive Sanctions", "type":"Law", "elect":"", "For": "Each player can have a maximum of 3 action cards in their hand.", "Against": "Each player discards 1 random action card from their hand."},
-    {"name":"Fleet Regulations", "type":"Law", "elect":"", "For": "Each player cannot have more than 4 tokens in their fleet pool.", "Against": "Each player places 1 command token from their reinforcements in their fleet pool."},
+    {"name":"Executive Sanctions", "type":"Law", "elect":"", "for": "Each player can have a maximum of 3 action cards in their hand.", "against": "Each player discards 1 random action card from their hand."},
+    {"name":"Fleet Regulations", "type":"Law", "elect":"", "for": "Each player cannot have more than 4 tokens in their fleet pool.", "against": "Each player places 1 command token from their reinforcements in their fleet pool."},
     //{"name":"Holy Planet of Ixth", "type":"Law", "elect":"Cultural Planet", "description": "Attach this card to the elected planet's card. The planet's owner gains 1 victory point. Units on this planet cannot use PRODUCTION. When a player gains control of this planet, they gain 1 victory point. When a player loses control of this planet, they lose 1 victory point."},
-    {"name":"Homeland Defense Act", "type":"Law", "elect":"", "For": "Each player can have any number of PDS units on planets they control.", "Against": "Each player destroys 1 of their PDS unit."},
+    {"name":"Homeland Defense Act", "type":"Law", "elect":"", "for": "Each player can have any number of PDS units on planets they control.", "against": "Each player destroys 1 of their PDS unit."},
     {"name":"Imperial Arbiter", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nAt the end of the strategy phase, the owner of this card may discard this card to swap 1 of their strategy cards with 1 of another player's strategy cards."},
     {"name":"Minister of Commerce", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nAfter the owner of this card replenishes commodities, they gain 1 trade good for each player that is their neighbor."},
     {"name":"Minister of Exploration", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nWhen the owner of this card gains control of a planet, they gain 1 trade good."},
@@ -115,8 +115,8 @@ let agendasData = [
     {"name":"Minister of Sciences", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nWhen the owner of this card resolves the primary or secondary ability of the \"Technology\" strategy card, they do not need to spend resources to research technology."},
     {"name":"Minister of War", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nThe owner of this card may discard this card after performing an action to remove 1 of their command counters from the game board and return it to their reinforcements; then they may perform 1 additional action."},
     {"name":"Prophecy of Ixth", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nThe owner of this card applies +1 to the result of their fighter's combat rolls. When the owner of this card uses PRODUCTION, they discard this card unless they produce 2 or more fighters."},
-    {"name":"Publicize Weapon Schematics", "type":"Law", "elect":"", "For": "If any player owns a war sun technology, all players may ignore all prerequisites on war sun technologies. All war suns lose SUSTAIN DAMAGE.", "Against": "Each player that owns a war sun technology discards all of their action cards."},
-    {"name":"Regulated Conscription", "type":"Law", "elect":"", "For": "When a player produces units, they produce only 1 fighter and infantry for its cost instead of 2.", "Against": "No effect."},
+    {"name":"Publicize Weapon Schematics", "type":"Law", "elect":"", "for": "If any player owns a war sun technology, all players may ignore all prerequisites on war sun technologies. All war suns lose SUSTAIN DAMAGE.", "against": "Each player that owns a war sun technology discards all of their action cards."},
+    {"name":"Regulated Conscription", "type":"Law", "elect":"", "for": "When a player produces units, they produce only 1 fighter and infantry for its cost instead of 2.", "against": "No effect."},
     //{"name":"Representative Government (TI4)", "type":"Law", "elect":"-", "description": "FOR : Players cannot exhaust planets to cast votes during the agenda phase. Each player may cast 1 vote on each agenda instead.\nAGAINST : At the start of the next strategy phase, each player that voted \"Against\" exhausts all of their cultural planets."},
     //{"name":"Research Team: Biotic", "type":"Law", "elect":"Industrial Planet", "description": "Attach this card to the elected planet's card.\nWhen the owner of this planet researches technology, they may exhaust this card to ignore 1 green prerequisite."},
     //{"name":"Research Team: Cybernetic ", "type":"Law", "elect":"Industrial Planet", "description": "Attach this card to the elected planet's card.\nWhen the owner of this planet researches technology, they may exhaust this card to ignore 1 yellow prerequisite."},
@@ -124,43 +124,41 @@ let agendasData = [
     //{"name":"Research Team: Warfare", "type":"Law", "elect":"Hazardous Planet", "description": "Attach this card to the elected planet's card.\nWhen the owner of this planet researches technology, they may exhaust this card to ignore 1 red prerequisite."},
     //{"name":"Senate Sanctuary", "type":"Law", "elect":"Planet", "description": "Attach this card to the elected planet's card.\nThe influence value of this planet is increased by 2."},
     //{"name":"Shard of the Throne", "type":"Law", "elect":"Player", "description": "The elected player gains this card and 1 victory point.\nA player gains this card and 1 victory point when they win a combat against the owner of this card. Then, the previous owner of this card loses 1 victory point."},
-    {"name":"Shared Research", "type":"Law", "elect":"", "For": "Each player's units can move through nebulae.", "Against": "Each player places a command token from their reinforcements in their home system, if able."},
+    {"name":"Shared Research", "type":"Law", "elect":"", "for": "Each player's units can move through nebulae.", "against": "Each player places a command token from their reinforcements in their home system, if able."},
     //{"name":"Terraforming Initiative", "type":"Law", "elect":"Hazardous Planet", "description": "Attach this card to the elected planet's card.\nThe resource and influence values of this planet are increased by 1."},
     //{"name":"The Crown of Emphidia", "type":"Law", "elect":"Player", "description": "The elected player gains this card and 1 victory point.\nA player gains this card and 1 victory point after they gain control of a planet in the home system of this card's owner. Then, the previous owner of this card loses 1 victory point."},
     //{"name":"The Crown of Thalnos", "type":"Law", "elect":"Player", "description": "The elected player gains this card.\nDuring each combat round, the owner of this card may reroll any number of dice; they must destroy each of their units that did not produce a hit with its reroll."},
-    {"name":"Wormhole Reconstruction", "type":"Law", "elect":"", "For": "All systems that contain either an alpha or beta wormhole are adjacent to each other.", "Against": "Each player places a command token from their reinforcements in each system that contains a wormhole and 1 or more of their ships."},
-    {"name":"Articles of War", "type":"Law", "elect":"", "For": "All mechs lose their printed abilities except for SUSTAIN DAMAGE.", "Against": "Each player that voted \"For\" gains 3 trade goods."},
-    {"name":"Checks and Balances", "type":"Law", "elect":"", "For": "When a player chooses a strategy card during the strategy phase, they give that strategy card to another player that does not have 1 (or a player that does not have 2 in a three- or four-player game), if able.", "Against": "Each player readies only 3 of their planets at the end of this agenda phase."},
-    {"name":"Nexus Sovereignty", "type":"Law", "elect":"", "For": "Alpha and beta wormholes in the wormhole nexus have no effect during movement.", "Against": "Place a gamma wormhole token in the Mecatol Rex system."},
+    {"name":"Wormhole Reconstruction", "type":"Law", "elect":"", "for": "All systems that contain either an alpha or beta wormhole are adjacent to each other.", "against": "Each player places a command token from their reinforcements in each system that contains a wormhole and 1 or more of their ships."},
+    {"name":"Articles of War", "type":"Law", "elect":"", "for": "All mechs lose their printed abilities except for SUSTAIN DAMAGE.", "against": "Each player that voted \"For\" gains 3 trade goods."},
+    {"name":"Checks and Balances", "type":"Law", "elect":"", "for": "When a player chooses a strategy card during the strategy phase, they give that strategy card to another player that does not have 1 (or a player that does not have 2 in a three- or four-player game), if able.", "against": "Each player readies only 3 of their planets at the end of this agenda phase."},
+    {"name":"Nexus Sovereignty", "type":"Law", "elect":"", "for": "Alpha and beta wormholes in the wormhole nexus have no effect during movement.", "against": "Place a gamma wormhole token in the Mecatol Rex system."},
     {"name":"Political Censure", "type":"Law", "elect":"Player", "description": "The elected player gains this card and 1 victory point.\nThe elected player cannot play action cards.\nIf the owner of this card loses this card, they lose 1 victory point."},
-    {"name":"Representative Government", "type":"Law", "elect":"", "For": "Players cannot exhaust planets to cast votes during the agenda phase; each player may cast 1 vote on each agenda instead. Players cannot cast additional votes.", "Against": "At the start of the next strategy phase, each player that voted \"Against\" exhausts all of their cultural planets."},
+    {"name":"Representative Government", "type":"Law", "elect":"", "for": "Players cannot exhaust planets to cast votes during the agenda phase; each player may cast 1 vote on each agenda instead. Players cannot cast additional votes.", "against": "At the start of the next strategy phase, each player that voted \"Against\" exhausts all of their cultural planets."},
     {"name":"Search Warrant", "type":"Law", "elect":"Player", "description": "The elected player gains this card and draws 2 secret objectives.\nThe owner of this card plays with their secret objectives revealed."},
     {"name":"Archived Secret", "type":"Directive", "elect":"Player", "description": "Elected player draws 1 secret objective."},
-    {"name":"Arms Reduction", "type":"Directive", "elect":"", "For": "Each player destroys all but 2 of their dreadnaughts and all but 4 of their cruisers.", "Against": "At the start of the next strategy phase, each player exhausts each of their planets that have a technology specialty."},
+    {"name":"Arms Reduction", "type":"Directive", "elect":"", "for": "Each player destroys all but 2 of their dreadnaughts and all but 4 of their cruisers.", "against": "At the start of the next strategy phase, each player exhausts each of their planets that have a technology specialty."},
     {"name":"Colonial Redistribution", "type":"Directive", "elect":"Non-Home Planet Other Than Mecatol Rex", "description": "Destroy each unit on the elected planet. Then, the player who controls that planet chooses 1 player with the fewest victory points; that player may place 1 infantry from their reinforcements on the elected planet."},
     {"name":"Compensated Disarmament", "type":"Directive", "elect":"Planet", "description": "Destroy each ground force on the elected planet; for each unit that was destroyed, the player who controls that planet gains 1 trade good."},
-    {"name":"Economic Equality", "type":"Directive", "elect":"", "For": "Each player returns all of their trade goods to the supply. Then, each player gains 5 trade goods.", "Against": "Each player returns all of their trade goods to the supply."},
-    {"name":"Incentive Program", "type":"Directive", "elect":"", "For": "Draw and reveal 1 stage I public objective from the deck and place it near the public objectives.", "Against": "Draw and reveal 1 stage II public objective from the deck and place it near the public objectives."},
-    {"name":"Ixthian Artifact", "type":"Directive", "elect":"", "For": "The speaker rolls 1 die. If the result is 6-10, each player may research 2 technologies. If the result is 1-5, destroy all units in Mecatol Rex's system, and each player with units in systems adjacent to Mecatol Rex's system destroys 3 of their units in each of those systems.", "Against": "No effect."},
+    {"name":"Economic Equality", "type":"Directive", "elect":"", "for": "Each player returns all of their trade goods to the supply. Then, each player gains 5 trade goods.", "against": "Each player returns all of their trade goods to the supply."},
+    {"name":"Incentive Program", "type":"Directive", "elect":"", "for": "Draw and reveal 1 stage I public objective from the deck and place it near the public objectives.", "against": "Draw and reveal 1 stage II public objective from the deck and place it near the public objectives."},
+    {"name":"Ixthian Artifact", "type":"Directive", "elect":"", "for": "The speaker rolls 1 die. If the result is 6-10, each player may research 2 technologies. If the result is 1-5, destroy all units in Mecatol Rex's system, and each player with units in systems adjacent to Mecatol Rex's system destroys 3 of their units in each of those systems.", "against": "No effect."},
     {"name":"Judicial Abolishment", "type":"Directive", "elect":"Law", "description": "When this agenda is revealed, if there are no laws in play, discard this card and reveal another agenda from the top of the deck.\nDiscard the elected law from play."},
     {"name":"Miscount Disclosed", "type":"Directive", "elect":"Law", "description": "When this agenda is revealed, if there are no laws in play, discard this card and reveal another agenda from the top of the deck.\nVote on the elected law as if it were just revealed from the top of the deck."},
-    {"name":"Mutiny", "type":"Directive", "elect":"", "For": "Each player who voted \"For\" gains 1 victory point.", "Against": "Each player who voted \"For\" loses 1 victory point."},
-    {"name":"New Constitution", "type":"Directive", "elect":"", "For": "When this agenda is revealed, if there are no laws in play, discard this card and reveal another agenda from the top of the deck. Discard all laws in play. At the start of the next strategy phase, each player exhausts each planet in their home system.", "Against": "No effect."},
+    {"name":"Mutiny", "type":"Directive", "elect":"", "for": "Each player who voted \"For\" gains 1 victory point.", "against": "Each player who voted \"For\" loses 1 victory point."},
+    {"name":"New Constitution", "type":"Directive", "elect":"", "for": "When this agenda is revealed, if there are no laws in play, discard this card and reveal another agenda from the top of the deck. Discard all laws in play. At the start of the next strategy phase, each player exhausts each planet in their home system.", "against": "No effect."},
     {"name":"Public Execution", "type":"Directive", "elect":"Player", "description": "The elected player discards all of their action cards. If they have the speaker token, they give it to the player on their left. The elected player cannot vote on any agendas during this agenda phase."},
-    {"name":"Seed of an Empire", "type":"Directive", "elect":"", "For": "The player with most victory points gains 1 victory point.", "Against": "The player with the fewest victory points gains 1 victory point."},
-    {"name":"Swords to Plowshares", "type":"Directive", "elect":"", "For": "Each player destroys half of their infantry on each planet they control, rounded up. Then, each player gains trade goods equal to the number of their infantry that were destroyed.", "Against": "Each player places 1 infantry from their reinforcements on each planet they control."},
-    {"name":"Unconventional Measures", "type":"Directive", "elect":"", "For": "Each player that voted \"For\" draws 2 action cards.", "Against": "Each player that voted \"For\" discards all of their action cards."},
-    {"name":"Wormhole Research", "type":"Directive", "elect":"", "For": "Each player who has 1 or more ships in a system that contains a wormhole may research 1 technology. Then, destroy all ships in systems that contain an alpha or beta wormhole.", "Against": "Each player that voted \"Against\" removes 1 command token from their command sheet and returns it to their reinforcements."},
+    {"name":"Seed of an Empire", "type":"Directive", "elect":"", "for": "The player with most victory points gains 1 victory point.", "against": "The player with the fewest victory points gains 1 victory point."},
+    {"name":"Swords to Plowshares", "type":"Directive", "elect":"", "for": "Each player destroys half of their infantry on each planet they control, rounded up. Then, each player gains trade goods equal to the number of their infantry that were destroyed.", "against": "Each player places 1 infantry from their reinforcements on each planet they control."},
+    {"name":"Unconventional Measures", "type":"Directive", "elect":"", "for": "Each player that voted \"For\" draws 2 action cards.", "against": "Each player that voted \"For\" discards all of their action cards."},
+    {"name":"Wormhole Research", "type":"Directive", "elect":"", "for": "Each player who has 1 or more ships in a system that contains a wormhole may research 1 technology. Then, destroy all ships in systems that contain an alpha or beta wormhole.", "against": "Each player that voted \"Against\" removes 1 command token from their command sheet and returns it to their reinforcements."},
     {"name":"Armed Forces Standardization", "type":"Directive", "elect":"Player", "description": "The elected player places command tokens from their reinforcements so that they have 3 tokens in their tactic pool, 3 tokens in their fleet pool and 2 tokens in their strategy pool. They return any excess tokens to their reinforcements."},
-    {"name":"Clandestine Operations", "type":"Directive", "elect":"", "For": "Each player removes 2 command tokens from their command sheet and returns those tokens to their reinforcements.", "Against": "Each player removes 1 command token from their fleet pool and returns that token to their reinforcements."},
+    {"name":"Clandestine Operations", "type":"Directive", "elect":"", "for": "Each player removes 2 command tokens from their command sheet and returns those tokens to their reinforcements.", "against": "Each player removes 1 command token from their fleet pool and returns that token to their reinforcements."},
     {"name":"Covert Legislation", "type":"Directive", "elect":"", "description": "When this agenda is revealed, the speaker draws the next card in the agenda deck but does not reveal it to the other players. Instead, the speaker reads the eligible outcomes aloud (for, against, elect player, etc.); the other players vote for these outcomes as if they were outcomes of this agenda, without knowing their effects."},
     {"name":"Galactic Crisis Pact", "type":"Directive", "elect":"Strategy Card", "description": "Each player may perform the secondary ability of the elected strategy card without spending a command token; command tokens placed by the ability are placed from a player's reinforcements instead."},
     {"name":"Minister of Antiques", "type":"Directive", "elect":"Player", "description": "The elected player gains 1 relic."},
-    {"name":"Rearmament Agreement", "type":"Directive", "elect":"", "For": "Each player places 1 mech from their reinforcements on a planet they control in their home system.", "Against": "Each player replaces each of their mechs with 1 infantry from their reinforcements."},
+    {"name":"Rearmament Agreement", "type":"Directive", "elect":"", "for": "Each player places 1 mech from their reinforcements on a planet they control in their home system.", "against": "Each player replaces each of their mechs with 1 infantry from their reinforcements."},
     {"name":"Research Grant Reallocation", "type":"Directive", "elect":"Player", "description": "The elected player gains any 1 technology of their choice. Then, for each prerequisite on that technology, they remove 1 token from their fleet pool and return it to their reinforcements."},
 ]
-
-let agendaDeck = [];
 
 // Load objectives from JSON file
 async function loadDataFromFile(type, fileUrl) {
@@ -174,7 +172,7 @@ async function loadDataFromFile(type, fileUrl) {
             objectives = data;
         } else if (type === "Agenda") {
             agendas = data;
-        }
+        } 
     } catch (error) {
         console.error('Error loading objectives:', error);
     }
@@ -219,7 +217,7 @@ function createTable(type) {
             fragment.appendChild(row);
         });
     } else if (type === "Agenda") {
-        agendas.currentAgendas.forEach((agenda, agendaIndex) => {
+        agendas.activeAgendas.forEach((agenda, agendaIndex) => {
             const row = createAgendaRow(agenda, agendaIndex); // Pass the whole agenda name
             fragment.appendChild(row);
         });
@@ -292,7 +290,7 @@ function removeItem(mode, itemIndex) {
         logAction(`${mode} "${objective}" was removed by`) // Log the action for non-repudation
     } else if (mode === "Agenda") {
         const agenda = agendas[itemIndex];
-        agendas.currentAgendas.splice(itemIndex, 1); // Remove Agenda
+        agendas.activeAgendas.splice(itemIndex, 1); // Remove Agenda
         updateTableRow("tableAgenda", itemIndex);
         logAction(`${mode} "${agenda}" was removed by`)
     }
@@ -314,7 +312,7 @@ async function saveDataToJson(type) {
         payload = objectives;
     } else if (type === "Agenda") {
         url = "/ti/admin/agendas";
-        payload = { "currentDisputedAgenda": agendas.currentDisputedAgenda, "currentAgendas": agendas.currentAgendas };
+        payload = { "currentDisputedAgenda": agendas.currentDisputedAgenda, "activeAgendas": agendas.activeAgendas, "agendaDeck": agendas.agendaDeck };
     }
 
     try {
@@ -354,7 +352,7 @@ function addNewAgenda(newAgenda) {
     // Remove "For" or "Against" from the name to search if the agenda has already been added, either its "For" or "Against" version
     let newAgendaNameStripped = newAgenda.name.replace(/ \((For|Against)\)$/, "");
 
-    if (agendas.currentAgendas.some(agenda => agenda.name.includes(newAgendaNameStripped))) {
+    if (agendas.activeAgendas.some(agenda => agenda.name.includes(newAgendaNameStripped))) {
         alert("Agenda is already added.")
     } else {
         // Checking what the elect of the agenda is. Could be a player, scored secret objective, hazardous planet, etc. 
@@ -391,7 +389,7 @@ function addNewAgenda(newAgenda) {
             newAgenda.elect = prompt("Enter the name of the Strategy Card elected:")
         } 
 
-        agendas.currentAgendas.push(newAgenda);
+        agendas.activeAgendas.push(newAgenda);
         createTable("Agenda"); // Refresh the table
         saveDataToJson("Agenda"); // Save updated data to JSON file
         logAction(`Agenda "${newAgenda.name}" was added by`) // Log the action for non-repudation
@@ -415,7 +413,7 @@ function addNewObjectiveModal() {
   
     // Create the modal content
     const modalContent = document.createElement("div");
-    modalContent.style.width = "40%";
+    modalContent.style.width = "90%";
     modalContent.style.maxHeight = "80%"; // Set max height for the modal
     modalContent.style.backgroundColor = "rgba(40, 44, 52, 1)";
     modalContent.style.padding = "20px";
@@ -637,7 +635,7 @@ function addNewAgendaModal(type) {
   
     // Create the modal content
     const modalContent = document.createElement("div");
-    modalContent.style.width = "80%";
+    modalContent.style.width = "90%";
     modalContent.style.maxHeight = "80%"; // Set max height for the modal
     modalContent.style.backgroundColor = "rgba(40, 44, 52, 1)";
     modalContent.style.padding = "20px";
@@ -952,7 +950,7 @@ function agendaPhaseOptions() {
   
     // Create the modal content
     const modalContent = document.createElement("div");
-    modalContent.style.width = "40%";
+    modalContent.style.width = "90%";
     modalContent.style.maxHeight = "80%"; // Set max height for the modal
     modalContent.style.backgroundColor = "rgba(40, 44, 52, 1)";
     modalContent.style.padding = "20px";
@@ -975,31 +973,110 @@ function agendaPhaseOptions() {
     modalTitleT1.textContent = "Agenda Phase Options";
     modalContent.appendChild(modalTitleT1);
 
+    // Agenda Deck Count
+    const agendaDeckCount = document.createElement("p");
+    agendaDeckCount.textContent = `Cards currently in the agenda deck: ${agendas.agendaDeck.length}`;
+    modalContent.appendChild(agendaDeckCount);
+
     // Current Disputed Agenda Title
     const disputedAgendaTitle = document.createElement("h3");
     disputedAgendaTitle.textContent = "Current Disputed Agenda";
     modalContent.appendChild(disputedAgendaTitle);
 
+    // Agenda type and elect
+    const agendaTypeElect = document.createElement("h4");
+    let agendaElect;
+    if (agendas.currentDisputedAgenda.elect === "") {
+        agendaElect = "Pass/Repeal"
+    } else {
+        agendaElect = `${agendas.currentDisputedAgenda.elect} Elect`;
+    }
+    agendaTypeElect.textContent = `${agendas.currentDisputedAgenda.type} | ${agendaElect}`;
+    modalContent.appendChild(agendaTypeElect);
+
     // Current Disputed Agenda text box
     const disputedAgenda = document.createElement("p");
     if (agendas.currentDisputedAgenda === "") {
         disputedAgenda.textContent = "No currently disputed agenda.";
-    } else {
+    } else if (agendas.currentDisputedAgenda.description !== undefined ) {
         disputedAgenda.textContent = `${agendas.currentDisputedAgenda.name}: ${agendas.currentDisputedAgenda.description}`;
-        disputedAgenda.style.width = "100%";
+    } else {
+        disputedAgenda.textContent = `${agendas.currentDisputedAgenda.name}: For: ${agendas.currentDisputedAgenda.for} Against: ${agendas.currentDisputedAgenda.against}`
     }
+    disputedAgenda.style.width = "100%";
     modalContent.appendChild(disputedAgenda);
 
-    // Generate Random New Disputed Agenda Button
-    const changeDisputedAgendaRandomButton = document.createElement("button");
-    changeDisputedAgendaRandomButton.textContent = "Change Disputed Agenda Randomly";
-    changeDisputedAgendaRandomButton.style.width = "100%";
-    changeDisputedAgendaRandomButton.onclick = () => {
-        randomAgenda = agendasData[Math.floor(Math.random() * agendasData.length)];
-        changeDisputedAgenda(randomAgenda);
-        disputedAgenda.textContent = `${agendas.currentDisputedAgenda.name}: ${agendas.currentDisputedAgenda.description}`;
+    // Draw card from the Agenda Deck Button
+    const drawAgendaCardButton = document.createElement("button");
+    drawAgendaCardButton.textContent = "Draw Agenda Card";
+    drawAgendaCardButton.style.width = "100%";
+    drawAgendaCardButton.onclick = () => {
+        if (agendas.agendaDeck.length === 0) {
+            alert("Agenda deck is currently empty. Regenerate the agenda deck and try again.");
+        } else {
+            // Change the disputed agenda to the first item in the agendaDeck
+            agendas.currentDisputedAgenda = agendas.agendaDeck[0];
+            agendas.agendaDeck.shift();
+
+            // Change agenda content dynamically
+            disputedAgenda.textContent = `${agendas.currentDisputedAgenda.name}: ${agendas.currentDisputedAgenda.description}`;
+            if (agendas.currentDisputedAgenda === "") {
+                disputedAgenda.textContent = "No currently disputed agenda.";
+            } else if (agendas.currentDisputedAgenda.description !== undefined ) {
+                disputedAgenda.textContent = `${agendas.currentDisputedAgenda.name}: ${agendas.currentDisputedAgenda.description}`;
+            } else {
+                disputedAgenda.textContent = `${agendas.currentDisputedAgenda.name}: For: ${agendas.currentDisputedAgenda.for} Against: ${agendas.currentDisputedAgenda.against}`
+            }
+            agendaDeckCount.textContent = `Cards currently in the agenda deck: ${agendas.agendaDeck.length}`;
+
+            saveDataToJson("Agenda");
+        }
     };
-    modalContent.appendChild(changeDisputedAgendaRandomButton);
+    modalContent.appendChild(drawAgendaCardButton);
+
+    // Clear Disputed Agendas Button
+    const clearDisputedAgendasButton = document.createElement("button");
+    clearDisputedAgendasButton.textContent = "Clear Disputed Agenda";
+    clearDisputedAgendasButton.style.width = "100%";
+    clearDisputedAgendasButton.onclick = () => {
+        agendas.currentDisputedAgenda = "";
+        disputedAgenda.textContent = "No currently disputed agenda.";
+        saveDataToJson("Agenda");
+    }
+    modalContent.appendChild(clearDisputedAgendasButton);
+
+    // Resolve Agenda Button
+    const resolveAgendaButton = document.createElement("button");
+    resolveAgendaButton.textContent = "Resolve Agenda";
+    resolveAgendaButton.style.width = "100%";
+    resolveAgendaButton.onclick = () => {
+        alert("Not yet implemented. Add the Agenda manually.");
+    }
+    modalContent.appendChild(resolveAgendaButton);
+
+    // Shuffle Agenda Deck
+    const shuffleAgendaButton = document.createElement("button");
+    shuffleAgendaButton.textContent = "Shuffle Agenda Deck";
+    shuffleAgendaButton.style.width = "100%";
+    shuffleAgendaButton.onclick = () => {
+        if (confirm("Are you sure you would like to shuffle the deck?")) {
+            shuffleAgendaDeck();
+        };
+    }
+    modalContent.appendChild(shuffleAgendaButton);
+
+    // Regenerate Agenda Deck
+    const regenerateAgendaDeckButton = document.createElement("button");
+    regenerateAgendaDeckButton.textContent = "Regenerate Agenda Deck";
+    regenerateAgendaDeckButton.style.width = "100%";
+    regenerateAgendaDeckButton.onclick = () => {
+        if (confirm("Are you sure you would like to regenerate the deck? This will re-add all the agenda cards back into the deck.")) {
+            regenerateAgendaDeck();
+            // Refresh deck count
+            agendaDeckCount.textContent = `Cards currently in the agenda deck: ${agendaDeck.length}`;
+        };
+    }
+    modalContent.appendChild(regenerateAgendaDeckButton);
 
     // Change Disputed Agenda to specific Agenda Button
     const changeDisputedAgendaButton = document.createElement("button");
@@ -1010,43 +1087,247 @@ function agendaPhaseOptions() {
     };
     modalContent.appendChild(changeDisputedAgendaButton);
 
-    // Clear Disputed Agendas Button
-    const clearDisputedAgendasButton = document.createElement("button");
-    clearDisputedAgendasButton.textContent = "Clear Disputed Agendas";
-    clearDisputedAgendasButton.style.width = "100%";
-    clearDisputedAgendasButton.onclick = () => {
-        changeDisputedAgenda("");
-        disputedAgenda.textContent = "No currently disputed agenda.";
-    }
-    modalContent.appendChild(clearDisputedAgendasButton);
-
-    // Pass FOR Agenda Button
-    const passForAgendaButton = document.createElement("button");
-    passForAgendaButton.textContent = "Pass \"For\" Agenda";
-    passForAgendaButton.style.width = "100%";
-    passForAgendaButton.onclick = () => {
-        alert("Not yet implemented. Add the Agenda manually.");
-    }
-    modalContent.appendChild(passForAgendaButton);
-
-    // Pass AGAINST Agenda Button
-    const passAgainstAgendaButton = document.createElement("button");
-    passAgainstAgendaButton.textContent = "Pass \"Against\" Agenda";
-    passAgainstAgendaButton.style.width = "100%";
-    passAgainstAgendaButton.onclick = () => {
-        alert("Not yet implemented. Add the Agenda manually.");
-    }
-    modalContent.appendChild(passAgainstAgendaButton);
-
     // Add modal to document body
     modalOverlay.appendChild(modalContent);
     document.body.appendChild(modalOverlay);
 };
 
-// Changes the current disputed agenda with the given value
-function changeDisputedAgenda(newAgenda) {
-    agendas.currentDisputedAgenda = newAgenda;
+// Shuffle Agenda Deck
+function shuffleAgendaDeck() {
+    for (let i = agendas.agendaDeck.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        [agendas.agendaDeck[i], agendas.agendaDeck[randomIndex]] = [agendas.agendaDeck[randomIndex], agendas.agendaDeck[i]];
+    }
     saveDataToJson("Agenda");
+};
+
+function playPolitics() {
+    alert("Give the phone to the player playing politics and tap 'ok'");
+
+    oldPosArray = [0, 1];
+    firstAgendaOldPos = 0;
+    secondAgendaOldPos = 1;
+    
+    // Create the modal background
+    const modalOverlay = document.createElement("div");
+    modalOverlay.style.position = "fixed";
+    modalOverlay.style.top = "0";
+    modalOverlay.style.left = "0";
+    modalOverlay.style.width = "100%";
+    modalOverlay.style.height = "100%";
+    modalOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    modalOverlay.style.display = "flex";
+    modalOverlay.style.justifyContent = "center";
+    modalOverlay.style.alignItems = "center";
+    modalOverlay.style.zIndex = "1000";
+  
+    // Create the modal content
+    const modalContent = document.createElement("div");
+    modalContent.style.width = "90%";
+    modalContent.style.backgroundColor = "rgba(40, 44, 52, 1)";
+    modalContent.style.padding = "20px";
+    modalContent.style.borderRadius = "8px";
+    modalContent.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+    modalContent.style.position = "relative";
+    modalContent.style.overflowY = "auto"; // Make modal content scrollable
+    modalContent.style.animation = "slide-down 0.3s ease-out";
+
+    // Close modal when clicking outside of the modal content
+    modalOverlay.addEventListener("click", (event) => {
+      if (event.target === modalOverlay) {
+        document.body.removeChild(modalOverlay);
+      }
+    });
+
+    // Create the modal content
+    const title = document.createElement("h1");
+    title.textContent = "Politics Primary Ability";
+    modalContent.appendChild(title);
+
+    // Two Agendas table
+    const table = document.createElement("table");
+    const tableBody = document.createElement("tbody");
+
+    // Table Rows
+    const firstAgendaRow = document.createElement("tr");
+    firstAgendaRow.setAttribute('draggable', 'true');
+    firstAgendaRow.style.fontSize = "1em";
+    const firstAgendaTd = document.createElement("td");
+    if (agendas.agendaDeck[0].description !== undefined) {
+        firstAgendaTd.innerHTML = `<b>${agendas.agendaDeck[0].type}:</b> ${agendas.agendaDeck[0].name}<br>${agendas.agendaDeck[0].description}`;
+    } else {
+        firstAgendaTd.innerHTML = `<b>${agendas.agendaDeck[0].type}:</b> ${agendas.agendaDeck[0].name}<br><b>For:</b> ${agendas.agendaDeck[0].for}<br><b>Against:</b> ${agendas.agendaDeck[0].against}`;
+    }
+    firstAgendaTd.id = agendas.agendaDeck[0].name;
+    firstAgendaRow.appendChild(firstAgendaTd);
+    tableBody.appendChild(firstAgendaRow);
+
+    const secondAgendaRow = document.createElement("tr");
+    secondAgendaRow.setAttribute('draggable', 'true');
+    secondAgendaRow.style.fontSize = "1em";
+    const secondAgendaTd = document.createElement("td");
+    if (agendas.agendaDeck[1].description !== undefined) {
+        secondAgendaTd.innerHTML = `<b>${agendas.agendaDeck[1].type}:</b> ${agendas.agendaDeck[1].name}<br>${agendas.agendaDeck[1].description}`;
+    } else {
+        secondAgendaTd.innerHTML = `<b>${agendas.agendaDeck[1].type}:</b> ${agendas.agendaDeck[1].name}<br><b>For:</b> ${agendas.agendaDeck[1].for}<br><b>Against:</b> ${agendas.agendaDeck[1].against}`;
+    }
+    secondAgendaTd.id = agendas.agendaDeck[1].name;
+    secondAgendaRow.appendChild(secondAgendaTd);
+    tableBody.appendChild(secondAgendaRow);
+
+    const agendaDeckRow = document.createElement("tr");
+    agendaDeckRow.setAttribute('draggable', 'true');
+    agendaDeckRow.style.fontSize = "1em";
+    const agendaDeckTd = document.createElement("td");
+    agendaDeckTd.innerHTML = "<br><br><br><br><br><br>Rest of the Deck<br><br><br><br><br><br>"
+    agendaDeckRow.appendChild(agendaDeckTd);
+    tableBody.appendChild(agendaDeckRow);
+
+    // Drag-and-drop functionality
+    let draggedRow = null;
+
+    tableBody.addEventListener('dragstart', (event) => {
+        draggedRow = event.target;
+        draggedRow.classList.add('dragging');
+        event.dataTransfer.effectAllowed = 'move';
+    });
+
+    tableBody.addEventListener('dragend', (event) => {
+        draggedRow.classList.remove('dragging');
+        draggedRow = null;
+    });
+
+    tableBody.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        const targetRow = event.target.closest('tr');
+        if (!targetRow || targetRow === draggedRow) return;
+
+        const bounding = targetRow.getBoundingClientRect();
+        const offset = event.clientY - bounding.top;
+
+        if (offset > bounding.height / 2) {
+            tableBody.insertBefore(draggedRow, targetRow.nextSibling);
+        } else {
+            tableBody.insertBefore(draggedRow, targetRow);
+        }
+    });
+
+    // Support touch devices for drag-and-drop
+    let touchStartY = 0;
+    tableBody.addEventListener('touchstart', (event) => {
+        const touchRow = event.target.closest('tr');
+        if (!touchRow) return;
+        draggedRow = touchRow;
+        draggedRow.classList.add('dragging');
+        touchStartY = event.touches[0].clientY;
+    });
+
+    tableBody.addEventListener('touchmove', (event) => {
+        event.preventDefault();
+        const touchRow = event.target.closest('tr');
+        const touchY = event.touches[0].clientY;
+        if (!touchRow || !draggedRow) return;
+
+        const targetRow = document.elementFromPoint(
+            event.touches[0].clientX,
+            touchY
+        )?.closest('tr');
+
+        if (targetRow && targetRow !== draggedRow) {
+            const bounding = targetRow.getBoundingClientRect();
+            if (touchY - bounding.top > bounding.height / 2) {
+                tableBody.insertBefore(draggedRow, targetRow.nextSibling);
+            } else {
+                tableBody.insertBefore(draggedRow, targetRow);
+            }
+        }
+    });
+
+    tableBody.addEventListener('touchend', () => {
+        if (draggedRow) {
+            draggedRow.classList.remove('dragging');
+            draggedRow = null;
+        }
+    });
+
+    table.appendChild(tableBody);
+    modalContent.appendChild(table);
+
+    // Submit button
+    const submitButton = document.createElement("button");
+    submitButton.textContent = "Submit";
+    submitButton.onclick = () => {
+        if (confirm("Are you sure you would like to submit this Agenda card order?")) {
+
+            let deckPos;
+            let firstAgenda = agendas.agendaDeck[0];
+            let secondAgenda = agendas.agendaDeck[1];
+            let firstAgendaNewPos; 
+
+            console.log(table.rows[0]);
+            // Get the position of the deck relative to the re-ordered agenda cards
+            for (let i = 0; i < table.rows.length+1; i++) {
+                if (table.rows[i].innerHTML.includes("Deck")) {
+                    deckPos = i;
+                    break;
+                };
+            }
+
+            // Get the new position of the first agenda
+            for (let i = 0; i < table.rows.length+1; i++) {
+                if (table.rows[i].innerHTML.includes(agendas.agendaDeck[0].name)) {
+                    firstAgendaNewPos = i;
+                    break;
+                };
+            }
+
+            // Find where both the cards are, and the rest of the deck is relative to the deck
+            if (deckPos === 0) { // Deck is at the top
+
+                agendas.agendaDeck.shift(); // Remove first two elements from the agenda deck array
+                agendas.agendaDeck.shift(); 
+
+                if (firstAgendaNewPos === 1) { // First Agenda Card is at the bottom of the deck, on top of the second agenda
+                    agendas.agendaDeck.push(firstAgenda);
+                    agendas.agendaDeck.push(secondAgenda);
+                } else if (firstAgendaNewPos === 2) { // First Agenda card is at the bottom of the deck, below the second agenda
+                    agendas.agendaDeck.push(secondAgenda);
+                    agendas.agendaDeck.push(firstAgenda);
+                }
+
+            } else if (deckPos === 2) { // Deck is at the bottom
+                if (firstAgendaNewPos === 1) { // First agenda got swapped with the second agenda
+                    agendas.agendaDeck.shift(); // Remove the first agenda from the deck
+                    agendas.agendaDeck.splice(1, 0, firstAgenda); // Add the first agenda to the second position of the deck, right below the second agenda
+                }
+            } else { // Deck is in the middle
+                if (firstAgendaNewPos === 0) { // If the first agenda is in the same spot, move the second one to the bottom of the deck
+                    agendas.agendaDeck.splice(1, 1); // Remove the second element in the array, the second agenda
+                    agendas.agendaDeck.push(secondAgenda); // Add the second agenda to the bottom of the deck
+                } else { // If the first agenda is at the bottom of the deck
+                    agendas.agendaDeck.shift();
+                    agendas.agendaDeck.push(firstAgenda);
+                }
+            }
+            
+            document.body.removeChild(modalOverlay);
+            saveDataToJson("Agenda");
+        }
+    } 
+    modalContent.appendChild(submitButton);
+    
+    // Add modal to document body
+    modalOverlay.appendChild(modalContent);
+    document.body.appendChild(modalOverlay);
+};
+
+// Clear the agenda deck and create it once again with ALL the agenda cards
+function regenerateAgendaDeck() {
+    agendas.agendaDeck = [];
+    agendasData.forEach(agenda => {
+        agendas.agendaDeck.push(agenda)
+    });
+    shuffleAgendaDeck();
 };
 
 // Load objectives and create table
@@ -1064,10 +1345,10 @@ document.getElementById('addObjectiveBtn').addEventListener('click', addNewObjec
 
 // Add event listeners for the "Add Random Objective" buttons
 document.getElementById('addRandomT1ObjectiveBtn').addEventListener('click', () => {
-    addRandomObjective("T1")
+    addRandomObjective("T1");
 });
 document.getElementById('addRandomT2ObjectiveBtn').addEventListener('click', () => {
-    addRandomObjective("T2")
+    addRandomObjective("T2");
 });
 
 // Add event listener for the "Draw Random Agenda" button
@@ -1075,7 +1356,12 @@ document.getElementById('agendaPhaseOptionsBtn').addEventListener('click', agend
 
 // Add event listener for "Add Agenda" button
 document.getElementById('addAgendaBtn').addEventListener('click', () => {
-    addNewAgendaModal("permanent")
+    addNewAgendaModal("permanent");
+});
+
+// Add event listener for "Play Politics" button
+document.getElementById('politicsPrimaryAbilityBtn').addEventListener('click', () => {
+    playPolitics();
 });
 
 // Add event listener for "Back to Menu" button

@@ -129,20 +129,24 @@ async function checkGameState() {
         }
 
         // Check if window is not in fullscreen and remind the user
-            const infoBox = document.getElementById("info-box");
-        if (!window.fullScreen) {
-            // Add the 'visible' class to make it slide into view
-            infoBox.classList.remove("hidden");
-            infoBox.classList.add("visible");
-            console.log("Show fullscreen alert");
-        } else {
-            infoBox.classList.remove("visible");
-            infoBox.classList.add("hidden");
-            console.log("Hide fullscreen alert");
+        const infoBox = document.getElementById("info-box");
+        // Check Browser
+        if (navigator.userAgent.includes("Firefox")) {
+            console.log("Firefox");
+            if (!window.fullScreen) {
+                // Add the 'visible' class to make it slide into view
+                infoBox.classList.remove("hidden");
+                infoBox.classList.add("visible");
+
+            } else {
+                infoBox.classList.remove("visible");
+                infoBox.classList.add("hidden");
+            };
+        } else if (navigator.userAgent.includes("Chrome")) { 
+            // Fucking impossible to check if the browser is in fullscreen on chrome
         };
     }, 5000); 
 }
-
 
 let currentGamestate = "Peace";
 checkGameState();

@@ -5,6 +5,10 @@
             "title": "Bugs",
             "tasks": [
                 {
+                    "text": "fullscreen checker doesn't work with chrome",
+                    "id": "m7vixnkafgp0643o99rd24wy"
+                },
+                {
                     "text": "logger showing the server as the IP used to perform action",
                     "id": "rck6fli1r5ys427yrzls57mc"
                 },
@@ -64,28 +68,20 @@
             "title": "Features",
             "tasks": [
                 {
+                    "text": "rework agenda phase menu to create virtual deck (consider the politics strategy card)",
+                    "id": "hpoe081l7d86t1czucbc1kc2"
+                },
+                {
+                    "text": "consider adding checkbox to add fan made agendas to the game",
+                    "id": "qfwcjv20vbmwaroxgxrobl1t"
+                },
+                {
                     "text": "add a list of active laws in the agenda phase screen in case of agenda that requires electing a law",
                     "id": "rib8kmzflqyfgaa5bx42elyp"
                 },
                 {
                     "text": "Consider adding a \"Prophecy of Kings Expansion\" checkbox somewhere in the settings, since it changes some elements of the game (such as removing some agendas)",
                     "id": "n7x8rtwqomjc0fwttp252j4g"
-                },
-                {
-                    "text": "pass for and against Agenda buttons in the agenda phase options menu",
-                    "id": "af5xzbjd7jv3dd5ablbhcjr1"
-                },
-                {
-                    "text": "add a little tooltip that asks the user to go into fullscreen if they're not currently in fullscreen",
-                    "id": "w7xdncbfsuya3n8vt6tlobgs"
-                },
-                {
-                    "text": "agenda phase options button in the player menu which opens a modal that allows admins to change players: for, against, rider, speaker, and abstain",
-                    "id": "g1k6u9z5bbm0m9b16q82ycox"
-                },
-                {
-                    "text": "agenda phase screen\n\n",
-                    "id": "p9kirwniubm2lmchfuzl13yj"
                 },
                 {
                     "text": "consider adding images of the games in the sessions screen, rather than just the name",
@@ -100,16 +96,8 @@
                     "id": "npyt2iji6fs8j2ky9fss1dz6"
                 },
                 {
-                    "text": "add a tooltip that asks the player to make the page fullscreen if it isnt",
-                    "id": "hs2w3123awuae67ot1npwgws"
-                },
-                {
                     "text": "\"add session\" button",
                     "id": "z2u4zg0do796jd8c0tcil1mw"
-                },
-                {
-                    "text": "sessions screen when a session is clicked",
-                    "id": "zige7dr7gtkeu9j6sy1tsy03"
                 },
                 {
                     "text": "add a slideshow animation to the home page game image",
@@ -151,8 +139,8 @@
             "title": "Optimization",
             "tasks": [
                 {
-                    "text": "put all file update functions into one file and function",
-                    "id": "xk3qyn28ciiqpczlmjvezrrt"
+                    "text": "create unified admin page template",
+                    "id": "hivxr3qxxg84p4h2i7qft8lr"
                 },
                 {
                     "text": "buy domain, something like:\n* immersivetabletop.ca",
@@ -189,5 +177,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1734210870666
+    "timestamp": 1734741896430
 }

@@ -537,8 +537,8 @@ async function changeAgendaPhaseOptions(index) {
     ];
     const electLaw = [];
     agendas = await loadJsonFile(agendasFileUrl);
-    agendas.currentAgendas.forEach(currentAgenda => {
-        electLaw.push(currentAgenda.name);
+    agendas.activeAgendas.forEach(activeAgenda => {
+        electLaw.push(activeAgenda.name);
     });
     const electStrategyCard = [
         "Leadership",

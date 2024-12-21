@@ -7,51 +7,89 @@
     <link href="" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/TI4/modal.css') }}">
     <style>
-        body {
+        /* Universal Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
             font-family: 'Orbitron', sans-serif;
             background-color: #282c34;
             color: #ffffff;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 20px;
         }
 
         h1 {
-            margin-bottom: 20px;
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 2.5em;
+        }
+
+        h3 {
+            font-size: 2em;
+        }
+
+        h4 {
+            font-size: 1.5em;
         }
 
         button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 1.2em;
+            margin: 10px 0;
+            padding: 10px 15px;
+            font-size: 2em;
             background-color: #4B0082;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
+            height: 6vh;
         }
 
         button:hover {
             background-color: #6A0DAD;
         }
 
+        #tableContainerObjectives, #tableContainerAgendas {
+            width: 100%;
+            overflow-x: auto;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            table-layout: fixed; /* Prevent table from exceeding width */
         }
 
         th, td {
             padding: 10px;
             border: 1px solid #ddd;
+            word-wrap: break-word;
+            text-align: left;
+            font-size: 1.5em;
         }
 
         th {
             background-color: #4B0082;
             color: #ffffff;
         }
+
     </style>
 </head>
 <body>
@@ -65,6 +103,7 @@
     <div id="tableContainerAgendas"></div>
     <button id="addAgendaBtn">Add New Agenda</button>
     <button id="agendaPhaseOptionsBtn">Agenda Phase Options</button>
+    <button id="politicsPrimaryAbilityBtn">Play Politics Primary Ability</button>
     <button id="backToMenuBtn">Back To Menu</button>
 
     <!-- Load players file -->
